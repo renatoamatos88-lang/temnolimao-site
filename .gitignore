@@ -1,0 +1,14 @@
+# Claude Code configs (local only)
+.claude/
+
+# Imagens originais não otimizadas (versões WebP são usadas no site)
+quem-somos.png
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+*.swp
