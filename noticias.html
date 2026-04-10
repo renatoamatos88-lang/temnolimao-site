@@ -3,6 +3,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Notícias — Tem no Limão</title>
 <meta name="description" content="Tudo que rola no Limão: cultura, comunidade, gastronomia e muito mais.">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G4ZK4ZT9XS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G4ZK4ZT9XS');
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,600;1,700;1,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -316,6 +326,12 @@ function renderNoticias() {
 function abrirArtigo(idx) {
   const n = noticias[idx];
   if (!n) return;
+  if (typeof gtag === 'function') {
+    gtag('event', 'noticia_click', {
+      noticia_titulo: n.titulo,
+      noticia_categoria: n.cat
+    });
+  }
   const corpo = n.corpo || `<p>${n.excerpt || 'Conteúdo em breve.'}</p>`;
   const shareText = encodeURIComponent(`${n.titulo} — Tem no Limão 🍋`);
   document.getElementById('article-box').innerHTML = `
