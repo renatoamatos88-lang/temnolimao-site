@@ -1,10 +1,14 @@
 # Claude Code configs (local only)
 .claude/
 
+# Junction local para preview do projeto Casa Verde (não commitar)
+cv/
+
 # Imagens originais não otimizadas (versões WebP são usadas no site)
 quem-somos.png
 Logo Doce Mordida.png
 Logo Vivian Piacenti.png
+logo-original.png
 
 # OS files
 .DS_Store
