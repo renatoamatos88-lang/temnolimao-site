@@ -1761,6 +1761,10 @@ tr:hover td { background: rgba(255,255,255,.02); }
         <div class="tnl-section-label">Diretório</div>
         <h2 class="tnl-section-title">Negócios do <em>Limão</em></h2>
       </div>
+      <a href="https://airtable.com/appZ2fnxgGjGZDJpt/pagVbY0WICvbBiTe4/form" target="_blank" rel="noopener" class="tnl-btn-dark" id="cta-cadastre-negocio">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        Cadastre seu negócio
+      </a>
     </div>
     <div class="tnl-search-wrap">
       <span class="tnl-search-icon">
@@ -3389,6 +3393,53 @@ renderVagas();
 // Apply saved reels if any
 if (_reelsCfg) renderReels(_reelsCfg);
 checkHash();
+
+// ── Airtable: carregar parceiros aprovados via /api/parceiros ──
+// Fonte única de verdade pros cadastros enviados pelo formulário público.
+// Merge por WhatsApp: entradas do Airtable que não existem em `negocios` são adicionadas.
+// Não salva no localStorage — Airtable sempre ganha no próximo reload.
+(async function carregarDoAirtable() {
+  try {
+    const r = await fetch('/api/parceiros', { cache: 'no-store' });
+    if (!r.ok) { console.warn('[Airtable] HTTP', r.status); return; }
+    const data = await r.json();
+    const lista = Array.isArray(data.parceiros) ? data.parceiros : [];
+    if (lista.length === 0) return;
+
+    // Dedup por WhatsApp (só dígitos)
+    const wppsExistentes = new Set(
+      negocios.map(n => String(n.wpp || '').replace(/\D/g, '')).filter(Boolean)
+    );
+    const novos = lista.filter(p => {
+      const wpp = String(p.wpp || '').replace(/\D/g, '');
+      return wpp && !wppsExistentes.has(wpp);
+    });
+
+    if (novos.length === 0) return;
+
+    // Atribui IDs sequenciais (sem colidir com _negociosDefault)
+    let maxId = negocios.reduce((m, n) => Math.max(m, Number(n.id) || 0), 0);
+    for (const p of novos) {
+      p.id = ++maxId;
+      p.fonte = 'airtable'; // flag pra debug/admin
+      negocios.push(p);
+      // Se vier categoria nova, adiciona no filtro
+      if (p.cat && typeof CATS !== 'undefined' && !CATS.includes(p.cat)) {
+        CATS.push(p.cat);
+      }
+    }
+
+    // Re-render só o que precisa
+    if (typeof renderFilterBar === 'function') renderFilterBar();
+    if (typeof renderCards === 'function') renderCards();
+    if (typeof renderTblNegs === 'function') renderTblNegs();
+    if (typeof renderDashStats === 'function') renderDashStats();
+
+    console.log(`[Airtable] ${novos.length} parceiros carregados.`);
+  } catch (err) {
+    console.warn('[Airtable] erro ao carregar:', err);
+  }
+})();
 
 // ── GA4: tracking de cliques em parceiros (delegação no #cards-grid) ──
 document.getElementById('cards-grid')?.addEventListener('click', function(e) {
