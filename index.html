@@ -510,18 +510,25 @@ tr:hover td { background: rgba(255,255,255,.02); }
 }
 .tnl-hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-/* Stats */
+/* Stats — caixa escura com blur (padrão mobile + web) */
 .tnl-hero-stats {
   display: flex; gap: 2rem; flex-wrap: wrap;
+  background: rgba(10, 14, 4, .72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(184, 230, 30, .16);
+  border-radius: 16px;
+  padding: 1.1rem 1.4rem;
+  align-self: flex-start;
 }
 .tnl-hero-stat { }
 .tnl-hero-stat-number {
-  font-family: 'Space Mono',monospace; font-size: 1.4rem; font-weight: 700;
-  color: var(--amarelo); line-height: 1; margin-bottom: .3rem;
+  font-family: 'Space Mono',monospace; font-size: 2rem; font-weight: 700;
+  color: var(--amarelo); line-height: 1; margin-bottom: .35rem;
 }
 .tnl-hero-stat-label {
-  font-family: 'Space Mono',monospace; font-size: .6rem;
-  text-transform: uppercase; letter-spacing: .15em; color: rgba(255,255,255,.72);
+  font-family: 'Space Mono',monospace; font-size: .62rem;
+  text-transform: uppercase; letter-spacing: .15em; color: rgba(255,255,255,.75);
 }
 
 /* ── SLIDE B: mesmo layout split espelhado ── */
@@ -550,18 +557,25 @@ tr:hover td { background: rgba(255,255,255,.02); }
 }
 .tnl-ig-img-full { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-/* Métricas slide B */
+/* Métricas slide B — caixa escura com blur (padrão mobile + web) */
 .tnl-ig-stats {
-  display: flex; gap: 1.5rem; flex-wrap: wrap; z-index: 3;
+  display: flex; gap: 1.75rem; flex-wrap: wrap; z-index: 3;
   margin-top: 1.25rem; margin-bottom: 1.5rem;
+  background: rgba(6, 10, 2, .72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(184, 230, 30, .16);
+  border-radius: 16px;
+  padding: 1.1rem 1.4rem;
+  align-self: flex-start;
 }
 .tnl-ig-stat-n {
-  font-family: 'Space Mono',monospace; font-size: 1.1rem; font-weight: 700;
-  color: var(--amarelo); line-height: 1; margin-bottom: .2rem;
+  font-family: 'Space Mono',monospace; font-size: 1.6rem; font-weight: 700;
+  color: var(--amarelo); line-height: 1; margin-bottom: .3rem;
 }
 .tnl-ig-stat-l {
-  font-family: 'Space Mono',monospace; font-size: .5rem;
-  text-transform: uppercase; letter-spacing: .12em; color: rgba(255,255,255,.72);
+  font-family: 'Space Mono',monospace; font-size: .55rem;
+  text-transform: uppercase; letter-spacing: .12em; color: rgba(255,255,255,.75);
 }
 
 /* Dots */
@@ -581,8 +595,8 @@ tr:hover td { background: rgba(255,255,255,.02); }
 .tnl-btn-ig-follow {
   display: inline-flex; align-items: center; gap: .5rem;
   background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
-  color: white; font-weight: 800; font-size: .88rem;
-  padding: .8rem 1.5rem; border-radius: 3rem;
+  color: white; font-weight: 700; font-size: .95rem;
+  padding: .9rem 2rem; border-radius: 3rem;
   text-decoration: none; border: none; cursor: pointer;
   font-family: 'Plus Jakarta Sans',sans-serif;
   transition: opacity .2s, transform .15s;
@@ -590,14 +604,14 @@ tr:hover td { background: rgba(255,255,255,.02); }
 .tnl-btn-ig-follow:hover { opacity:.9; transform: translateY(-2px); }
 .tnl-btn-ig-wpp {
   display: inline-flex; align-items: center; gap: .5rem;
-  background: rgba(255,255,255,.07); color: rgba(255,255,255,.85);
-  font-weight: 600; font-size: .88rem;
-  padding: .8rem 1.5rem; border-radius: 3rem;
-  text-decoration: none; border: 1px solid rgba(255,255,255,.14);
+  background: none; color: rgba(255,255,255,.95);
+  font-weight: 500; font-size: .95rem;
+  padding: .9rem 2rem; border-radius: 3rem;
+  text-decoration: none; border: 1px solid rgba(255,255,255,.65);
   font-family: 'Plus Jakarta Sans',sans-serif;
-  transition: background .2s;
+  transition: border-color .2s, color .2s;
 }
-.tnl-btn-ig-wpp:hover { background: rgba(255,255,255,.12); }
+.tnl-btn-ig-wpp:hover { border-color: var(--limao); color: var(--limao); }
 
 /* ── MOBILE ── */
 @media (max-width: 768px) {
@@ -608,14 +622,41 @@ tr:hover td { background: rgba(255,255,255,.02); }
   .tnl-ig-img-wrap {
     position: absolute; inset: 0; z-index: 0;
   }
-  .tnl-hero-img-wrap { opacity: .12; }
-  .tnl-ig-img-wrap { opacity: .07; }
+  /* Imagens visíveis no mobile (antes: .12/.07 invisíveis) */
+  .tnl-hero-img-wrap { opacity: .45; }
+  .tnl-ig-img-wrap { opacity: .38; }
+  /* Gradiente vertical: topo escuro protege texto, base revela imagem */
   .tnl-hero-img-wrap::before {
-    background: linear-gradient(to right, var(--dark) 0%, rgba(22,26,14,.6) 70%, transparent 100%);
+    background:
+      linear-gradient(to bottom, var(--dark) 0%, rgba(22,26,14,.88) 30%, rgba(22,26,14,.4) 75%, transparent 100%);
+  }
+  .tnl-hero-img-wrap::after {
+    background: linear-gradient(to top, var(--dark) 0%, transparent 45%);
+    height: 28%;
   }
   .tnl-ig-img-wrap::before {
-    background: linear-gradient(to bottom, #080e04 0%, rgba(8,14,4,.5) 50%, transparent 100%);
+    background:
+      linear-gradient(to bottom, #080e04 0%, rgba(8,14,4,.88) 30%, rgba(8,14,4,.4) 75%, transparent 100%);
   }
+  .tnl-ig-img-wrap::after {
+    background: linear-gradient(to top, #080e04 0%, transparent 45%);
+    height: 28%;
+  }
+  /* Stats ganham caixa sólida pra ficarem legíveis sobre a imagem */
+  .tnl-hero-stats,
+  .tnl-ig-stats {
+    background: rgba(10, 14, 4, .78);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(184, 230, 30, .14);
+    border-radius: 14px;
+    padding: 1rem 1.15rem;
+    gap: 1.25rem !important;
+  }
+  .tnl-hero-stat-number { font-size: 1.75rem !important; }
+  .tnl-hero-stat-label { font-size: .55rem !important; }
+  .tnl-ig-stat-n { font-size: 1.4rem !important; }
+  .tnl-ig-stat-l { font-size: .52rem !important; }
   .tnl-hero-content,
   .tnl-ig-content {
     padding: 6.5rem 1.5rem 2.5rem;
@@ -1323,9 +1364,254 @@ tr:hover td { background: rgba(255,255,255,.02); }
 
 /* ── Ancoragem: compensa nav fixo (~72px) ── */
 #directory, #quem-somos, #vagas, #podcast, #news, #depoimentos, #instagram, #cta { scroll-margin-top: 85px; }
+
+/* ═══ REVEAL ON SCROLL (§3.2 do 08-efeitos-premium.md) ═══ */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 800ms cubic-bezier(.2,.8,.2,1),
+              transform 800ms cubic-bezier(.2,.8,.2,1);
+}
+[data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+}
+
+/* ═══ HERO — ENTRADA CINEMATOGRÁFICA (§2.1 do 08-efeitos-premium.md) ═══ */
+[data-hero-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: hero-rise 700ms cubic-bezier(.2,.8,.2,1) var(--hero-delay, 0ms) forwards;
+}
+@keyframes hero-rise {
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-hero-reveal] { opacity: 1; transform: none; animation: none; }
+}
+
+/* ═══ HERO SCROLL SCENE — Subpasso 1: infraestrutura (pin + --progress) ═══ */
+/* Caminho 2 — inspirado em obsidianassembly.com. Ativa via JS com .scene-active */
+/* IMPORTANTE: o pai .tnl-hero tem overflow:hidden e max-height:620px, e html/body
+   têm overflow-x:hidden — os 3 quebram position:sticky. Neutralizamos aqui. */
+html.tnl-scene-on,
+html.tnl-scene-on body {
+  overflow-x: clip;          /* clip não cria contexto de scroll → sticky volta a funcionar */
+}
+@supports not (overflow-x: clip) {
+  /* fallback: navegadores antigos — aceitamos risco de scroll horizontal pontual */
+  html.tnl-scene-on,
+  html.tnl-scene-on body {
+    overflow-x: visible;
+  }
+}
+@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  .tnl-hero.scene-active {
+    height: 200vh;
+    max-height: none;
+    overflow: visible;       /* libera o sticky filho */
+    position: relative;
+  }
+  .tnl-hero.scene-active .tnl-hero-viewport {
+    /* Ordem importa: `inset` (shorthand) precisa vir ANTES dos específicos,
+       senão ele sobrescreve top/left/right/bottom */
+    inset: auto;             /* anula o `inset: 0` da regra base */
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+/* ═══ SPLASH DE ENTRADA ═══ */
+#tnl-splash {
+  position: fixed; inset: 0; z-index: 99999;
+  background: #161A0E;
+  display: flex; align-items: center; justify-content: center;
+  transition: opacity .7s ease;
+}
+#tnl-splash.is-hidden { opacity: 0; pointer-events: none; }
+
+.tnl-splash-inner {
+  display: flex; flex-direction: column;
+  align-items: center; gap: .75rem;
+  position: relative;
+}
+
+/* Anéis decorativos pulsantes */
+.tnl-splash-ring,
+.tnl-splash-ring2 {
+  position: absolute;
+  border-radius: 50%;
+  top: 50%; left: 50%;
+  pointer-events: none;
+}
+.tnl-splash-ring {
+  width: 230px; height: 230px;
+  border: 1.5px solid rgba(184, 230, 30, .20);
+  animation: tnl-splash-pulse 2.6s ease-in-out infinite;
+}
+.tnl-splash-ring2 {
+  width: 300px; height: 300px;
+  border: 1px solid rgba(184, 230, 30, .09);
+  animation: tnl-splash-pulse 2.6s ease-in-out infinite .55s;
+}
+
+/* Container do personagem Gui — transparente, sem recorte circular */
+.tnl-splash-lemon-wrap {
+  width: 260px; height: 260px;
+  position: relative; z-index: 1;
+  filter: drop-shadow(0 18px 50px rgba(184, 230, 30, .35));
+  flex-shrink: 0;
+  /* anima só no fallback (img); vídeo já traz animação interna */
+}
+.tnl-splash-lemon-wrap.has-video { animation: none; filter: drop-shadow(0 18px 50px rgba(184, 230, 30, .28)); }
+.tnl-splash-lemon-wrap:not(.has-video) {
+  animation: tnl-lemon-float 4s ease-in-out infinite;
+}
+.tnl-splash-lemon,
+.tnl-splash-video {
+  width: 100%; height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.tnl-splash-video { background: transparent; }
+
+/* Nome e tagline — "Tem no Limão!" numa linha só */
+.tnl-splash-brand {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin: 0;
+  text-align: center;
+  color: rgba(255, 255, 255, .95);
+  letter-spacing: -.01em;
+  white-space: nowrap;
+}
+.tnl-splash-brand strong { font-weight: 800; color: #fff; }
+.tnl-splash-brand .tnl-splash-limao { color: #B8E61E; font-weight: 800; margin-left: .3rem; }
+.tnl-splash-brand .tnl-splash-tag { display:block; margin-top:.5rem; font-size: .85rem; color: rgba(255, 255, 255, .55); font-weight: 400; letter-spacing: .05em; white-space: normal; }
+
+/* Dots de loading */
+.tnl-splash-dots {
+  display: flex; gap: .45rem;
+  margin-top: .15rem;
+}
+.tnl-splash-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: #B8E61E;
+  animation: tnl-dot-blink 1.4s ease-in-out infinite;
+}
+.tnl-splash-dot:nth-child(2) { animation-delay: .24s; }
+.tnl-splash-dot:nth-child(3) { animation-delay: .48s; }
+
+@keyframes tnl-lemon-float {
+  0%,  100% { transform: translateY(0px)   rotate(-5deg) scale(1.00); }
+  40%        { transform: translateY(-16px) rotate( 5deg) scale(1.03); }
+  70%        { transform: translateY(-8px)  rotate( 2deg) scale(1.01); }
+}
+@keyframes tnl-splash-pulse {
+  0%, 100% { opacity: 1;   transform: translate(-50%, -50%) scale(1);    }
+  50%       { opacity: .12; transform: translate(-50%, -50%) scale(1.14); }
+}
+@keyframes tnl-dot-blink {
+  0%, 100% { opacity: .2;  transform: scale(1);    }
+  50%       { opacity: 1;   transform: scale(1.4); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tnl-splash-lemon-wrap,
+  .tnl-splash-ring,
+  .tnl-splash-ring2,
+  .tnl-splash-dot { animation: none; }
+  #tnl-splash { transition: none; }
+}
+
+/* Esconde dots durante a scene (navegação manual não faz sentido com scroll) */
+.tnl-hero.scene-active .tnl-hero-dots { display: none !important; }
+
+/* ═══ HERO SCROLL SCENE — Subpasso 2 (v6): fade+scale sem sobreposição ═══ */
+/* Slide A sai ANTES de Slide B entrar → sem double-exposure.
+   Botões do Slide B chegam por último, induzindo o clique.
+   Pointer-events restaurados via classes JS (scene-at-start / scene-at-end). */
+@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  .tnl-hero.scene-active .tnl-hero-slide {
+    transition: none;
+    will-change: opacity, transform;
+    pointer-events: none; /* restaurado pelas classes JS abaixo */
+  }
+
+  /* ── Slide A: visível [0→0.4], sai [0.4→0.55] com leve recuo ── */
+  .tnl-hero.scene-active #heroSlide0 {
+    z-index: 2;
+    opacity: calc(1 - clamp(0, calc((var(--progress,0) - 0.40) * 6.67), 1));
+    transform: scale(calc(1 - 0.025 * clamp(0, calc((var(--progress,0) - 0.40) * 6.67), 1)));
+  }
+
+  /* ── Slide B: invisível [0→0.6], entra [0.6→0.75] subindo levemente ── */
+  .tnl-hero.scene-active #heroSlide1 {
+    z-index: 3;
+    opacity: clamp(0, calc((var(--progress,0) - 0.60) * 6.67), 1);
+    transform: translateY(calc(20px * (1 - clamp(0, calc((var(--progress,0) - 0.60) * 6.67), 1))));
+  }
+
+  /* ── CTAs do Slide B chegam por último [0.78→0.94] ── */
+  .tnl-hero.scene-active #heroSlide1 .tnl-hero-actions {
+    opacity: clamp(0, calc((var(--progress,0) - 0.78) * 6.25), 1);
+    transform: translateY(calc(18px * (1 - clamp(0, calc((var(--progress,0) - 0.78) * 6.25), 1))));
+  }
+
+  /* Pointer-events nos endpoints — controlados por classe JS */
+  .tnl-hero.scene-active.scene-at-start #heroSlide0 { pointer-events: auto; }
+  .tnl-hero.scene-active.scene-at-end   #heroSlide1 { pointer-events: auto; }
+}
 </style>
 </head>
 <body>
+
+<!-- ═══ SPLASH DE ENTRADA ═══ -->
+<div id="tnl-splash" aria-hidden="true">
+  <div class="tnl-splash-inner">
+    <div class="tnl-splash-ring"></div>
+    <div class="tnl-splash-ring2"></div>
+    <div class="tnl-splash-lemon-wrap has-video">
+      <video class="tnl-splash-video" autoplay muted loop playsinline preload="auto"
+             width="260" height="260"
+             aria-hidden="true">
+        <source src="gui-cartoon.webm" type="video/webm">
+      </video>
+    </div>
+    <script>
+    /* Fallback: iOS Safari não toca WebM com alpha → usa img estático + flutuar */
+    (function(){
+      var wrap = document.querySelector('.tnl-splash-lemon-wrap.has-video');
+      if (!wrap) return;
+      var video = wrap.querySelector('video');
+      var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+      var supportsWebM = video && video.canPlayType && video.canPlayType('video/webm; codecs="vp8"') !== '';
+      function fallback(){
+        wrap.classList.remove('has-video');
+        wrap.innerHTML = '<img class="tnl-splash-lemon" src="lemon-3d.webp" alt="">';
+      }
+      if (isIOS || !supportsWebM) { fallback(); return; }
+      video.addEventListener('error', fallback);
+      /* Se em 1.2s o vídeo não começou a renderizar, fallback (Safari às vezes aceita mas não toca alpha) */
+      setTimeout(function(){
+        if (video.readyState < 2 || video.paused) fallback();
+      }, 1200);
+    })();
+    </script>
+    <p class="tnl-splash-brand"><strong>Tem no<span class="tnl-splash-limao">Limão!</span></strong><span class="tnl-splash-tag">O guia do bairro</span></p>
+    <div class="tnl-splash-dots">
+      <span class="tnl-splash-dot"></span>
+      <span class="tnl-splash-dot"></span>
+      <span class="tnl-splash-dot"></span>
+    </div>
+  </div>
+</div>
 
 <!-- ═══════════ ADMIN OVERLAY ═══════════ -->
 <div id="admin-overlay">
@@ -1649,13 +1935,13 @@ tr:hover td { background: rgba(255,255,255,.02); }
         <div class="tnl-hero-slide-a">
           <!-- ESQUERDA: texto -->
           <div class="tnl-hero-content">
-            <div class="tnl-hero-eyebrow">Bairro do Limão · São Paulo</div>
-            <h1 class="tnl-hero-title">
+            <div class="tnl-hero-eyebrow" data-hero-reveal style="--hero-delay: 0ms">Bairro do Limão · São Paulo</div>
+            <h1 class="tnl-hero-title" data-hero-reveal style="--hero-delay: 120ms">
               Tem no <span class="tnl-hero-limao">Limão!</span>
               <span class="tnl-hero-title-sub">O que você procura?</span>
             </h1>
-            <p class="tnl-hero-subtitle">O guia definitivo dos negócios, serviços e acontecimentos do bairro que tem de tudo — e que ainda vai te surpreender.</p>
-            <div class="tnl-hero-stats">
+            <p class="tnl-hero-subtitle" data-hero-reveal style="--hero-delay: 240ms">O guia definitivo dos negócios, serviços e acontecimentos do bairro que tem de tudo — e que ainda vai te surpreender.</p>
+            <div class="tnl-hero-stats" data-hero-reveal style="--hero-delay: 320ms">
               <div class="tnl-hero-stat">
                 <div class="tnl-hero-stat-number">1</div>
                 <div class="tnl-hero-stat-label">Bairro</div>
@@ -1665,7 +1951,7 @@ tr:hover td { background: rgba(255,255,255,.02); }
                 <div class="tnl-hero-stat-label">Moradores</div>
               </div>
             </div>
-            <div class="tnl-hero-actions">
+            <div class="tnl-hero-actions" data-hero-reveal style="--hero-delay: 420ms">
               <a class="tnl-btn-primary" href="https://wa.me/5511983592721?text=Oi!%20Vim%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20quero%20cadastrar%20meu%20neg%C3%B3cio%20no%20bairro!" target="_blank">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
                 Cadastre seu negócio
@@ -1755,16 +2041,12 @@ tr:hover td { background: rgba(255,255,255,.02); }
   </div>
 
   <!-- NEGÓCIOS -->
-  <section class="tnl-section tnl-directory" id="directory">
+  <section class="tnl-section tnl-directory" id="directory" data-reveal>
     <div class="tnl-section-header">
       <div>
         <div class="tnl-section-label">Diretório</div>
         <h2 class="tnl-section-title">Negócios do <em>Limão</em></h2>
       </div>
-      <a href="https://airtable.com/appZ2fnxgGjGZDJpt/pagVbY0WICvbBiTe4/form" target="_blank" rel="noopener" class="tnl-btn-dark" id="cta-cadastre-negocio">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-        Cadastre seu negócio
-      </a>
     </div>
     <div class="tnl-search-wrap">
       <span class="tnl-search-icon">
@@ -1870,7 +2152,7 @@ tr:hover td { background: rgba(255,255,255,.02); }
   </section>
 
   <!-- QUEM SOMOS -->
-  <section class="tnl-section tnl-quem-somos" id="quem-somos">
+  <section class="tnl-section tnl-quem-somos" id="quem-somos" data-reveal>
     <div class="tnl-qs-grid">
       <div class="tnl-qs-img-wrap">
         <img class="tnl-qs-img" src="quem-somos.webp" alt="Equipe Tem no Limão">
@@ -2048,7 +2330,7 @@ tr:hover td { background: rgba(255,255,255,.02); }
   </section>
 
   <!-- DEPOIMENTOS -->
-  <section class="tnl-section tnl-depoimentos">
+  <section class="tnl-section tnl-depoimentos" data-reveal>
     <div class="tnl-section-header">
       <div>
         <div class="tnl-section-label">Comunidade</div>
@@ -2112,7 +2394,7 @@ tr:hover td { background: rgba(255,255,255,.02); }
   </div>
 
   <!-- VAGAS -->
-  <section class="tnl-section tnl-vagas" id="vagas">
+  <section class="tnl-section tnl-vagas" id="vagas" data-reveal>
     <div class="tnl-section-header">
       <div>
         <div class="tnl-section-label">Oportunidades</div>
@@ -2124,7 +2406,7 @@ tr:hover td { background: rgba(255,255,255,.02); }
   </section>
 
   <!-- INSTAGRAM -->
-  <section class="tnl-instagram-strip" id="instagram">
+  <section class="tnl-instagram-strip" id="instagram" data-reveal>
     <div class="tnl-ig-top-row">
       <a class="tnl-ig-header" href="https://www.instagram.com/temnolimao/" target="_blank">
         <div class="tnl-ig-icon">
@@ -3394,53 +3676,6 @@ renderVagas();
 if (_reelsCfg) renderReels(_reelsCfg);
 checkHash();
 
-// ── Airtable: carregar parceiros aprovados via /api/parceiros ──
-// Fonte única de verdade pros cadastros enviados pelo formulário público.
-// Merge por WhatsApp: entradas do Airtable que não existem em `negocios` são adicionadas.
-// Não salva no localStorage — Airtable sempre ganha no próximo reload.
-(async function carregarDoAirtable() {
-  try {
-    const r = await fetch('/api/parceiros', { cache: 'no-store' });
-    if (!r.ok) { console.warn('[Airtable] HTTP', r.status); return; }
-    const data = await r.json();
-    const lista = Array.isArray(data.parceiros) ? data.parceiros : [];
-    if (lista.length === 0) return;
-
-    // Dedup por WhatsApp (só dígitos)
-    const wppsExistentes = new Set(
-      negocios.map(n => String(n.wpp || '').replace(/\D/g, '')).filter(Boolean)
-    );
-    const novos = lista.filter(p => {
-      const wpp = String(p.wpp || '').replace(/\D/g, '');
-      return wpp && !wppsExistentes.has(wpp);
-    });
-
-    if (novos.length === 0) return;
-
-    // Atribui IDs sequenciais (sem colidir com _negociosDefault)
-    let maxId = negocios.reduce((m, n) => Math.max(m, Number(n.id) || 0), 0);
-    for (const p of novos) {
-      p.id = ++maxId;
-      p.fonte = 'airtable'; // flag pra debug/admin
-      negocios.push(p);
-      // Se vier categoria nova, adiciona no filtro
-      if (p.cat && typeof CATS !== 'undefined' && !CATS.includes(p.cat)) {
-        CATS.push(p.cat);
-      }
-    }
-
-    // Re-render só o que precisa
-    if (typeof renderFilterBar === 'function') renderFilterBar();
-    if (typeof renderCards === 'function') renderCards();
-    if (typeof renderTblNegs === 'function') renderTblNegs();
-    if (typeof renderDashStats === 'function') renderDashStats();
-
-    console.log(`[Airtable] ${novos.length} parceiros carregados.`);
-  } catch (err) {
-    console.warn('[Airtable] erro ao carregar:', err);
-  }
-})();
-
 // ── GA4: tracking de cliques em parceiros (delegação no #cards-grid) ──
 document.getElementById('cards-grid')?.addEventListener('click', function(e) {
   var a = e.target.closest('.tnl-card-ol-wa');
@@ -3479,10 +3714,16 @@ document.getElementById('cards-grid')?.addEventListener('click', function(e) {
     }, 1400);
   }
 
-  function autoNext() { setSlide((cur + 1) % total); }
+  function autoNext() {
+    // Subpasso 1: pausa o carrossel enquanto a scene está ativa
+    if (document.querySelector('.tnl-hero.scene-active')) return;
+    setSlide((cur + 1) % total);
+  }
 
   function resetAuto() {
     clearInterval(timer);
+    // Subpasso 1: não arma timer se scene-active
+    if (document.querySelector('.tnl-hero.scene-active')) return;
     timer = setInterval(autoNext, 7000);
   }
 
@@ -3514,5 +3755,105 @@ document.getElementById('cards-grid')?.addEventListener('click', function(e) {
   resetAuto();
 })();
 
+</script>
+<!-- ═══ REVEAL ON SCROLL (§3.2 do 08-efeitos-premium.md) ═══ -->
+<script>
+(function(){
+  var targets = document.querySelectorAll('[data-reveal]');
+  if (!targets.length) return;
+  if (!('IntersectionObserver' in window)) {
+    targets.forEach(function(el){ el.classList.add('is-visible'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+  targets.forEach(function(el){ io.observe(el); });
+})();
+</script>
+
+<!-- ═══ HERO SCROLL SCENE (Caminho 2) — Subpasso 1: pin + --progress ═══ -->
+<script>
+(function(){
+  // Guards — se qualquer um falhar, a scene fica desligada e o hero segue normal
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (window.innerWidth < 768) return;
+  if (location.hash === '#admin') return;
+
+  var hero = document.querySelector('.tnl-hero');
+  if (!hero) return;
+
+  // Ativa o modo scene (CSS só aplica com essa classe)
+  // Adiciona classe no <html> também, pois precisamos sobrescrever
+  // overflow-x:hidden de html/body (gotcha que quebra position:sticky)
+  document.documentElement.classList.add('tnl-scene-on');
+  hero.classList.add('scene-active');
+
+  var ticking = false;
+  function updateProgress() {
+    var rect = hero.getBoundingClientRect();
+    var heroTopAbs = window.scrollY + rect.top;
+    var pinDuration = rect.height - window.innerHeight;
+    if (pinDuration > 0) {
+      var scrolled = window.scrollY - heroTopAbs;
+      var p = Math.min(Math.max(scrolled / pinDuration, 0), 1);
+      hero.style.setProperty('--progress', p.toFixed(4));
+
+      // Restaura pointer-events nos extremos (scroll parado no início ou fim)
+      if (p <= 0.05) {
+        hero.classList.add('scene-at-start');
+        hero.classList.remove('scene-at-end');
+      } else if (p >= 0.88) {
+        hero.classList.remove('scene-at-start');
+        hero.classList.add('scene-at-end');
+      } else {
+        hero.classList.remove('scene-at-start');
+        hero.classList.remove('scene-at-end');
+      }
+    }
+    ticking = false;
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      window.requestAnimationFrame(updateProgress);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', updateProgress, { passive: true });
+  updateProgress(); // estado inicial
+})();
+</script>
+
+<!-- ═══ SPLASH: oculta automaticamente após ~1800ms ═══ -->
+<script>
+(function(){
+  var splash = document.getElementById('tnl-splash');
+  if (!splash) return;
+
+  function hideSplash() {
+    splash.classList.add('is-hidden');
+    // Remove do DOM após o fade terminar (700ms de transition)
+    setTimeout(function(){ splash.remove(); }, 750);
+  }
+
+  // Failsafe: oculta em 5.5s mesmo que o load não dispare
+  var maxTimer = setTimeout(hideSplash, 5500);
+
+  window.addEventListener('load', function(){
+    clearTimeout(maxTimer);
+    // 4s pra apreciar a animação completa (metade do loop de 8s)
+    var elapsed = performance.now();
+    var wait = Math.max(0, 4000 - elapsed);
+    setTimeout(hideSplash, wait);
+  });
+})();
 </script>
 </body></html>
