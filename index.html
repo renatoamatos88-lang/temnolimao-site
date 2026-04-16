@@ -1,6 +1,9 @@
 <html lang="pt-BR"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Oculta splash imediatamente se já foi exibida nesta sessão -->
+<script>if(sessionStorage.getItem('tnl_splash_shown')){document.documentElement.classList.add('tnl-splash-skip');}</script>
+<style>.tnl-splash-skip #tnl-splash{display:none!important}</style>
 <title>Tem no Limão — O guia do bairro</title>
 <meta name="description" content="O guia definitivo dos negócios, serviços e acontecimentos do bairro do Limão, São Paulo.">
 
@@ -49,7 +52,8 @@
     "logo": "https://www.temnolimao.com.br/logo.png",
     "sameAs": [
       "https://www.instagram.com/temnolimao",
-      "https://www.tiktok.com/@temnolimao"
+      "https://www.tiktok.com/@temnolimao",
+      "https://www.youtube.com/@temnolimao110"
     ],
     "areaServed": {
       "@type": "Place",
@@ -1029,7 +1033,7 @@ tr:hover td { background: rgba(255,255,255,.02); }
 .tnl-news .tnl-section-label { color: var(--limao); }
 .tnl-news .tnl-view-all { color: rgba(255,255,255,.5); }
 .tnl-news .tnl-view-all:hover { color: var(--limao); }
-.tnl-news-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 1.5rem; align-items: start; }
+.tnl-news-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; align-items: start; max-width: 680px; }
 .tnl-news-card { border-radius: 1rem; overflow: hidden; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); transition: background .2s, transform .25s; cursor: pointer; }
 .tnl-news-card:hover { background: rgba(255,255,255,.07); transform: translateY(-3px); }
 .tnl-news-thumb { width: 100%; object-fit: cover; display: block; }
@@ -1041,6 +1045,35 @@ tr:hover td { background: rgba(255,255,255,.02); }
 .tnl-news-excerpt { font-size: .82rem; color: rgba(255,255,255,.45); line-height: 1.5; margin-bottom: .8rem; }
 .tnl-news-meta { font-size: .75rem; color: rgba(255,255,255,.3); display: flex; align-items: center; gap: .4rem; }
 .tnl-news-col { display: flex; flex-direction: column; gap: 1.25rem; }
+
+/* ── ARTICLE OVERLAY (popover de notícia) ── */
+.tnl-article-overlay{display:none;position:fixed;inset:0;z-index:500;background:rgba(22,26,14,.6);backdrop-filter:blur(6px);overflow-y:auto;padding:2rem 1rem}
+.tnl-article-overlay.open{display:flex;align-items:flex-start;justify-content:center}
+.tnl-article-box{background:white;border-radius:1.25rem;max-width:760px;width:100%;margin:auto;overflow:hidden;box-shadow:0 32px 80px rgba(22,26,14,.3);position:relative}
+.tnl-article-close{position:absolute;top:1rem;right:1rem;width:36px;height:36px;border-radius:50%;background:rgba(22,26,14,.08);border:none;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;color:var(--ltext);transition:.2s;z-index:10}
+.tnl-article-close:hover{background:rgba(22,26,14,.15)}
+.tnl-article-img{width:100%;height:300px;object-fit:cover;display:block;background:linear-gradient(135deg,var(--dark),var(--dark2))}
+.tnl-article-img-placeholder{width:100%;height:220px;background:linear-gradient(135deg,var(--dark),var(--dark2));display:flex;align-items:center;justify-content:center;font-size:4rem;opacity:.3}
+.tnl-article-content{padding:2.5rem}
+.tnl-article-tag{display:inline-block;background:var(--limao);color:var(--dark);font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:.25rem .75rem;border-radius:.3rem;margin-bottom:1rem}
+.tnl-article-titulo{font-family:'Plus Jakarta Sans', sans-serif;font-size:clamp(1.5rem,4vw,2rem);font-weight:900;color:var(--ltext);line-height:1.2;letter-spacing:-.02em;margin-bottom:1rem}
+.tnl-article-meta{display:flex;align-items:center;gap:.6rem;font-family:'Space Mono',monospace;font-size:.7rem;color:var(--text-light);padding-bottom:1.5rem;border-bottom:1px solid var(--cream2);margin-bottom:1.75rem;flex-wrap:wrap}
+.tnl-article-meta-dot{width:3px;height:3px;border-radius:50%;background:var(--cream2)}
+.tnl-article-autor{font-weight:700;color:var(--mid)}
+.tnl-article-body{font-size:1rem;line-height:1.8;color:#2a2f1a}
+.tnl-article-body p{margin-bottom:1.25rem}
+.tnl-article-body p:last-child{margin-bottom:0}
+.tnl-article-body strong{font-weight:700;color:var(--ltext)}
+.tnl-article-body em{font-style:italic}
+.tnl-article-share{display:flex;align-items:center;gap:.75rem;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--cream2)}
+.tnl-article-share-label{font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light)}
+.tnl-article-share-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1rem;border-radius:2rem;font-size:.82rem;font-weight:600;text-decoration:none;transition:.2s;border:none;cursor:pointer;font-family:'Plus Jakarta Sans', sans-serif}
+.tnl-article-share-wpp{background:var(--wpp-green);color:white}
+.tnl-article-share-wpp:hover{background:#1ebd5a}
+.tnl-article-share-copy{background:var(--cream2);color:var(--ltext)}
+.tnl-article-share-copy:hover{background:#d8d4c4}
+.tnl-article-fonte{display:inline-flex;align-items:center;gap:.35rem;margin-top:1.5rem;font-size:.82rem;color:var(--text-light);text-decoration:none;padding:.5rem .875rem;border:1px solid var(--cream2);border-radius:2rem;transition:.2s}
+.tnl-article-fonte:hover{border-color:var(--dark);color:var(--ltext)}
 
 /* DEPOIMENTOS */
 .tnl-depoimentos { background: var(--cream); }
@@ -1355,6 +1388,11 @@ tr:hover td { background: rgba(255,255,255,.02); }
   .tnl-news-meta { font-size: .75rem; }
   .tnl-news-col { gap: 1rem; }
 
+  /* ── ARTICLE OVERLAY MOBILE ── */
+  .tnl-article-box{border-radius:.75rem}
+  .tnl-article-content{padding:1.5rem}
+  .tnl-article-titulo{font-size:1.4rem}
+
   /* ── DEPOIMENTOS ── */
   .tnl-dep-grid { grid-template-columns: 1fr; gap: 1rem; }
 
@@ -1525,7 +1563,7 @@ html.tnl-scene-on body {
   object-fit: contain;
   display: block;
 }
-.tnl-splash-video { background: transparent; }
+.tnl-splash-video { background: transparent; mix-blend-mode: screen; }
 
 /* Nome e tagline — "Tem no Limão!" numa linha só */
 .tnl-splash-brand {
@@ -1656,26 +1694,21 @@ html.tnl-scene-on body {
              width="260" height="260"
              aria-hidden="true">
         <source src="gui-cartoon.webm" type="video/webm">
+        <source src="gui-cartoon-black.mp4" type="video/mp4">
       </video>
     </div>
     <script>
-    /* Fallback: iOS Safari não toca WebM com alpha → usa img estático + flutuar */
+    /* Fallback: se nenhuma source rodar em 2s, mostra lemon */
     (function(){
       var wrap = document.querySelector('.tnl-splash-lemon-wrap.has-video');
       if (!wrap) return;
       var video = wrap.querySelector('video');
-      var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-      var supportsWebM = video && video.canPlayType && video.canPlayType('video/webm; codecs="vp8"') !== '';
-      function fallback(){
+      function fallbackLemon(){
         wrap.classList.remove('has-video');
         wrap.innerHTML = '<img class="tnl-splash-lemon" src="lemon-3d.webp" alt="">';
       }
-      if (isIOS || !supportsWebM) { fallback(); return; }
-      video.addEventListener('error', fallback);
-      /* Se em 1.2s o vídeo não começou a renderizar, fallback (Safari às vezes aceita mas não toca alpha) */
-      setTimeout(function(){
-        if (video.readyState < 2 || video.paused) fallback();
-      }, 1200);
+      video.addEventListener('error', fallbackLemon);
+      setTimeout(function(){ if(video.readyState < 2 || video.paused) fallbackLemon(); }, 2000);
     })();
     </script>
     <p class="tnl-splash-brand"><strong>Tem no<span class="tnl-splash-limao">Limão!</span></strong><span class="tnl-splash-tag">O guia do bairro</span></p>
@@ -1965,7 +1998,7 @@ html.tnl-scene-on body {
       <li><a href="#quem-somos">Quem Somos</a></li>
       <li><a href="#vagas">Vagas</a></li>
       <li><a href="#" data-nav="podcast" onclick="return false" style="cursor:default;opacity:.6">Podcast <span class="tnl-em-breve">Em breve</span></a></li>
-      <li><a href="#" data-nav="noticias" onclick="return false" style="cursor:default;opacity:.6">Notícias <span class="tnl-em-breve">Em breve</span></a></li>
+      <li><a href="noticias.html">Notícias</a></li>
     </ul>
     <div class="tnl-nav-socials">
       <a class="tnl-nav-social-icon" href="https://www.instagram.com/temnolimao/" title="Instagram" target="_blank">
@@ -1996,7 +2029,7 @@ html.tnl-scene-on body {
     <a href="#quem-somos" onclick="closeMenu()">Quem Somos</a>
     <a href="#vagas" onclick="closeMenu()">Vagas</a>
     <a href="#" data-nav="podcast" onclick="return false" style="opacity:.6">Podcast <span class="tnl-em-breve">Em breve</span></a>
-    <a href="#" data-nav="noticias" onclick="return false" style="opacity:.6">Notícias <span class="tnl-em-breve">Em breve</span></a>
+    <a href="noticias.html">Notícias</a>
     <a class="tnl-mob-cta" href="https://wa.me/5511983592721?text=Oi!%20Vim%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20quero%20cadastrar%20meu%20neg%C3%B3cio%20no%20bairro!" target="_blank" onclick="closeMenu()">Cadastre seu negócio</a>
   </div>
 
@@ -2364,7 +2397,7 @@ html.tnl-scene-on body {
   </section>
 
   <!-- NOTÍCIAS -->
-  <section class="tnl-section tnl-news" id="news" style="display:none">
+  <section class="tnl-section tnl-news" id="news">
     <div class="tnl-section-header">
       <div>
         <div class="tnl-section-label">Jornalismo Local</div>
@@ -2373,35 +2406,22 @@ html.tnl-scene-on body {
       <a class="tnl-view-all" href="noticias.html">Ver todas →</a>
     </div>
     <div class="tnl-news-grid" id="news-grid">
-    <div class="tnl-news-card featured">
-      <img class="tnl-news-thumb" src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=700&amp;q=80&amp;fit=crop" alt="Feira das Sextas completa 5 anos e se consolida como tradição no Limão">
+    <div class="tnl-news-card featured" onclick="abrirNoticiaIndex(0)">
+      <img class="tnl-news-thumb" src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=700&amp;q=80&amp;fit=crop" alt="Folha de S.Paulo: jornalista investe em notícias do Limão">
       <div class="tnl-news-body">
-        <span class="tnl-news-tag">Cultura</span>
-        <div class="tnl-news-title">Feira das Sextas completa 5 anos e se consolida como tradição no Limão</div>
-        <div class="tnl-news-excerpt">O evento que começou com 12 barraquinhas agora reúne mais de 80 expositores locais toda semana, movimentando a economia do bairro.</div>
-        <div class="tnl-news-meta">15 fev 2026 · 4 min de leitura</div>
+        <span class="tnl-news-tag">Na Mídia</span>
+        <div class="tnl-news-title">Folha de S.Paulo: jornalista investe em notícias do Limão e quer revolucionar bairro paulistano</div>
+        <div class="tnl-news-excerpt">Guilherme Fuoco deixou a TV Globo para apostar no jornalismo hiperlocal do bairro onde nasceu. O Tem no Limão virou referência de mídia comunitária em SP.</div>
+        <div class="tnl-news-meta">27 jun 2024 · 6 min de leitura</div>
       </div>
     </div>
-    <div class="tnl-news-col">
-      
-      <div class="tnl-news-card secondary">
-        <img class="tnl-news-thumb" src="https://images.unsplash.com/photo-1585435557343-3b092031a831?w=400&amp;q=70&amp;fit=crop" alt="Moradores se mobilizam para revitalizar a Praça do Limão">
-        <div class="tnl-news-body">
-          <span class="tnl-news-tag">Comunidade</span>
-          <div class="tnl-news-title">Moradores se mobilizam para revitalizar a Praça do Limão</div>
-          <div class="tnl-news-meta">12 fev 2026 · 3 min de leitura</div>
-        </div>
-      </div>
-      <div class="tnl-news-card secondary">
-        <img class="tnl-news-thumb" src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=400&amp;q=70&amp;fit=crop" alt="Novo mural na Av. Imirim celebra a história do bairro">
-        <div class="tnl-news-body">
-          <span class="tnl-news-tag">Arte</span>
-          <div class="tnl-news-title">Novo mural na Av. Imirim celebra a história do bairro</div>
-          <div class="tnl-news-meta">8 fev 2026 · 5 min de leitura</div>
-        </div>
-      </div>
-    </div></div>
+    </div>
   </section>
+
+  <!-- ARTIGO OVERLAY (popover de notícia no index) -->
+  <div class="tnl-article-overlay" id="news-article-overlay" onclick="fecharNoticiaIndex(event)">
+    <div class="tnl-article-box" id="news-article-box"></div>
+  </div>
 
   <!-- DEPOIMENTOS -->
   <section class="tnl-section tnl-depoimentos" data-reveal>
@@ -2679,9 +2699,7 @@ let podcasts = [
 ];
 
 let noticias = [
-  { cat:'Cultura', titulo:'Feira das Sextas completa 5 anos e se consolida como tradição no Limão', excerpt:'O evento que começou com 12 barraquinhas agora reúne mais de 80 expositores locais toda semana, movimentando a economia do bairro.', data:'15 fev 2026', leit:'4 min', featured:true },
-  { cat:'Comunidade', titulo:'Moradores se mobilizam para revitalizar a Praça do Limão', excerpt:'Mutirão de voluntários planeja novo paisagismo e área de lazer para crianças.', data:'12 fev 2026', leit:'3 min' },
-  { cat:'Arte', titulo:'Novo mural na Av. Imirim celebra a história do bairro', excerpt:'Artistas locais passaram três semanas pintando o painel de 40 metros.', data:'8 fev 2026', leit:'5 min' },
+  { cat:'Na Mídia', titulo:'Folha de S.Paulo: jornalista investe em notícias do Limão e quer revolucionar bairro paulistano', excerpt:'Guilherme Fuoco deixou a TV Globo para apostar no jornalismo hiperlocal do bairro onde nasceu. O Tem no Limão virou referência de mídia comunitária em SP.', img:'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=700&q=80&fit=crop', data:'27 jun 2024', leit:'6 min', autor:'Folha de S.Paulo', corpo:'<p>O jornalista Guilherme Fuoco, de 34 anos, surpreendeu ao deixar a TV Globo — onde atuava como editor de textos e participou da cobertura da Copa do Mundo de 2018 — para se dedicar ao jornalismo comunitário no Limão, bairro da zona norte de São Paulo onde cresceu.</p><p>O projeto <strong>Tem no Limão</strong>, focado principalmente no Instagram, reúne cerca de 40 mil seguidores numa comunidade de aproximadamente 80 mil habitantes. A plataforma se tornou o principal canal de informação local do bairro, com a missão de divulgar o comércio, expor problemas, cobrar a prefeitura e conectar os moradores.</p><p>Hoje o Tem no Limão conta com mais de cem anunciantes, uma equipe de 13 pessoas e uma meta mensal de faturamento de R$ 100 mil — provando que jornalismo hiperlocal pode ser um negócio sustentável.</p><p>O lema resume tudo: <strong>"Não precisa sair do bairro. Tem no Limão."</strong></p>', fonte:'https://www1.folha.uol.com.br/mercado/2024/06/jornalista-investe-em-noticias-do-limao-e-quer-revolucionar-bairro-paulistano.shtml', featured:true },
 ];
 
 let depoimentos = [
@@ -2866,18 +2884,20 @@ function renderNews() {
   const cfg = carregarDB()?.config || {};
   const sec = document.getElementById('news');
   const activeNots = noticias.filter(n => !n.paused);
-  // Mostra seção só se habilitada no ADM
-  if (sec) sec.style.display = cfg.sec_news ? '' : 'none';
-  if (!cfg.sec_news || !activeNots.length) return;
+  // Visível por padrão; ADM pode ocultar
+  var showNews = cfg.sec_news !== undefined ? cfg.sec_news : true;
+  if (sec) sec.style.display = showNews ? '' : 'none';
+  if (!showNews || !activeNots.length) return;
   const newsImgs = [
-    'https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=700&q=80&fit=crop',
+    'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=700&q=80&fit=crop',
+    'https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=400&q=70&fit=crop',
     'https://images.unsplash.com/photo-1585435557343-3b092031a831?w=400&q=70&fit=crop',
     'https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=400&q=70&fit=crop',
   ];
   const [feat, ...rest] = activeNots;
   document.getElementById('news-grid').innerHTML = `
-    <div class="tnl-news-card featured">
-      <img class="tnl-news-thumb" src="${newsImgs[0]}" alt="${escAttr(feat.titulo)}">
+    <div class="tnl-news-card featured" onclick="abrirNoticiaIndex(0)">
+      <img class="tnl-news-thumb" src="${feat.img||newsImgs[0]}" alt="${escAttr(feat.titulo)}">
       <div class="tnl-news-body">
         <span class="tnl-news-tag">${escText(feat.cat)}</span>
         <div class="tnl-news-title">${escText(feat.titulo)}</div>
@@ -2885,17 +2905,62 @@ function renderNews() {
         <div class="tnl-news-meta">${escText(feat.data)} · ${escText(feat.leit)} de leitura</div>
       </div>
     </div>
-    <div class="tnl-news-col">
+    ${rest.length ? `<div class="tnl-news-col">
       ${rest.map((n,i) => `
-      <div class="tnl-news-card secondary">
-        <img class="tnl-news-thumb" src="${newsImgs[i+1]||newsImgs[0]}" alt="${escAttr(n.titulo)}">
+      <div class="tnl-news-card secondary" onclick="abrirNoticiaIndex(${activeNots.indexOf(n)})">
+        <img class="tnl-news-thumb" src="${n.img||newsImgs[i+1]||newsImgs[0]}" alt="${escAttr(n.titulo)}">
         <div class="tnl-news-body">
           <span class="tnl-news-tag">${escText(n.cat)}</span>
           <div class="tnl-news-title">${escText(n.titulo)}</div>
           <div class="tnl-news-meta">${escText(n.data)} · ${escText(n.leit)} de leitura</div>
         </div>
       </div>`).join('')}
-    </div>`;
+    </div>` : ''}`;
+}
+
+function abrirNoticiaIndex(idx) {
+  var activeNots = noticias.filter(function(n){ return !n.paused; });
+  var n = activeNots[idx];
+  if (!n) return;
+  if (typeof gtag === 'function') {
+    gtag('event', 'noticia_click', { noticia_titulo: n.titulo, noticia_categoria: n.cat });
+  }
+  var corpo = n.corpo || '<p>' + (n.excerpt || 'Conteúdo em breve.') + '</p>';
+  var shareText = encodeURIComponent(n.titulo + ' — Tem no Limão 🍋');
+  document.getElementById('news-article-box').innerHTML =
+    '<button class="tnl-article-close" onclick="fecharNoticiaIndex()">✕</button>' +
+    (n.img ? '<img class="tnl-article-img" src="' + n.img + '" alt="' + n.titulo.replace(/"/g,'&quot;') + '">' : '<div class="tnl-article-img-placeholder">📰</div>') +
+    '<div class="tnl-article-content">' +
+      '<span class="tnl-article-tag">' + n.cat + '</span>' +
+      '<h1 class="tnl-article-titulo">' + n.titulo + '</h1>' +
+      '<div class="tnl-article-meta">' +
+        (n.autor ? '<span class="tnl-article-autor">' + n.autor + '</span><span class="tnl-article-meta-dot"></span>' : '') +
+        '<span>' + (n.data||'') + '</span>' +
+        (n.leit ? '<span class="tnl-article-meta-dot"></span><span>' + n.leit + ' de leitura</span>' : '') +
+      '</div>' +
+      '<div class="tnl-article-body">' + corpo + '</div>' +
+      (n.fonte ? '<a class="tnl-article-fonte" href="' + n.fonte + '" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver fonte original</a>' : '') +
+      '<div class="tnl-article-share">' +
+        '<span class="tnl-article-share-label">Compartilhar</span>' +
+        '<a class="tnl-article-share-btn tnl-article-share-wpp" href="https://wa.me/?text=' + shareText + '" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg> WhatsApp</a>' +
+        '<button class="tnl-article-share-btn tnl-article-share-copy" onclick="copiarLinkIndex()"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar link</button>' +
+      '</div>' +
+    '</div>';
+  document.getElementById('news-article-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function fecharNoticiaIndex(e) {
+  if (e && e.target !== document.getElementById('news-article-overlay')) return;
+  document.getElementById('news-article-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function copiarLinkIndex() {
+  navigator.clipboard.writeText(window.location.href).then(function(){
+    var btn = document.querySelector('#news-article-overlay .tnl-article-share-copy');
+    if (btn) { btn.textContent = '✓ Copiado!'; setTimeout(function(){ btn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar link'; }, 2000); }
+  });
 }
 
 function renderDep() {
@@ -3116,7 +3181,7 @@ function aplicarConfig(cfg) {
 
   // Restaura checkboxes de seções
   if (g('cfg-sec-podcast'))  g('cfg-sec-podcast').checked  = cfg.sec_podcast ?? false;
-  if (g('cfg-sec-noticias')) g('cfg-sec-noticias').checked = cfg.sec_news    ?? false;
+  if (g('cfg-sec-noticias')) g('cfg-sec-noticias').checked = cfg.sec_news    ?? true;
   if (g('cfg-sec-vagas'))    g('cfg-sec-vagas').checked    = cfg.sec_vagas   ?? true;
 
   // Aplica visibilidade das seções no site
@@ -3148,9 +3213,9 @@ function _aplicarVisibilidadeSecoes(cfg) {
   // Seção podcast
   const podSec = document.getElementById('podcast');
   if (podSec) podSec.style.display = cfg.sec_podcast ? '' : 'none';
-  // Seção notícias
+  // Seção notícias (visível por padrão)
   const newsSec = document.getElementById('news');
-  if (newsSec) newsSec.style.display = cfg.sec_news ? '' : 'none';
+  if (newsSec) newsSec.style.display = (cfg.sec_news ?? true) ? '' : 'none';
   // Seção vagas
   const vagSec = document.getElementById('vagas');
   if (vagSec) vagSec.style.display = (cfg.sec_vagas ?? true) ? '' : 'none';
@@ -3168,15 +3233,10 @@ function _aplicarNavLinks(cfg) {
       a.innerHTML = 'Podcast <span class="tnl-em-breve">Em breve</span>';
     }
   });
-  // Notícias
+  // Notícias — sempre ativo (página própria)
   document.querySelectorAll('a[data-nav="noticias"]').forEach(a => {
-    if (cfg.sec_news) {
-      a.href = '#news'; a.onclick = null; a.style.opacity = ''; a.style.cursor = '';
-      a.innerHTML = 'Notícias';
-    } else {
-      a.href = '#'; a.onclick = function(){ return false; }; a.style.opacity = '.6'; a.style.cursor = 'default';
-      a.innerHTML = 'Notícias <span class="tnl-em-breve">Em breve</span>';
-    }
+    a.href = 'noticias.html'; a.onclick = null; a.style.opacity = ''; a.style.cursor = '';
+    a.innerHTML = 'Notícias';
   });
 }
 
@@ -3194,7 +3254,7 @@ function initSecaoCheckboxes() {
   const cfg = carregarDB()?.config || {};
   const g = id => document.getElementById(id);
   if (g('cfg-sec-podcast'))  g('cfg-sec-podcast').checked  = cfg.sec_podcast ?? false;
-  if (g('cfg-sec-noticias')) g('cfg-sec-noticias').checked = cfg.sec_news    ?? false;
+  if (g('cfg-sec-noticias')) g('cfg-sec-noticias').checked = cfg.sec_news    ?? true;
   if (g('cfg-sec-vagas'))    g('cfg-sec-vagas').checked    = cfg.sec_vagas   ?? true;
 }
 function salvarConfig() {
@@ -3936,10 +3996,18 @@ document.getElementById('cards-grid')?.addEventListener('click', function(e) {
 (function(){
   var splash = document.getElementById('tnl-splash');
   if (!splash) return;
+
+  // Já mostrou nesta sessão? Remove splash imediatamente
+  if (sessionStorage.getItem('tnl_splash_shown')) {
+    splash.remove();
+    return;
+  }
+
   var done = false;
 
   function hideSplash() {
     if (done) return; done = true;
+    sessionStorage.setItem('tnl_splash_shown', '1');
     splash.classList.add('is-hidden');
     setTimeout(function(){ splash.remove(); }, 750);
   }
