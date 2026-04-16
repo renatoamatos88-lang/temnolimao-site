@@ -1999,6 +1999,10 @@ html.tnl-scene-on body {
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                 Quero meu site
               </a>
+              <a class="tnl-btn-secondary" href="#directory" onclick="document.getElementById('directory')?.scrollIntoView({behavior:'smooth'});return false;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                Encontre um negócio
+              </a>
             </div>
           </div>
           <!-- DIREITA: imagem -->
@@ -2685,6 +2689,8 @@ function setFilter(el, c) {
   document.querySelectorAll('.tnl-filter-btn').forEach(b => b.classList.remove('active'));
   el.classList.add('active');
   renderCards();
+  /* GA4 — filtro de categoria */
+  gtag('event', 'filter_category', { category: c });
 }
 
 function getCatEmoji(cat) {
@@ -2742,6 +2748,27 @@ function renderCards() {
   const loadWrap = document.querySelector('.tnl-load-more-wrap');
   if (loadWrap) loadWrap.style.display = temMais ? 'block' : 'none';
 }
+
+/* ═══════════ GA4 — EVENTOS CUSTOMIZADOS EXTRAS ═══════════ */
+(function(){
+  document.addEventListener('click', function(e){
+    /* Clique em qualquer CTA de cadastro (TNL WhatsApp) */
+    var cadastro = e.target.closest('a[href*="wa.me/5511983592721"]');
+    if (cadastro) {
+      gtag('event', 'cadastro_click', { location: cadastro.closest('section')?.id || 'header' });
+    }
+  });
+  /* Busca no diretório — dispara no keyup com debounce */
+  var _buscaTimer;
+  var buscaEl = document.getElementById('busca');
+  if (buscaEl) buscaEl.addEventListener('keyup', function(){
+    clearTimeout(_buscaTimer);
+    var v = this.value;
+    _buscaTimer = setTimeout(function(){
+      if (v.length > 2) gtag('event', 'directory_search', { query: v });
+    }, 1500);
+  });
+})();
 
 function renderPodcast() {
   const cfg = carregarDB()?.config || {};
@@ -3878,21 +3905,26 @@ document.getElementById('cards-grid')?.addEventListener('click', function(e) {
 (function(){
   var splash = document.getElementById('tnl-splash');
   if (!splash) return;
+  var done = false;
 
   function hideSplash() {
+    if (done) return; done = true;
     splash.classList.add('is-hidden');
-    // Remove do DOM após o fade terminar (700ms de transition)
     setTimeout(function(){ splash.remove(); }, 750);
   }
 
-  // Failsafe: oculta em 5.5s mesmo que o load não dispare
-  var maxTimer = setTimeout(hideSplash, 5500);
+  // Skip por click/tap em qualquer lugar do splash
+  splash.addEventListener('click', hideSplash);
+  splash.style.cursor = 'pointer';
+
+  // Failsafe: oculta em 3.5s
+  var maxTimer = setTimeout(hideSplash, 3500);
 
   window.addEventListener('load', function(){
     clearTimeout(maxTimer);
-    // 4s pra apreciar a animação completa (metade do loop de 8s)
+    // 2s — rápido o suficiente pra ver a marca, não perder o visitante
     var elapsed = performance.now();
-    var wait = Math.max(0, 4000 - elapsed);
+    var wait = Math.max(0, 2000 - elapsed);
     setTimeout(hideSplash, wait);
   });
 })();
