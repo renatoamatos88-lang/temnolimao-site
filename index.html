@@ -11,11 +11,22 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G4ZK4ZT9XS"></script>
+<!-- Google Consent Mode v2 — deve vir ANTES do gtag -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  var _tnlConsent = localStorage.getItem('tnl_cookie_consent');
+  gtag('consent', 'default', {
+    analytics_storage: _tnlConsent === 'granted' ? 'granted' : 'denied',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    wait_for_update: 500
+  });
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G4ZK4ZT9XS"></script>
+<script>
   gtag('js', new Date());
   gtag('config', 'G-G4ZK4ZT9XS');
 </script>
@@ -1568,6 +1579,34 @@ html.tnl-scene-on body {
   .tnl-hero.scene-active.scene-at-start #heroSlide0 { pointer-events: auto; }
   .tnl-hero.scene-active.scene-at-end   #heroSlide1 { pointer-events: auto; }
 }
+
+/* ═══════════ COOKIE / LGPD BANNER ═══════════ */
+#tnl-cookie-banner {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 99999;
+  background: rgba(10, 14, 4, .92);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(184, 230, 30, .18);
+  padding: 1rem 1.2rem;
+  display: flex; align-items: center; justify-content: center; gap: 1rem;
+  flex-wrap: wrap;
+  font-family: inherit; font-size: .85rem; color: rgba(255,255,255,.8);
+  transform: translateY(100%);
+  transition: transform .4s ease;
+}
+#tnl-cookie-banner.is-visible { transform: translateY(0); }
+#tnl-cookie-banner a { color: #B8E61E; text-decoration: underline; }
+.tnl-cookie-btns { display: flex; gap: .5rem; flex-shrink: 0; }
+.tnl-cookie-btn {
+  padding: .5rem 1.2rem; border-radius: 6px; border: none;
+  font-size: .82rem; font-weight: 600; cursor: pointer;
+  transition: opacity .2s;
+}
+.tnl-cookie-btn:hover { opacity: .85; }
+.tnl-cookie-btn-accept { background: #B8E61E; color: #0a0e04; }
+.tnl-cookie-btn-reject { background: transparent; color: rgba(255,255,255,.7); border: 1px solid rgba(255,255,255,.25); }
+@media(max-width:600px){
+  #tnl-cookie-banner { flex-direction: column; text-align: center; padding: 1rem; }
+}
 </style>
 </head>
 <body>
@@ -2588,6 +2627,8 @@ const _negociosDefault = [
   { id:39, nome:'Instituto Musicando', cat:'Educação',            desc:'Escola de música para todas as idades. Musicalização infantil e terapias por meio da música.', logo: 'https://storage.tally.so/private/c1864419-a44f-43d9-bcfb-02d0c8c425d5.jpeg?id=2okQYj&accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJva1FZaiIsImZvcm1JZCI6IjJFa0dsRCIsImlhdCI6MTc3NjEwMzQ5N30.sBRONuFYxY5BFdt2K47ezHtUbgpcSbz0PpuM3JDexU0&signature=35b809aa0657b005615096daa69275b97c4f509972bd8d33b4fb0b492f356b78', logoCls:'', end:'Av. Dep. Emílio Carlos, 444 – Limão', hora:'Seg–Qui 9h–21h · Sex 9h–20h · Sáb 9h–14h', tipo:'wpp', wpp:'5511918375978' },
   { id:40, nome:'Redes SP',            cat:'Serviços',            desc:'Instalação de rede de proteção e varal de teto.', logo: 'https://storage.tally.so/private/1001490429.jpg?id=rYLD92&accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InJZTEQ5MiIsImZvcm1JZCI6IjJFa0dsRCIsImlhdCI6MTc3NjEwMzQ5N30.5PfkywFWLm9ieiQ2RxkEcGKAApw1qLv1v5DSehduA4w&signature=be2829e2900d5dbc1edaf38936282f982513fe6a9419196884437a2bb464b647', logoCls:'', end:'Rua Dom Antônio de Almeida Lustosa, 170', hora:'Seg–Sex 8h–18h · Sáb 8h–12h', tipo:'wpp', wpp:'5511947353557' },
   { id:42, nome:'GDigital - Gisele Mendes', cat:'Serviços',      desc:'Terceirização de serviços financeiros, administrativos e secretariado para profissionalizar seu negócio.', logo: 'logo-gdigital.webp', logoCls:'', end:'', hora:'10h–17h', tipo:'wpp', wpp:'5511975063857' },
+  { id:43, nome:'Hurbana Soluções',       cat:'Outro',           desc:'Soluções urbanas e empresariais.', logo: 'logo-hurbana.webp', logoCls:'', end:'Av. Deputado Emílio Carlos, 188 – Limão', hora:'-', tipo:'wpp', wpp:'5511955558502' },
+  { id:44, nome:'ADV Partners',           cat:'Outro',           desc:'Firma de advogados — Cristiane Oliveira.', logo: 'logo-advpartners.webp', logoCls:'', end:'Av. Deputado Emílio Carlos, 188 – Limão', hora:'-', tipo:'wpp', wpp:'5511955558502' },
 ];
 let negocios = [..._negociosDefault];
 let negociosVisiveis = 6;
@@ -3853,6 +3894,39 @@ document.getElementById('cards-grid')?.addEventListener('click', function(e) {
     var elapsed = performance.now();
     var wait = Math.max(0, 4000 - elapsed);
     setTimeout(hideSplash, wait);
+  });
+})();
+</script>
+
+<!-- ═══════════ COOKIE / LGPD BANNER ═══════════ -->
+<div id="tnl-cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <p>Usamos cookies para melhorar sua experiência e analisar o tráfego do site (Google Analytics). Ao aceitar, você concorda com nossa coleta de dados conforme a <strong>LGPD</strong>.</p>
+  <div class="tnl-cookie-btns">
+    <button class="tnl-cookie-btn tnl-cookie-btn-accept" id="tnl-cookie-accept">Aceitar</button>
+    <button class="tnl-cookie-btn tnl-cookie-btn-reject" id="tnl-cookie-reject">Rejeitar</button>
+  </div>
+</div>
+<script>
+(function(){
+  var KEY = 'tnl_cookie_consent';
+  var banner = document.getElementById('tnl-cookie-banner');
+  if (!banner) return;
+
+  var saved = localStorage.getItem(KEY);
+  if (!saved) {
+    setTimeout(function(){ banner.classList.add('is-visible'); }, 1500);
+  }
+
+  document.getElementById('tnl-cookie-accept').addEventListener('click', function(){
+    localStorage.setItem(KEY, 'granted');
+    gtag('consent', 'update', { analytics_storage: 'granted' });
+    banner.classList.remove('is-visible');
+  });
+
+  document.getElementById('tnl-cookie-reject').addEventListener('click', function(){
+    localStorage.setItem(KEY, 'denied');
+    gtag('consent', 'update', { analytics_storage: 'denied' });
+    banner.classList.remove('is-visible');
   });
 })();
 </script>
