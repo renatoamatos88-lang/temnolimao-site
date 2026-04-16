@@ -42,6 +42,38 @@ git push
   - `docs:` — documentação
   - `chore:` — tarefas de manutenção
 
+## Analytics & LGPD (ativo desde 09/04/2026)
+- **GA4**: ID `G-G4ZK4ZT9XS` — instalado em todas as páginas HTML
+- **Google Consent Mode v2**: implementado — GA4 inicia com `analytics_storage: denied`
+- **Banner LGPD**: faixa fixa no rodapé com Aceitar/Rejeitar, salva em `localStorage` (`tnl_cookie_consent`)
+- **Eventos GA4 customizados** ativos:
+  - `parceiro_whatsapp_click` — clique no WhatsApp de um parceiro do diretório
+  - `parceiro_site_click` — clique no site de um parceiro
+  - `cadastro_click` — clique em CTA "Cadastre seu negócio" (WhatsApp TNL)
+  - `filter_category` — uso de filtro de categoria no diretório
+  - `directory_search` — busca no campo de pesquisa do diretório (debounce 1.5s)
+
+## SEO (implementado em 16/04/2026)
+- `sitemap.xml` — 4 páginas (index, vagas, noticias, podcast)
+- `robots.txt` — allow all + referência ao sitemap
+- **Canonical URLs**: `https://www.temnolimao.com.br/...` (com www.)
+- **Schema.org**: WebSite + Organization + areaServed (Bairro do Limão) + SearchAction
+- **Pendência manual**: solicitar indexação no Search Console para as 4 URLs
+
+## Splash screen
+- **Vídeo**: `gui-cartoon.webm` (VP8 alpha, 560px, 8s palindrome loop)
+- **Fallback iOS**: `lemon-3d.webp` (560px, com canal alpha, animação CSS float)
+- **Duração**: 2s após load (skipável por click/tap) + failsafe 3.5s
+- Detecção iOS: `canPlayType('video/webm; codecs="vp8"')` + UA sniffing
+
+## Diretório de negócios
+- Array `_negociosDefault` no `index.html` (~linha 2549)
+- **44 negócios** cadastrados (último ID: 44)
+- Merge automático com `localStorage` via `aplicarDB()` para não perder entries
+- Novos clientes do Tally: logos convertidos para WebP local (400px, `sharp-cli`)
+- Categorias com filtro: Alimentação, Saúde, Estética, Academia, Eventos, Educação, Tecnologia, Serviços, Drone, Fotografia, Jóias/Acessórios, Loja, Imobiliária, Advocacia, Outro
+- Paginação: 6 cards visíveis + "Carregar mais"
+
 ## Área admin
 - Acesso: adicionar `/#admin` ao final da URL (ex: `www.temnolimao.com.br/#admin`)
 - **Não é login real** — é um lock client-side para edições locais
@@ -49,20 +81,54 @@ git push
 - Senha armazenada em `localStorage` (chave `SENHA_KEY`)
 
 ## ⚠️ Quirk crítico: localStorage vs código
-O site carrega dados do `localStorage` se existir, via função `aplicarDB()`
-(em `index.html` ~linha 2586). Para **não perder** negócios adicionados
-diretamente no código (array `_negociosDefault`), há um merge automático:
-entradas do código que não existam no `localStorage` são adicionadas.
-
-Ver `docs/ARQUITETURA.md#persistencia` para detalhes.
+O site carrega dados do `localStorage` se existir, via função `aplicarDB()`.
+Para **não perder** negócios adicionados diretamente no código (array
+`_negociosDefault`), há um merge automático: entradas do código que não
+existam no `localStorage` são adicionadas.
 
 ## Convenções de imagem
 - **Sempre WebP** para imagens do site, via `sharp-cli`:
   ```bash
   sharp -i "original.png" -o "nome-kebab-case.webp" -f webp -q 82
   ```
+- Para imagens com transparência, usar Node sharp API diretamente (sharp-cli perde alpha):
+  ```bash
+  NODE_PATH="C:\\Users\\ux-de\\AppData\\Roaming\\npm\\node_modules\\sharp-cli\\node_modules" node -e "
+  const sharp = require('sharp');
+  sharp('input.png').resize(560,560,{fit:'contain',background:{r:0,g:0,b:0,alpha:0}}).webp({quality:80,alphaQuality:90}).toFile('output.webp')
+  "
+  ```
 - PNG/JPG originais vão para o `.gitignore` (manter repo leve)
 - Nomes em `kebab-case` sem espaços nem acentos
+
+## Métricas — estado em 16/04/2026
+- **159 usuários** (1-16 abr), 98,7% novos, 17s engajamento, 82,3% bounce
+- **74,8%** do tráfego vem do Instagram, 20,1% Direct, 4,4% Google
+- **91% São Paulo** — público-alvo correto
+- Relatório completo no Notion: https://www.notion.so/344719e5f03281b88137e600dad11abc
+- Template de métricas no Notion: https://www.notion.so/344719e5f0328163871cf03f38b92662
+
+## Sprints — estado atual
+
+### ✅ Sprint 1 — Engajamento (concluído 16/04/2026)
+- Splash 4s→2s + skipável por tap
+- Eventos GA4 customizados
+- Banner LGPD + Consent Mode v2
+
+### ✅ Sprint 2 — SEO (concluído 16/04/2026)
+- sitemap.xml + robots.txt
+- Canonical URLs corrigidos (www.)
+- Schema.org (WebSite + Organization + areaServed)
+
+### 🔜 Sprint 3 — Retenção (maio)
+- Conteúdo rotativo na home
+- Captura de contato (push/email)
+- Página de Vagas ativa com vagas reais
+
+### 🔜 Sprint 4 — Monetização (maio/junho)
+- Destaque pago no diretório
+- Landing pages por categoria
+- CTA B2B para donos de negócios
 
 ## Ações que requerem confirmação explícita do usuário
 - `git push --force`, `git reset --hard`, `rm -rf`, branch delete
@@ -76,9 +142,9 @@ Ver `docs/ARQUITETURA.md#persistencia` para detalhes.
 - [`docs/ROADMAP.md`](docs/ROADMAP.md) — migração futura para Next.js + Supabase + Stripe
 
 ## Projetos paralelos
-- **Tem na Casa Verde** (ou nome similar) — clone do formato atual para bairro vizinho, mesma stack estática, captura de mercado enquanto o site v2 é construído.
+- **Tem na Casa Verde** (ou nome similar) — clone do formato atual para bairro vizinho, mesma stack estática
 
 ## Próxima fase (v2) — stack definitiva
 Next.js + TypeScript + Supabase + Stripe + Mercado Pago + Tailwind + shadcn/ui.
-Detalhes em `docs/ROADMAP.md`. A migração para v2 deve ser feita em **sessão nova**
-do Claude, com este `CLAUDE.md` carregado como contexto.
+Inclui: dashboard analytics integrado no admin (GA4 Data API), multi-tenant.
+Detalhes em `docs/ROADMAP.md`.
