@@ -68,7 +68,7 @@ git push
 
 ## Diretório de negócios
 - Array `_negociosDefault` no `index.html` (~linha 2549)
-- **44 negócios** cadastrados (último ID: 44)
+- **43 negócios** cadastrados (IDs 1–43 contíguos; cada entrada tem campo `entrada:'YYYY-MM-DD'`)
 - Merge automático com `localStorage` via `aplicarDB()` para não perder entries
 - Novos clientes do Tally: logos convertidos para WebP local (400px, `sharp-cli`)
 - Categorias com filtro: Alimentação, Saúde, Estética, Academia, Eventos, Educação, Tecnologia, Serviços, Drone, Fotografia, Jóias/Acessórios, Loja, Imobiliária, Advocacia, Outro
