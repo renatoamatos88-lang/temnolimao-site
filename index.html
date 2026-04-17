@@ -186,6 +186,46 @@ img, video { max-width: 100%; height: auto; }
   --adm-active:  #27ae60;
 }
 
+/* ADMIN — LIGHT MODE */
+#adm-panel.lightmode {
+  --adm-bg:      #f3f5ee;
+  --adm-surface: #ffffff;
+  --adm-card:    #f8faf0;
+  --adm-border:  rgba(0,0,0,.1);
+  --adm-text:    #1a1d14;
+  --adm-muted:   rgba(0,0,0,.55);
+  --adm-limao:   #5a7f10;
+}
+#adm-panel.lightmode .adm-sort { background: #ffffff !important; color: var(--adm-text) !important; border-color: rgba(0,0,0,.15) !important; }
+#adm-panel.lightmode .adm-sort option { background: #ffffff; color: var(--adm-text); }
+#adm-panel.lightmode input[type="file"] { background: #ffffff !important; color: var(--adm-text) !important; border-color: rgba(0,0,0,.15) !important; }
+#adm-panel.lightmode .modal-box h4 { color: #1a1d14; }
+#adm-panel.lightmode .modal-cancel:hover { color: #1a1d14; }
+#adm-panel.lightmode .modal-save { color: #ffffff; }
+#adm-panel.lightmode .adm-sec input[type="text"],
+#adm-panel.lightmode .adm-sec input[type="password"],
+#adm-panel.lightmode .adm-sec input[type="file"],
+#adm-panel.lightmode .adm-sec textarea,
+#adm-panel.lightmode .adm-sec select,
+#adm-panel.lightmode .modal-box input[type="text"],
+#adm-panel.lightmode .modal-box input[type="password"],
+#adm-panel.lightmode .modal-box textarea,
+#adm-panel.lightmode .modal-box select { background: #ffffff !important; color: var(--adm-text) !important; border-color: rgba(0,0,0,.15) !important; }
+#adm-panel.lightmode tr:hover td { background: rgba(0,0,0,.04) !important; }
+#adm-panel.lightmode th { background: rgba(0,0,0,.03) !important; }
+#adm-panel.lightmode .adm-stat-card:hover { background: rgba(90,127,16,.05); }
+#adm-panel.lightmode .adm-nav-link:hover { background: rgba(90,127,16,.08); }
+#adm-panel.lightmode .adm-nav-link.active { background: rgba(90,127,16,.12); }
+#adm-panel.lightmode .adm-sm-btn { background: #ffffff; color: var(--adm-text); border-color: rgba(0,0,0,.15); }
+#adm-panel.lightmode .adm-sm-btn:hover { background: #f0f4e5; }
+#adm-panel.lightmode .adm-badge.badge-active { background: rgba(39,174,96,.15); color: #1e7d3e; }
+#adm-panel.lightmode .adm-badge.badge-paused { background: rgba(243,156,18,.15); color: #a66c00; }
+#adm-panel.lightmode .adm-badge.badge-cat { background: rgba(90,127,16,.12); color: #3e5808; }
+#adm-panel.lightmode .adm-save-toast { background: #1a1d14; color: #ffffff; }
+#adm-panel.lightmode .modal-save:hover { background: #4a6b0f; }
+#adm-panel.lightmode .adm-login-btn { color: #ffffff; }
+#adm-panel.lightmode .adm-add-btn { color: #ffffff; }
+
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
   background: var(--cream);
@@ -1742,6 +1782,9 @@ html.tnl-scene-on body {
   <div id="adm-panel">
     <div class="adm-topbar">
       <div class="adm-topbar-brand">🍋 Painel ADM — Tem no Limão</div>
+      <div class="adm-topbar-actions">
+        <button class="adm-tbtn" id="adm-theme-toggle" onclick="toggleAdmTheme()" title="Alternar tema">🌙 Dark</button>
+      </div>
     </div>
     <div class="adm-body">
       <!-- Sidebar -->
@@ -3414,10 +3457,24 @@ function admResetSenha() {
     document.getElementById('adm-err').style.color = '#2ecc71';
   }
 }
+const ADM_THEME_KEY = 'tnl_adm_theme';
+function aplicarAdmTheme() {
+  const panel = document.getElementById('adm-panel');
+  const btn = document.getElementById('adm-theme-toggle');
+  const isLight = localStorage.getItem(ADM_THEME_KEY) === 'light';
+  if (panel) panel.classList.toggle('lightmode', isLight);
+  if (btn) btn.textContent = isLight ? '☀️ Light' : '🌙 Dark';
+}
+function toggleAdmTheme() {
+  const isLight = localStorage.getItem(ADM_THEME_KEY) === 'light';
+  localStorage.setItem(ADM_THEME_KEY, isLight ? 'dark' : 'light');
+  aplicarAdmTheme();
+}
 function admLogin() {
   if (document.getElementById('adm-pwd').value === getSenha()) {
     document.getElementById('adm-login-box').style.display = 'none';
     document.getElementById('adm-panel').classList.add('active');
+    aplicarAdmTheme();
     aplicarConfig(carregarDB()?.config);
     renderAdmAll();
     atualizarExibicaoSenha();
