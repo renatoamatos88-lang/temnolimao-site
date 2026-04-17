@@ -1795,10 +1795,21 @@ html.tnl-scene-on body {
             </div>
             <button class="adm-add-btn" onclick="openModal('neg')">+ Novo Negócio</button>
           </div>
-          <input class="adm-search" id="srch-negs" placeholder="Buscar por nome ou categoria..." oninput="renderTblNegs()">
+          <div style="display:flex;gap:.75rem;margin-bottom:.75rem;flex-wrap:wrap">
+            <input class="adm-search" id="srch-negs" placeholder="Buscar por nome ou categoria..." oninput="renderTblNegs()" style="flex:1;min-width:200px;margin-bottom:0">
+            <select class="adm-sort" id="sort-negs" onchange="renderTblNegs()" style="padding:.6rem .875rem;background:#1c2412;color:rgba(255,255,255,.85);border:1px solid rgba(200,224,74,.2);border-radius:.5rem;font-size:.82rem;cursor:pointer;min-width:180px">
+              <option value="nome-asc">Nome (A→Z)</option>
+              <option value="nome-desc">Nome (Z→A)</option>
+              <option value="cat-asc">Categoria</option>
+              <option value="pag-asc">Pagamento</option>
+              <option value="entrada-desc">Entrada (mais recente)</option>
+              <option value="entrada-asc">Entrada (mais antiga)</option>
+              <option value="status-asc">Status</option>
+            </select>
+          </div>
           <div class="adm-table-card">
             <table>
-              <thead><tr><th>Nome</th><th>Categoria</th><th>Telefone</th><th>Endereço</th><th>Status</th><th>Ações</th></tr></thead>
+              <thead><tr><th>Nome</th><th>Categoria</th><th>Pagamento</th><th>Telefone</th><th>Endereço</th><th>Status</th><th>Ações</th></tr></thead>
               <tbody id="tbl-negs"></tbody>
             </table>
           </div>
@@ -1812,6 +1823,15 @@ html.tnl-scene-on body {
               <div class="adm-sec-sub" style="margin-bottom:0">Oportunidades de emprego no bairro</div>
             </div>
             <button class="adm-add-btn" onclick="openModal('vag')">+ Nova Vaga</button>
+          </div>
+          <div style="display:flex;gap:.75rem;margin-bottom:.75rem;flex-wrap:wrap">
+            <select class="adm-sort" id="sort-vags" onchange="renderTblVags()" style="padding:.6rem .875rem;background:#1c2412;color:rgba(255,255,255,.85);border:1px solid rgba(200,224,74,.2);border-radius:.5rem;font-size:.82rem;cursor:pointer;min-width:180px">
+              <option value="cargo-asc">Cargo (A→Z)</option>
+              <option value="cargo-desc">Cargo (Z→A)</option>
+              <option value="emp-asc">Empresa</option>
+              <option value="tipo-asc">Tipo (CLT/PJ)</option>
+              <option value="status-asc">Status</option>
+            </select>
           </div>
           <div class="adm-table-card">
             <table>
@@ -1830,6 +1850,16 @@ html.tnl-scene-on body {
             </div>
             <button class="adm-add-btn" onclick="openModal('pod')">+ Novo Episódio</button>
           </div>
+          <div style="display:flex;gap:.75rem;margin-bottom:.75rem;flex-wrap:wrap">
+            <select class="adm-sort" id="sort-pods" onchange="renderTblPods()" style="padding:.6rem .875rem;background:#1c2412;color:rgba(255,255,255,.85);border:1px solid rgba(200,224,74,.2);border-radius:.5rem;font-size:.82rem;cursor:pointer;min-width:180px">
+              <option value="ep-desc">Episódio (mais recente)</option>
+              <option value="ep-asc">Episódio (mais antigo)</option>
+              <option value="titulo-asc">Título (A→Z)</option>
+              <option value="guest-asc">Convidado</option>
+              <option value="dest-desc">Destaque primeiro</option>
+              <option value="status-asc">Status</option>
+            </select>
+          </div>
           <div class="adm-table-card">
             <table>
               <thead><tr><th>Ep</th><th>Título</th><th>Convidado(a)</th><th>Duração</th><th>Links</th><th>Destaque</th><th>Status</th><th>Ações</th></tr></thead>
@@ -1847,6 +1877,16 @@ html.tnl-scene-on body {
             </div>
             <button class="adm-add-btn" onclick="openModal('not')">+ Nova Notícia</button>
           </div>
+          <div style="display:flex;gap:.75rem;margin-bottom:.75rem;flex-wrap:wrap">
+            <select class="adm-sort" id="sort-nots" onchange="renderTblNots()" style="padding:.6rem .875rem;background:#1c2412;color:rgba(255,255,255,.85);border:1px solid rgba(200,224,74,.2);border-radius:.5rem;font-size:.82rem;cursor:pointer;min-width:180px">
+              <option value="data-desc">Data (mais recente)</option>
+              <option value="data-asc">Data (mais antiga)</option>
+              <option value="titulo-asc">Título (A→Z)</option>
+              <option value="cat-asc">Categoria</option>
+              <option value="dest-desc">Destaque primeiro</option>
+              <option value="status-asc">Status</option>
+            </select>
+          </div>
           <div class="adm-table-card">
             <table>
               <thead><tr><th>Título</th><th>Categoria</th><th>Data</th><th>Destaque</th><th>Status</th><th>Ações</th></tr></thead>
@@ -1863,6 +1903,14 @@ html.tnl-scene-on body {
               <div class="adm-sec-sub" style="margin-bottom:0">Avaliações de moradores e empreendedores</div>
             </div>
             <button class="adm-add-btn" onclick="openModal('dep')">+ Novo Depoimento</button>
+          </div>
+          <div style="display:flex;gap:.75rem;margin-bottom:.75rem;flex-wrap:wrap">
+            <select class="adm-sort" id="sort-deps" onchange="renderTblDeps()" style="padding:.6rem .875rem;background:#1c2412;color:rgba(255,255,255,.85);border:1px solid rgba(200,224,74,.2);border-radius:.5rem;font-size:.82rem;cursor:pointer;min-width:180px">
+              <option value="nome-asc">Nome (A→Z)</option>
+              <option value="nome-desc">Nome (Z→A)</option>
+              <option value="dest-desc">Destaque primeiro</option>
+              <option value="status-asc">Status</option>
+            </select>
           </div>
           <div class="adm-table-card">
             <table>
@@ -1962,6 +2010,7 @@ html.tnl-scene-on body {
             <p style="font-size:.82rem;color:var(--adm-muted);margin-bottom:1rem">Exporte todos os dados do ADM antes de pedir alterações ao Claude, para não perder nada. Depois importe de volta se necessário.</p>
             <div style="display:flex;gap:.75rem;flex-wrap:wrap">
               <button onclick="exportarDados()" style="padding:.6rem 1.25rem;background:var(--adm-limao);color:var(--dark);border:none;border-radius:.5rem;font-weight:700;font-size:.82rem;cursor:pointer">⬇️ Exportar dados (.json)</button>
+              <button onclick="exportarCSV()" style="padding:.6rem 1.25rem;background:transparent;color:var(--adm-limao);border:1px solid var(--adm-limao);border-radius:.5rem;font-weight:700;font-size:.82rem;cursor:pointer;margin-left:.5rem">📊 Exportar negócios (.csv)</button>
               <label style="padding:.6rem 1.25rem;background:rgba(255,255,255,.08);color:var(--adm-text);border:none;border-radius:.5rem;font-weight:700;font-size:.82rem;cursor:pointer;display:inline-flex;align-items:center">
                 ⬆️ Importar dados
                 <input type="file" accept=".json" onchange="importarDados(this)" style="display:none">
@@ -3286,6 +3335,27 @@ function exportarDados() {
   a.click(); URL.revokeObjectURL(url);
   toast('Backup exportado! ✅');
 }
+function exportarCSV() {
+  const esc = v => {
+    const s = (v==null?'':String(v)).replace(/"/g,'""');
+    return /[",;\n]/.test(s) ? `"${s}"` : s;
+  };
+  const headers = ['ID','Nome','Categoria','Pagamento','Telefone','Site','Endereço','Horário','Status','Entrada'];
+  const linhas = negocios.map(n => [
+    n.id, n.nome, n.cat,
+    n.pagamento==='parceiro'?'Parceiro':'Recorrência',
+    n.wpp||'', n.siteUrl||'', n.end||'', n.hora||'',
+    n.paused?'Pausado':'Ativo', n.entrada||''
+  ].map(esc).join(';'));
+  const csv = '\ufeff' + headers.join(';') + '\n' + linhas.join('\n');
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  const data = new Date().toISOString().slice(0,10);
+  a.href = url; a.download = `temnolimao-negocios-${data}.csv`;
+  a.click(); URL.revokeObjectURL(url);
+  toast('CSV exportado! ✅');
+}
 function importarDados(input) {
   const file = input.files[0];
   if (!file) return;
@@ -3406,7 +3476,19 @@ function renderDashStats() {
 function renderTblNegs() {
   const cnt=document.getElementById('cnt-negs');
   const q = (document.getElementById('srch-negs')?.value||'').toLowerCase();
+  const sort = document.getElementById('sort-negs')?.value || 'nome-asc';
   let lista = negocios.filter(n => !q || n.nome.toLowerCase().includes(q) || n.cat.toLowerCase().includes(q));
+  const cmp = (a,b) => String(a||'').localeCompare(String(b||''),'pt-BR',{sensitivity:'base'});
+  const sorters = {
+    'nome-asc':     (a,b)=> cmp(a.nome,b.nome),
+    'nome-desc':    (a,b)=> cmp(b.nome,a.nome),
+    'cat-asc':      (a,b)=> cmp(a.cat,b.cat) || cmp(a.nome,b.nome),
+    'pag-asc':      (a,b)=> cmp(a.pagamento||'recorrencia', b.pagamento||'recorrencia') || cmp(a.nome,b.nome),
+    'entrada-desc': (a,b)=> cmp(b.entrada||'', a.entrada||''),
+    'entrada-asc':  (a,b)=> cmp(a.entrada||'', b.entrada||''),
+    'status-asc':   (a,b)=> (a.paused?1:0)-(b.paused?1:0) || cmp(a.nome,b.nome),
+  };
+  lista.sort(sorters[sort] || sorters['nome-asc']);
   if(cnt) cnt.textContent = `(${negocios.length})`;
 
   document.getElementById('tbl-negs').innerHTML = lista.map((n)=> {
@@ -3419,6 +3501,7 @@ function renderTblNegs() {
         <strong>${n.nome}</strong>
       </div></td>
       <td><span class="adm-badge badge-cat">${n.cat}</span></td>
+      <td><span class="adm-badge" style="background:${n.pagamento==='parceiro'?'rgba(200,224,74,.15)':'rgba(100,150,255,.15)'};color:${n.pagamento==='parceiro'?'var(--adm-limao)':'#7ab0ff'};border:1px solid ${n.pagamento==='parceiro'?'rgba(200,224,74,.3)':'rgba(100,150,255,.3)'}">${n.pagamento==='parceiro'?'🤝 Parceiro':'💳 Recorrência'}</span></td>
       <td style="font-size:.78rem">${tel}</td>
       <td style="font-size:.72rem;color:var(--adm-muted);max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${n.end||'—'}</td>
       <td><span class="adm-badge ${n.paused?'badge-paused':'badge-active'}">${n.paused?'⏸ Pausado':'● Ativo'}</span></td>
@@ -3434,7 +3517,19 @@ function renderTblNegs() {
 // ── VAGAS TABLE ────────────────────────────────────
 function renderTblVags() {
   const cnt=document.getElementById('cnt-vags'); if(cnt) cnt.textContent=`(${vagas.length})`;
-  document.getElementById('tbl-vags').innerHTML = vagas.map((v,i)=>`
+  const sort = document.getElementById('sort-vags')?.value || 'cargo-asc';
+  const cmp = (a,b) => String(a||'').localeCompare(String(b||''),'pt-BR',{sensitivity:'base'});
+  const sorters = {
+    'cargo-asc':  (a,b)=> cmp(a.cargo,b.cargo),
+    'cargo-desc': (a,b)=> cmp(b.cargo,a.cargo),
+    'emp-asc':    (a,b)=> cmp(a.empresa,b.empresa) || cmp(a.cargo,b.cargo),
+    'tipo-asc':   (a,b)=> cmp(a.tipo,b.tipo) || cmp(a.cargo,b.cargo),
+    'status-asc': (a,b)=> (a.paused?1:0)-(b.paused?1:0) || cmp(a.cargo,b.cargo),
+  };
+  const lista = [...vagas].sort(sorters[sort] || sorters['cargo-asc']);
+  document.getElementById('tbl-vags').innerHTML = lista.map((v)=> {
+    const i = vagas.indexOf(v);
+    return `
     <tr style="${v.paused?'opacity:.5':''}">
       <td><strong>${v.cargo}</strong></td>
       <td>${v.empresa}</td>
@@ -3446,13 +3541,28 @@ function renderTblVags() {
         <button class="adm-sm-btn ${v.paused?'unpause':'pause'}" onclick="togglePause('vags',${i})">${v.paused?'▶ Ativar':'⏸ Pausar'}</button>
         <button class="adm-sm-btn del" onclick="delItem('vags',${i})">🗑</button>
       </div></td>
-    </tr>`).join('');
+    </tr>`;
+  }).join('');
 }
 
 // ── PODCAST TABLE ──────────────────────────────────
 function renderTblPods() {
   const cnt=document.getElementById('cnt-pods'); if(cnt) cnt.textContent=`(${podcasts.length})`;
-  document.getElementById('tbl-pods').innerHTML = podcasts.map((p,i)=>`
+  const sort = document.getElementById('sort-pods')?.value || 'ep-desc';
+  const cmp = (a,b) => String(a||'').localeCompare(String(b||''),'pt-BR',{sensitivity:'base',numeric:true});
+  const epNum = p => parseInt(String(p.ep||'').replace(/\D/g,'')) || 0;
+  const sorters = {
+    'ep-desc':    (a,b)=> epNum(b) - epNum(a),
+    'ep-asc':     (a,b)=> epNum(a) - epNum(b),
+    'titulo-asc': (a,b)=> cmp(a.titulo,b.titulo),
+    'guest-asc':  (a,b)=> cmp(a.guest,b.guest),
+    'dest-desc':  (a,b)=> (b.destaque?1:0)-(a.destaque?1:0) || epNum(b)-epNum(a),
+    'status-asc': (a,b)=> (a.paused?1:0)-(b.paused?1:0) || epNum(b)-epNum(a),
+  };
+  const lista = [...podcasts].sort(sorters[sort] || sorters['ep-desc']);
+  document.getElementById('tbl-pods').innerHTML = lista.map((p)=> {
+    const i = podcasts.indexOf(p);
+    return `
     <tr style="${p.paused?'opacity:.5':''}">
       <td><strong>${p.ep}</strong></td>
       <td style="max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${p.titulo}</td>
@@ -3470,13 +3580,34 @@ function renderTblPods() {
         <button class="adm-sm-btn ${p.paused?'unpause':'pause'}" onclick="togglePause('pods',${i})">${p.paused?'▶ Ativar':'⏸ Pausar'}</button>
         <button class="adm-sm-btn del" onclick="delItem('pods',${i})">🗑</button>
       </div></td>
-    </tr>`).join('');
+    </tr>`;
+  }).join('');
 }
 
 // ── NOTÍCIAS TABLE ─────────────────────────────────
 function renderTblNots() {
   const cnt=document.getElementById('cnt-nots'); if(cnt) cnt.textContent=`(${noticias.length})`;
-  document.getElementById('tbl-nots').innerHTML = noticias.map((n,i)=>`
+  const sort = document.getElementById('sort-nots')?.value || 'data-desc';
+  const cmp = (a,b) => String(a||'').localeCompare(String(b||''),'pt-BR',{sensitivity:'base'});
+  const MESES = {jan:0,fev:1,mar:2,abr:3,mai:4,jun:5,jul:6,ago:7,set:8,out:9,nov:10,dez:11};
+  const parseData = s => {
+    if (!s) return 0;
+    const m = String(s).toLowerCase().match(/(\d{1,2})\s+(\w{3})\s+(\d{4})/);
+    if (m && MESES[m[2]]!=null) return new Date(+m[3], MESES[m[2]], +m[1]).getTime();
+    const t = Date.parse(s); return isNaN(t) ? 0 : t;
+  };
+  const sorters = {
+    'data-desc':  (a,b)=> parseData(b.data) - parseData(a.data),
+    'data-asc':   (a,b)=> parseData(a.data) - parseData(b.data),
+    'titulo-asc': (a,b)=> cmp(a.titulo,b.titulo),
+    'cat-asc':    (a,b)=> cmp(a.cat,b.cat) || parseData(b.data)-parseData(a.data),
+    'dest-desc':  (a,b)=> (b.featured?1:0)-(a.featured?1:0) || parseData(b.data)-parseData(a.data),
+    'status-asc': (a,b)=> (a.paused?1:0)-(b.paused?1:0) || parseData(b.data)-parseData(a.data),
+  };
+  const lista = [...noticias].sort(sorters[sort] || sorters['data-desc']);
+  document.getElementById('tbl-nots').innerHTML = lista.map((n)=> {
+    const i = noticias.indexOf(n);
+    return `
     <tr style="${n.paused?'opacity:.5':''}">
       <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"><strong>${escText(n.titulo)}</strong></td>
       <td><span class="adm-badge badge-cat">${escText(n.cat)}</span></td>
@@ -3488,13 +3619,25 @@ function renderTblNots() {
         <button class="adm-sm-btn ${n.paused?'unpause':'pause'}" onclick="togglePause('nots',${i})">${n.paused?'▶ Ativar':'⏸ Pausar'}</button>
         <button class="adm-sm-btn del" onclick="delItem('nots',${i})">🗑</button>
       </div></td>
-    </tr>`).join('');
+    </tr>`;
+  }).join('');
 }
 
 // ── DEPOIMENTOS TABLE ──────────────────────────────
 function renderTblDeps() {
   const cnt=document.getElementById('cnt-deps'); if(cnt) cnt.textContent=`(${depoimentos.length})`;
-  document.getElementById('tbl-deps').innerHTML = depoimentos.map((d,i)=>`
+  const sort = document.getElementById('sort-deps')?.value || 'nome-asc';
+  const cmp = (a,b) => String(a||'').localeCompare(String(b||''),'pt-BR',{sensitivity:'base'});
+  const sorters = {
+    'nome-asc':   (a,b)=> cmp(a.nome,b.nome),
+    'nome-desc':  (a,b)=> cmp(b.nome,a.nome),
+    'dest-desc':  (a,b)=> (b.featured?1:0)-(a.featured?1:0) || cmp(a.nome,b.nome),
+    'status-asc': (a,b)=> (a.paused?1:0)-(b.paused?1:0) || cmp(a.nome,b.nome),
+  };
+  const lista = [...depoimentos].sort(sorters[sort] || sorters['nome-asc']);
+  document.getElementById('tbl-deps').innerHTML = lista.map((d)=> {
+    const i = depoimentos.indexOf(d);
+    return `
     <tr style="${d.paused?'opacity:.5':''}">
       <td><strong>${escText(d.nome)}</strong></td>
       <td style="font-size:.78rem;color:var(--adm-muted)">${escText(d.role)}</td>
@@ -3506,7 +3649,8 @@ function renderTblDeps() {
         <button class="adm-sm-btn ${d.paused?'unpause':'pause'}" onclick="togglePause('deps',${i})">${d.paused?'▶ Ativar':'⏸ Pausar'}</button>
         <button class="adm-sm-btn del" onclick="delItem('deps',${i})">🗑</button>
       </div></td>
-    </tr>`).join('');
+    </tr>`;
+  }).join('');
 }
 
 // ── PAUSE / DELETE (generic) ──────────────────────
@@ -3565,6 +3709,7 @@ function buildModal(tipo, d, idx) {
   if (tipo==='neg') return `<h4>${tit} Negócio</h4>
     <div class="fg"><label>Nome *</label><input id="m-nome" type="text" value="${d.nome||''}"></div>
     <div class="fg"><label>Categoria *</label><select id="m-cat">${selOpt(_CATS_OPT, d.cat||'Alimentação')}</select></div>
+    <div class="fg"><label>Pagamento *</label><select id="m-pagamento"><option value="recorrencia"${d.pagamento!=='parceiro'?' selected':''}>💳 Recorrência (paga pelo site)</option><option value="parceiro"${d.pagamento==='parceiro'?' selected':''}>🤝 Parceiro (paga direto ao Guilherme)</option></select></div>
     <div class="fg"><label>Descrição</label><textarea id="m-desc" rows="3">${d.desc||''}</textarea></div>
     <div class="fg"><label>Endereço</label><input id="m-end" type="text" value="${d.end||''}"></div>
     <div class="fg"><label>Horário</label><input id="m-hora" type="text" value="${d.hora||''}" placeholder="Seg–Sex 9h–18h"></div>
@@ -3619,9 +3764,17 @@ function buildModal(tipo, d, idx) {
     ${acts}`;
 
   if (tipo==='not') return `<h4>${tit} Notícia</h4>
+    <div class="fg" style="background:rgba(200,224,74,.06);border:1px solid rgba(200,224,74,.2);border-radius:.5rem;padding:.75rem">
+      <label style="color:var(--adm-limao);font-weight:700">🔗 Buscar dados via link (opcional)</label>
+      <div style="display:flex;gap:.5rem;margin-top:.35rem">
+        <input id="m-link-auto" type="text" placeholder="Cole a URL da matéria (ex: folha.uol.com.br/...)" style="flex:1">
+        <button type="button" onclick="buscarLinkPreview()" style="padding:.5rem 1rem;background:var(--adm-limao);color:var(--dark);border:none;border-radius:.4rem;font-weight:700;font-size:.8rem;cursor:pointer;white-space:nowrap">Buscar</button>
+      </div>
+      <div id="m-link-status" style="font-size:.72rem;color:var(--adm-muted);margin-top:.35rem">Preenche automaticamente título, resumo, imagem, autor e data. Funciona melhor em sites de notícia grandes.</div>
+    </div>
     <div class="fg"><label>Título *</label><input id="m-titulo" type="text" value="${d.titulo||''}"></div>
     <div class="fg-row">
-      <div class="fg"><label>Categoria</label><select id="m-cat"><option${d.cat==='Cultura'?' selected':''}>Cultura</option><option${d.cat==='Comunidade'?' selected':''}>Comunidade</option><option${d.cat==='Arte'?' selected':''}>Arte</option><option${d.cat==='Gastronomia'?' selected':''}>Gastronomia</option><option${d.cat==='Esporte'?' selected':''}>Esporte</option><option${d.cat==='Evento'?' selected':''}>Evento</option></select></div>
+      <div class="fg"><label>Categoria</label><select id="m-cat"><option${d.cat==='Na Mídia'?' selected':''}>Na Mídia</option><option${d.cat==='Cultura'?' selected':''}>Cultura</option><option${d.cat==='Comunidade'?' selected':''}>Comunidade</option><option${d.cat==='Arte'?' selected':''}>Arte</option><option${d.cat==='Gastronomia'?' selected':''}>Gastronomia</option><option${d.cat==='Esporte'?' selected':''}>Esporte</option><option${d.cat==='Evento'?' selected':''}>Evento</option></select></div>
       <div class="fg"><label>Tempo de leitura</label><input id="m-leit" type="text" value="${d.leit||''}" placeholder="4 min"></div>
     </div>
     <div class="fg-row">
@@ -3629,6 +3782,7 @@ function buildModal(tipo, d, idx) {
       <div class="fg"><label>Data</label><input id="m-data" type="text" value="${d.data||''}" placeholder="15 fev 2026"></div>
     </div>
     <div class="fg"><label>Resumo (aparece na vitrine)</label><textarea id="m-exc" rows="2">${d.excerpt||''}</textarea></div>
+    <div class="fg"><label>URL da imagem de capa</label><input id="m-img" type="text" value="${d.img||''}" placeholder="https://... (cole a URL da imagem)"><div id="m-img-preview" style="margin-top:.5rem;${d.img?'':'display:none'}"><img src="${d.img||''}" style="max-width:180px;max-height:110px;border-radius:.4rem;object-fit:cover"></div></div>
     <div class="fg"><label>Texto completo do artigo</label><textarea id="m-corpo" rows="10" placeholder="Escreva o artigo aqui. Parágrafos separados por linha em branco serão exibidos corretamente.">${(d.corpo||'').replace(/<p>/g,'').replace(/<\/p>/g,'\n\n').trim()}</textarea><div style="font-size:.72rem;color:var(--adm-muted);margin-top:.35rem">Dica: separe parágrafos com uma linha em branco.</div></div>
     <div class="fg"><label>Link da fonte (opcional)</label><input id="m-fonte" type="text" value="${d.fonte||''}" placeholder="https://..."></div>
     <div class="fg"><label>Destaque?</label><select id="m-feat"><option value="1"${d.featured?' selected':''}>Sim — card grande</option><option value="0"${!d.featured?' selected':''}>Não</option></select></div>
@@ -3671,6 +3825,7 @@ function save_neg(idx) {
   const obj = {
     id: idx!=null ? negocios[idx].id : nextId(negocios),
     nome: fv('m-nome'), cat: fv('m-cat'), desc: fv('m-desc'),
+    pagamento: fv('m-pagamento') || 'recorrencia',
     end: fv('m-end'), hora: fv('m-hora'), tipo: fv('m-tipo'),
     wpp: fv('m-wpp'), siteUrl: fv('m-site'),
     logo: logoData || (idx!=null ? negocios[idx].logo : ''),
@@ -3717,6 +3872,36 @@ function save_pod(idx) {
 }
 
 function editNot(i) { openModal('not', noticias[i], i); }
+async function buscarLinkPreview() {
+  const url = (document.getElementById('m-link-auto')?.value||'').trim();
+  const status = document.getElementById('m-link-status');
+  if (!url) { status.textContent = '⚠️ Cole uma URL primeiro.'; status.style.color='#ff6b6b'; return; }
+  if (!/^https?:\/\//i.test(url)) { status.textContent = '⚠️ URL precisa começar com http:// ou https://'; status.style.color='#ff6b6b'; return; }
+  status.innerHTML = '⏳ Buscando dados...'; status.style.color='var(--adm-limao)';
+  try {
+    const r = await fetch('/api/link-preview?url=' + encodeURIComponent(url));
+    const d = await r.json();
+    if (!r.ok) throw new Error(d.error || 'Falha na requisição');
+    const setIf = (id, val) => { if (val) { const el=document.getElementById(id); if (el && !el.value) el.value = val; } };
+    const force  = (id, val) => { if (val) { const el=document.getElementById(id); if (el) el.value = val; } };
+    force('m-titulo', d.titulo);
+    force('m-exc',    d.excerpt);
+    force('m-autor',  d.autor);
+    force('m-data',   d.data);
+    force('m-leit',   d.leit);
+    force('m-fonte',  d.fonte);
+    if (d.img) {
+      const el = document.getElementById('m-img');
+      if (el) { el.value = d.img; const prev = document.getElementById('m-img-preview'); if (prev) { prev.style.display=''; prev.querySelector('img').src = d.img; } }
+    }
+    const campos = [d.titulo?'título':null, d.excerpt?'resumo':null, d.img?'imagem':null, d.autor?'autor':null, d.data?'data':null].filter(Boolean);
+    status.innerHTML = campos.length ? `✅ Preenchido: ${campos.join(', ')}. Revise antes de salvar.` : '⚠️ Nenhum dado encontrado — preencha manualmente.';
+    status.style.color = campos.length ? '#7ab0ff' : '#ffa94d';
+  } catch (err) {
+    status.textContent = '❌ ' + err.message;
+    status.style.color = '#ff6b6b';
+  }
+}
 function save_not(idx) {
   if (!fv('m-titulo')) { alert('Título é obrigatório'); return; }
   const feat = fv('m-feat')==='1';
@@ -3731,6 +3916,7 @@ function save_not(idx) {
   const obj = {
     titulo: fv('m-titulo'), cat: fv('m-cat'), leit: fv('m-leit'),
     data: fv('m-data'), autor: fv('m-autor'), excerpt: fv('m-exc'),
+    img: fv('m-img') || (idx!=null ? noticias[idx].img : ''),
     corpo, fonte: fv('m-fonte'),
     featured: feat, secondary: !feat,
     paused: idx!=null ? (noticias[idx].paused||false) : false,
