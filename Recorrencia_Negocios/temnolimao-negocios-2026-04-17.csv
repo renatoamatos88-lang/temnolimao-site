@@ -1,0 +1,47 @@
+﻿ID;Nome;Categoria;Pagamento;Telefone;Site;Endereço;Horário;Status;Entrada
+1;Migui;Loja;Recorrência;5511977631776;;"Av. Mandaqui, 46 - Limão";Seg–Sex 8h–18h · Sáb 8h–13h;Ativo;2026-04-04
+2;Fridali Shop;Jóias / Acessórios;Recorrência;;https://www.fridalishop.com;24h — Loja Online;Todos os dias;Ativo;2026-04-04
+3;Compre Mais;Alimentação;Recorrência;5511982418180;;"Rua Firminópolis, 223 - Jd. Vista Alegre";Todos os dias 7h–22h;Ativo;2026-04-04
+4;Pseq;Saúde;Recorrência;5511953395484;;"Rua José Kileber, 242 - Limão";Seg–Sex 8h–18h;Ativo;2026-04-04
+5;Dom Capuchon;Alimentação;Recorrência;551127743746;;"Rua Jaboatão, 180 - Casa Verde";Ter–Dom 11h–22h;Ativo;2026-04-04
+6;Van Gogh;Educação;Recorrência;551139661622;;"Rua Atenágoras, 99 - Limão";Seg–Sex 7h–18h · Sáb 8h–12h;Ativo;2026-04-04
+7;Camargo;Serviços;Recorrência;5511955400139;;"Av. Deputado Emílio Carlos, 2369";Seg–Qui 9h–18h · Sex 9h–17h;Ativo;2026-04-04
+8;Doce Mordida;Alimentação;Recorrência;5511988813637;;"Av. Nossa Senhora do Ó, 565 - Limão";Ter–Dom 10h–20h;Ativo;2026-04-04
+9;Dra Mayte Peres;Estética;Recorrência;5511915859882;;"Av. Nossa Senhora do Ó, 865 - Limão";Seg–Sex 9h–18h · Sáb 9h–14h;Ativo;2026-04-04
+10;Felix e Navarro;Imobiliária;Recorrência;551139845900;;"Av. Imirim, 4683 - Limão";Seg–Sex 9h–18h · Sáb 9h–13h;Ativo;2026-04-04
+11;Arnaldo Personal;Academia;Recorrência;5511975240598;;;Seg–Sáb 6h–21h;Ativo;2026-04-04
+12;Lift;Academia;Recorrência;5511963797955;;"Rua Paulo Vidigal Vicente de Azevedo, 17 - Limão";Seg–Sex 6h–22h · Sáb 8h–16h;Ativo;2026-04-04
+13;Miranda Odontologia;Saúde;Recorrência;5511945357126;;"Av. Deputado Emílio Carlos, 170 - Limão";Seg–Sex 8h–18h · Sáb 8h–12h;Ativo;2026-04-04
+14;SOS Parabéns;Eventos;Recorrência;5511942229587;;"Av. Antonio Munhoz Bonilha, 357 - Vila Palmeiras";Seg–Sex 9h–18h;Ativo;2026-04-04
+15;CVC Limão;Serviços;Recorrência;5511985580459;;"Av. Nossa Senhora do Ó, 565 - Limão";Seg–Sex 9h–18h · Sáb 9h–13h;Ativo;2026-04-04
+16;Evolution;Serviços;Recorrência;5511940209437;;"Av. Nossa Senhora do Ó, 161 - Limão";Seg–Sex 9h–18h;Ativo;2026-04-04
+17;Dias Gomes;Saúde;Recorrência;5511947425564;;"Rua Roque de Morais, 131 - Limão";Seg–Sex 8h–18h;Ativo;2026-04-04
+18;ACM;Academia;Recorrência;551139595050;;"Rua José Amato, 39 - Jardim das Laranjeiras";Seg–Sex 7h–22h · Sáb–Dom 8h–18h;Ativo;2026-04-04
+19;Esperia;Academia;Recorrência;551122233300;;"Av. Santos Dumont, 1313 - Santana";Seg–Sex 7h–22h · Sáb–Dom 8h–18h;Ativo;2026-04-04
+20;Will Smartcell;Tecnologia;Recorrência;5511960381591;;"Av. Deputado Emílio Carlos, 554 - Limão";Seg–Sex 9h–18h · Sáb 9h–14h;Ativo;2026-04-04
+21;Zani Adv;Advocacia;Recorrência;5511958174412;;"Av. Nossa Senhora do Ó, 565 - Limão";Seg–Sex 9h–18h;Ativo;2026-04-04
+22;Lemon Fast;Eventos;Recorrência;5511948586666;;;;Ativo;2026-04-13
+23;Drone Horizon;Drone;Recorrência;5511947188409;;;Seg–Sex 9h–18h;Ativo;2026-04-04
+24;Cesar Ogata;Drone;Recorrência;5511981359276;;;Seg–Sex 9h–18h;Ativo;2026-04-04
+25;MRI Tecnologia;Tecnologia;Recorrência;5511997503529;;"Rua Luís Braille, 23B - Vila Bonilha";Seg–Sex 9h–18h;Ativo;2026-04-04
+26;Primolimp;Serviços;Recorrência;5511940806633;;"Av. Casa Verde, 2364";Seg–Sáb 8h–18h;Ativo;2026-04-04
+27;HK Consultoria;Serviços;Recorrência;5511978711006;;"Av. Deputado Emílio Carlos, 134";;Ativo;2026-04-04
+28;Pescados Bairro do Limão;Alimentação;Recorrência;5511940028824;;;Ter–Sex 10h–19h · Sáb 11h–19h · Dom 11h–13h;Ativo;2026-04-04
+29;ELC Lash;Estética;Recorrência;5511994155429;;"Rua Marechal Xavier da Câmara, 21 sala 12";Seg–Sex 9h–18h30 · Sáb 9h–16h;Pausado;2026-04-04
+30;Sol e Lua Flores;Eventos;Recorrência;551139668987;;"Av. Dep. Emílio Carlos, 370";Seg–Sáb 9h–21h · Dom 9h–16h;Ativo;2026-04-04
+31;Imbali;Saúde;Recorrência;5511979895751;;"Av. Nossa Senhora do Ó, 865 – Conjunto 1011";Seg–Sex 8h–20h · Sáb 8h–13h;Ativo;2026-04-04
+32;PMC Pro Cleaning;Serviços;Recorrência;5521975822207;;;;Ativo;2026-04-04
+33;Campione Imóveis;Imobiliária;Recorrência;5511947533214;;"Rua Antônio Vera Cruz, 60 – Casa Verde Alta";Seg–Qui 8h–18h · Sex 8h–17h;Ativo;2026-04-04
+34;Barbara Valieri;Estética;Recorrência;5511976456485;;"Av. Nossa Senhora do Ó, 865 – Sala 1401";9h–19h;Ativo;2026-04-04
+35;Vivian Piacenti;Fotografia;Recorrência;5511992619389;;"Av. Deputado Emílio Carlos, 118 – Sala 19 - Limão";Somente com hora marcada;Ativo;2026-04-06
+36;Chega de Tanque;Serviços;Recorrência;5511957388250;;"Av. Clavásio Alves da Silva, 419 – Limão";Seg–Sex 7h30–18h30 · Sáb 8h–13h;Ativo;2026-04-13
+37;United Life;Academia;Recorrência;5511998660007;;"Praça Antonio Franco Velasco, 67";6h30–21h30;Ativo;2026-04-13
+38;Ary Design;Serviços;Recorrência;5511946455286;;"Rua Edson Andrade Silva, 73";9h–18h;Ativo;2026-04-13
+39;Instituto Musicando;Educação;Recorrência;5511918375978;;"Av. Dep. Emílio Carlos, 444 – Limão";Seg–Qui 9h–21h · Sex 9h–20h · Sáb 9h–14h;Ativo;2026-04-13
+40;Redes SP;Serviços;Recorrência;5511947353557;;"Rua Dom Antônio de Almeida Lustosa, 170";Seg–Sex 8h–18h · Sáb 8h–12h;Ativo;2026-04-13
+41;GDigital - Gisele Mendes;Serviços;Recorrência;5511975063857;;;10h–17h;Ativo;2026-04-13
+42;Hurbana Soluções;Outro;Recorrência;5511955558502;;"Av. Deputado Emílio Carlos, 188 – Limão";-;Ativo;2026-04-16
+43;ADV Partners;Outro;Recorrência;5511955558502;;"Av. Deputado Emílio Carlos, 188 – Limão";-;Ativo;2026-04-16
+44;Espaço Nathacha Araújo;Estética;Recorrência;5511988447160;;Rua Paulo Vidigal Vicente de Azevedo, 91;;Ativo;2026-04-15
+45;Óticas Diniz Limão;Óptica;Recorrência;551123618404;;Av. Prof. Celestino Bourrol, 762 – esquina com Av. Casa Verde;;Ativo;2026-04-16
+46;Tangerina. Naturais;Alimentação;Recorrência;5511974400950;;Av. Mandaqui, 119;;Ativo;2026-04-17
