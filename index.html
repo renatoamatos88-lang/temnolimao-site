@@ -1196,6 +1196,9 @@ tr:hover td { background: rgba(255,255,255,.02); }
 @media (max-width: 1100px) { .tnl-vagas-grid { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 860px)  { .tnl-vagas-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 540px)  { .tnl-vagas-grid { grid-template-columns: 1fr; } }
+.tnl-vagas-cta { display: flex; flex-direction: column; align-items: center; gap: .75rem; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,.08); }
+.tnl-vagas-cta-text { font-size: .9rem; color: rgba(255,255,255,.45); margin: 0; }
+.tnl-vagas-cta-btn { display: inline-flex; align-items: center; gap: .5rem; }
 
 /* ── FOOTER ── */
 .tnl-footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,.07); padding: 4rem 2.5rem 0; }
@@ -2582,12 +2585,15 @@ html.tnl-scene-on body {
         <div class="tnl-section-label">Oportunidades</div>
         <h2 class="tnl-section-title">Vagas de <em>Emprego</em></h2>
       </div>
-      <a class="tnl-btn-outline" href="https://wa.me/5511983592721?text=Oi!%20Vim%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20quero%20publicar%20uma%20vaga!" target="_blank">
+    </div>
+    <div class="tnl-vagas-grid" id="vagas-grid">
+    </div>
+    <div class="tnl-vagas-cta">
+      <p class="tnl-vagas-cta-text">Quer contratar alguém do bairro?</p>
+      <a class="tnl-btn-outline tnl-vagas-cta-btn" href="https://wa.me/5511983592721?text=Oi!%20Vim%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20quero%20publicar%20uma%20vaga!" target="_blank" onclick="if(typeof gtag==='function')gtag('event','cta_click',{cta_id:'publicar_vaga',location:'vagas'})">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
         Publicar uma vaga
       </a>
-    </div>
-    <div class="tnl-vagas-grid" id="vagas-grid">
     </div>
   </section>
 
