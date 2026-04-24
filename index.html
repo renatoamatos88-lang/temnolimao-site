@@ -345,7 +345,7 @@ body {
 .adm-sec.active { display: block; }
 .adm-sec-title {
   font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.75rem; font-weight: 900;
-  color: white; margin-bottom: .3rem;
+  color: var(--adm-text); margin-bottom: .3rem;
 }
 .adm-sec-sub { font-size: .82rem; color: var(--adm-muted); margin-bottom: 1.75rem; }
 
@@ -368,7 +368,7 @@ body {
 }
 .adm-tips h4 { color: var(--adm-limao); font-size: .88rem; margin-bottom: .75rem; }
 .adm-tips li { color: var(--adm-muted); font-size: .8rem; margin-bottom: .35rem; line-height: 1.5; }
-.adm-tips strong { color: white; }
+.adm-tips strong { color: var(--adm-text); }
 .adm-tips code { background: rgba(200,224,74,.12); color: var(--adm-limao); padding: .1rem .4rem; border-radius: .3rem; font-size: .75rem; }
 
 /* Table cards */
@@ -380,7 +380,7 @@ body {
   padding: .875rem 1.25rem; display: flex; justify-content: space-between; align-items: center;
   border-bottom: 1px solid var(--adm-border);
 }
-.adm-table-head span { font-weight: 700; font-size: .85rem; color: white; }
+.adm-table-head span { font-weight: 700; font-size: .85rem; color: var(--adm-text); }
 .adm-add-btn {
   background: var(--adm-limao); color: #0d1008; border: none;
   padding: .45rem 1rem; border-radius: .5rem; font-size: .75rem; font-weight: 800;
@@ -448,13 +448,13 @@ tr:hover td { background: rgba(255,255,255,.02); }
   background: var(--adm-card); border: 1px solid var(--adm-border);
   border-radius: 1rem; padding: 1.5rem; margin-bottom: 1.25rem;
 }
-.adm-cfg-card h4 { color: white; font-size: .88rem; font-weight: 700; margin-bottom: 1.1rem; display:flex; align-items:center; gap:.5rem; }
+.adm-cfg-card h4 { color: var(--adm-text); font-size: .88rem; font-weight: 700; margin-bottom: 1.1rem; display:flex; align-items:center; gap:.5rem; }
 
 /* Modal */
 .modal-bg { display: none; position: fixed; inset: 0; z-index: 99999; background: rgba(0,0,0,.7); align-items: center; justify-content: center; backdrop-filter: blur(4px); }
 .modal-bg.active { display: flex; }
 .modal-box { background: var(--adm-card); border: 1px solid var(--adm-border); border-radius: 1.1rem; padding: 2rem; width: 480px; max-width: 95vw; max-height: 90vh; overflow-y: auto; box-shadow: 0 40px 80px rgba(0,0,0,.6); }
-.modal-box h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.25rem; font-weight: 900; color: white; margin-bottom: 1.25rem; }
+.modal-box h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.25rem; font-weight: 900; color: var(--adm-text); margin-bottom: 1.25rem; }
 .modal-acts { display: flex; gap: .5rem; margin-top: 1.5rem; justify-content: flex-end; }
 .modal-cancel { padding: .6rem 1.25rem; border: 1px solid var(--adm-border); border-radius: .5rem; background: transparent; cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif; font-size: .82rem; color: var(--adm-muted); transition: all .15s; }
 .modal-cancel:hover { border-color: var(--adm-muted); color: white; }
@@ -3808,6 +3808,7 @@ function buildModal(tipo, d, idx) {
       <div class="fg"><label>Número WPP (só dígitos)</label><input id="m-wpp" type="text" value="${d.wpp||''}" placeholder="5511999999999"></div>
     </div>
     <div class="fg"><label>URL do Site</label><input id="m-site" type="text" value="${d.siteUrl||''}" placeholder="https://..."></div>
+    <div class="fg"><label>Instagram</label><input id="m-inst" type="text" value="${d.inst||''}" placeholder="https://www.instagram.com/..."></div>
     <div class="fg">
       <label>Logo (PNG/JPG)</label>
       <input type="file" id="m-logo-file" accept="image/*" onchange="previewLogo(this)" style="width:100%;padding:.5rem;border:1px solid rgba(200,224,74,.2);border-radius:.5rem;background:#1c2412;color:rgba(255,255,255,.7);font-size:.82rem">
@@ -3917,7 +3918,7 @@ function save_neg(idx) {
     nome: fv('m-nome'), cat: fv('m-cat'), desc: fv('m-desc'),
     pagamento: fv('m-pagamento') || 'recorrencia',
     end: fv('m-end'), hora: fv('m-hora'), tipo: fv('m-tipo'),
-    wpp: fv('m-wpp'), siteUrl: fv('m-site'),
+    wpp: fv('m-wpp'), siteUrl: fv('m-site'), inst: fv('m-inst'),
     logo: logoData || (idx!=null ? negocios[idx].logo : ''),
     logoCls: '',
     paused: idx!=null ? (negocios[idx].paused||false) : false,
