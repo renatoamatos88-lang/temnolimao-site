@@ -2785,7 +2785,7 @@ const _negociosDefault = [
   { id:42, nome:'Hurbana Soluções',       cat:'Outro',           desc:'Soluções urbanas e empresariais.', logo: 'logo-hurbana.webp', logoCls:'', end:'Av. Deputado Emílio Carlos, 188 – Limão', hora:'-', tipo:'wpp', wpp:'5511955558502', entrada:'2026-04-16' },
   { id:43, nome:'ADV Partners',           cat:'Outro',           desc:'Firma de advogados — Cristiane Oliveira.', logo: 'logo-advpartners.webp', logoCls:'', end:'Av. Deputado Emílio Carlos, 188 – Limão', hora:'-', tipo:'wpp', wpp:'5511955558502', entrada:'2026-04-16' },
   { id:44, nome:'Espaço Nathacha Araújo', cat:'Estética',        desc:'Alongamento de unhas, esmaltação em gel, banho de gel e blindagem.', logo: 'logo-nathacha-araujo.webp', logoCls:'', end:'Rua Paulo Vidigal Vicente de Azevedo, 91', hora:'', tipo:'wpp', wpp:'5511988447160', inst:'https://www.instagram.com/espaconathachaaraujo', entrada:'2026-04-15' },
-  { id:45, nome:'Óticas Diniz Limão',     cat:'Óptica',          desc:'Óculos de grau, solares e lentes de contato com exame de vista. Espaço kids, estacionamento e cafezinho na loja.', logo: 'logo-oticas-diniz.webp', logoCls:'', end:'Av. Prof. Celestino Bourrol, 762 – esquina com Av. Casa Verde', hora:'', tipo:'wpp', wpp:'551123618404', inst:'https://www.instagram.com/oticasdinizlimao', entrada:'2026-04-16' },
+  { id:45, nome:'Óticas Diniz Limão',     cat:'Óptica',          desc:'Óculos de grau, solares e lentes de contato com exame de vista. Espaço kids, estacionamento e cafezinho na loja.', logo: 'logo-oticas-diniz.webp', logoCls:'', end:'Av. Prof. Celestino Bourrol, 762', hora:'', tipo:'wpp', wpp:'551123618404', inst:'https://www.instagram.com/oticasdinizlimao', entrada:'2026-04-16' },
   { id:46, nome:'Tangerina. Naturais',    cat:'Alimentação',     desc:'Grãos, cereais, chás, temperos e itens a granel. Opções veganas, sem açúcar e sem lactose. Queijos e petiscos.', logo: 'logo-tangerina-naturais.webp', logoCls:'', end:'Av. Mandaqui, 119', hora:'', tipo:'wpp', wpp:'5511974400950', inst:'https://www.instagram.com/tangerina.naturais', entrada:'2026-04-17' },
 ];
 let negocios = [..._negociosDefault];
@@ -3176,10 +3176,18 @@ function salvarDB() {
 function aplicarDB(db) {
   if (!db) return;
   if (db.negocios) {
-    // Merge: mantém entradas do localStorage + adiciona novas do código que ainda não existem
+    const defaultMap = new Map(_negociosDefault.map(n => [n.id, n]));
     const idsDB = new Set(db.negocios.map(n => n.id));
+    // Merge: preserva edições do admin, mas preenche campos novos que só existem no código
+    const merged = db.negocios.map(n => {
+      const def = defaultMap.get(n.id);
+      if (!def) return n;
+      const extra = {};
+      for (const k of Object.keys(def)) { if (!(k in n)) extra[k] = def[k]; }
+      return Object.keys(extra).length ? {...n, ...extra} : n;
+    });
     const novas = _negociosDefault.filter(n => !idsDB.has(n.id));
-    negocios = [...db.negocios, ...novas];
+    negocios = [...merged, ...novas];
   }
   if (db.vagas)       vagas       = db.vagas;
   if (db.podcasts)    podcasts    = db.podcasts;
