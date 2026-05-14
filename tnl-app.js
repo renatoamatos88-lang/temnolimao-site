@@ -151,7 +151,7 @@ function _makeCard(n, isDestaque) {
 function renderDestaqueStrip() {
   const strip = document.getElementById('destaque-strip');
   if (!strip) return;
-  const destaques = negocios.filter(n => n.destaque && !n.paused).slice(0,4);
+  const destaques = negocios.filter(n => n.destaque && !n.paused).slice(0,3);
   if (!destaques.length) { strip.style.display='none'; return; }
   strip.style.display='';
   strip.innerHTML = destaques.map(n => _makeCard(n, true)).join('');
@@ -1411,6 +1411,25 @@ if (_savedDB) aplicarDB(_savedDB);
 
 renderFilterBar();
 renderDestaqueStrip();
+(function initDestaqueCarousel() {
+  if (!window.matchMedia('(max-width: 640px)').matches) return;
+  const strip = document.getElementById('destaque-strip');
+  if (!strip) return;
+  const origCards = Array.from(strip.querySelectorAll('.tnl-business-card'));
+  if (origCards.length < 2) return;
+  const gap = 14;
+  const cardWidth = Math.round((strip.offsetWidth - gap) / 2);
+  const track = document.createElement('div');
+  track.className = 'tnl-destaque-track';
+  origCards.forEach(c => { c.style.width = cardWidth + 'px'; track.appendChild(c); });
+  origCards.forEach(c => { const cl = c.cloneNode(true); track.appendChild(cl); });
+  strip.appendChild(track);
+  const totalWidth = origCards.length * (cardWidth + gap);
+  track.style.setProperty('--carousel-dur', Math.round(totalWidth / 55) + 's');
+  track.classList.add('playing');
+  strip.addEventListener('touchstart', () => track.classList.add('paused'), { passive: true });
+  strip.addEventListener('touchend',   () => track.classList.remove('paused'), { passive: true });
+})();
 renderCards();
 renderPodcast();
 renderNews();

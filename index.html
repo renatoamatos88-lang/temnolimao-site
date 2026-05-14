@@ -678,7 +678,7 @@
 
     <!-- CTA inline diretório -->
     <div class="tnl-dir-cta-strip">
-      <p class="tnl-dir-cta-strip-label">Seu negócio não está aqui?<br><span>Escolha um plano e apareça para quem mora no bairro.</span></p>
+      <p class="tnl-dir-cta-strip-label">Seu <em>negócio</em> não está aqui?<br><span>Escolha um plano e apareça para quem mora no bairro.</span></p>
       <div class="tnl-dir-cta-strip-btns">
         <a class="tnl-dir-plan-btn" href="#para-negocios" onclick="if(typeof gtag==='function')gtag('event','cta_click',{cta_id:'cadastro_negocio',location:'negocios_strip'})">
           <span class="tnl-dir-plan-btn-name">Parceiro</span>
@@ -1298,13 +1298,14 @@
 <script>
 (function(){
   var KEY = 'tnl_popup_shown';
-  if (sessionStorage.getItem(KEY)) return;
+  var last = localStorage.getItem(KEY);
+  if (last && Date.now() - parseInt(last) < 86400000) return;
   var shown = false;
 
   function showPopup() {
     if (shown) return;
     shown = true;
-    sessionStorage.setItem(KEY, '1');
+    localStorage.setItem(KEY, Date.now().toString());
     clearTimeout(timer);
     window.removeEventListener('scroll', onScroll, { passive: true });
     var overlay = document.getElementById('tnl-popup-overlay');
