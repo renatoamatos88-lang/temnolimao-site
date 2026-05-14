@@ -762,15 +762,18 @@ tr:hover td { background: rgba(255,255,255,.02); }
 
 /* CTA inline diretório */
 .tnl-dir-cta-strip {
-  display: flex; flex-direction: column; align-items: center;
+  display: flex; flex-direction: row; align-items: center; justify-content: space-between;
   gap: 1.5rem; margin-top: 3rem;
-  padding: 2.5rem 1.5rem;
+  padding: 1.25rem 2rem;
   background: rgba(22, 26, 14, 0.55);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border: 1px solid rgba(255,255,255,.1);
   border-radius: 1.25rem;
-  text-align: center;
+  text-align: left;
+}
+@media (max-width: 640px) {
+  .tnl-dir-cta-strip { flex-direction: column; text-align: center; padding: 1.5rem 1.25rem; }
 }
 .tnl-dir-cta-strip-label {
   font-family: 'Plus Jakarta Sans', sans-serif;
