@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Negócios — Tem no Limão</title>
+<meta name="description" content="Coloque seu negócio no guia do Bairro do Limão. Planos a partir de R$49,90/mês. Apareça para quem mora, trabalha e circula pelo bairro.">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#C8E04A">
+<link rel="canonical" href="https://www.temnolimao.com.br/para-negocios.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.temnolimao.com.br/para-negocios.html">
+<meta property="og:title" content="Para Negócios — Tem no Limão">
+<meta property="og:description" content="Coloque seu negócio no guia do Bairro do Limão. Planos a partir de R$49,90/mês.">
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G4ZK4ZT9XS"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-G4ZK4ZT9XS');</script>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"></noscript>
+<!-- Shared styles -->
+<link rel="stylesheet" href="tnl-style.css">
+<style>
+/* ── PAGE-SPECIFIC ── */
+.pn-hero {
+  background: var(--dark);
+  padding: 7rem 1.5rem 5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.pn-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(200,224,74,.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.pn-hero-label {
+  display: inline-block;
+  font-family: 'Space Mono', monospace;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--limao);
+  background: rgba(200,224,74,.1);
+  border: 1px solid rgba(200,224,74,.25);
+  padding: .35rem .9rem;
+  border-radius: 2rem;
+  margin-bottom: 1.5rem;
+}
+.pn-hero h1 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: .9rem;
+  letter-spacing: -.02em;
+}
+.pn-hero h1 em { color: var(--limao); font-style: normal; }
+.pn-hero-sub {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,.6);
+  max-width: 520px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.65;
+}
+.pn-hero-cta {
+  display: inline-block;
+  background: var(--limao);
+  color: var(--dark);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 1rem 2.25rem;
+  border-radius: 3rem;
+  text-decoration: none;
+  transition: background .15s, transform .15s;
+}
+.pn-hero-cta:hover { background: var(--limao-dark); color: #fff; transform: translateY(-2px); }
+.pn-hero-note {
+  display: block;
+  margin-top: .9rem;
+  font-size: .8rem;
+  color: rgba(255,255,255,.3);
+}
+
+/* ── STATS ── */
+.pn-stats {
+  background: var(--dark2);
+  padding: 2.5rem 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.pn-stats-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+.pn-stat {
+  flex: 1;
+  min-width: 140px;
+  text-align: center;
+  padding: 1rem 1.5rem;
+  position: relative;
+}
+.pn-stat + .pn-stat::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 20%; bottom: 20%;
+  width: 1px;
+  background: rgba(255,255,255,.08);
+}
+.pn-stat-num {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 2.2rem;
+  color: var(--limao);
+  line-height: 1;
+  letter-spacing: -.03em;
+}
+.pn-stat-label {
+  font-size: .78rem;
+  color: rgba(255,255,255,.4);
+  margin-top: .3rem;
+  font-weight: 500;
+}
+
+/* ── COMO FUNCIONA ── */
+.pn-steps {
+  background: var(--cream);
+  padding: 5rem 1.5rem;
+}
+.pn-steps-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+.pn-sec-label {
+  font-family: 'Space Mono', monospace;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--limao-dark);
+  margin-bottom: .5rem;
+}
+.pn-sec-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+  color: var(--ltext);
+  line-height: 1.15;
+  letter-spacing: -.02em;
+  margin-bottom: 3rem;
+}
+.pn-sec-title em { color: var(--limao-dark); font-style: normal; }
+
+.pn-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.pn-step {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  padding: 2rem 1.75rem;
+}
+.pn-step-num {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--limao);
+  color: var(--dark);
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: .9rem;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.25rem;
+}
+.pn-step h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--ltext);
+  margin-bottom: .5rem;
+}
+.pn-step p {
+  font-size: .88rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* ── PLANOS ── */
+.pn-plans {
+  background: var(--dark2);
+  padding: 5rem 1.5rem;
+}
+.pn-plans-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+.pn-plans-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.pn-plans-header .pn-sec-label { color: var(--limao); }
+.pn-plans-header .pn-sec-title { color: #fff; margin-bottom: 0; }
+.pn-plans-header .pn-sec-title em { color: var(--limao); }
+
+.pn-plans-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.pn-plan {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 1.5rem;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.pn-plan--destaque {
+  background: rgba(200,224,74,.07);
+  border-color: rgba(200,224,74,.4);
+}
+.pn-plan-badge {
+  position: absolute;
+  top: -1px; right: 1.75rem;
+  background: var(--limao);
+  color: var(--dark);
+  font-family: 'Space Mono', monospace;
+  font-size: .63rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .3rem .8rem;
+  border-radius: 0 0 .75rem .75rem;
+}
+.pn-plan-name {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: .75rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.45);
+  margin-bottom: .75rem;
+}
+.pn-plan--destaque .pn-plan-name { color: var(--limao); }
+.pn-plan-price {
+  display: flex;
+  align-items: flex-start;
+  gap: .1rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: .5rem;
+}
+.pn-plan-currency { font-size: 1.2rem; margin-top: .55rem; color: rgba(255,255,255,.55); font-weight: 700; }
+.pn-plan-int { font-size: 3.5rem; letter-spacing: -.04em; }
+.pn-plan-cents { font-size: 1.4rem; margin-top: .45rem; }
+.pn-plan-period { font-size: .82rem; font-weight: 500; color: rgba(255,255,255,.35); align-self: flex-end; margin-bottom: .4rem; margin-left: .2rem; }
+.pn-plan-tagline {
+  font-size: .85rem;
+  color: rgba(255,255,255,.4);
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+.pn-plan--destaque .pn-plan-tagline { color: rgba(255,255,255,.6); }
+.pn-plan-items {
+  list-style: none; padding: 0; margin: 0 0 2.5rem;
+  flex: 1;
+}
+.pn-plan-items li {
+  color: rgba(255,255,255,.65);
+  font-size: .9rem;
+  line-height: 1.5;
+  padding: .5rem 0 .5rem 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  position: relative;
+}
+.pn-plan-items li:last-child { border-bottom: none; }
+.pn-plan-items li::before { content: '✓'; position: absolute; left: 0; color: var(--limao); font-weight: 700; }
+.pn-plan--destaque .pn-plan-items li { color: rgba(255,255,255,.85); }
+
+.pn-plan-btn {
+  display: block;
+  text-align: center;
+  padding: 1rem 1.5rem;
+  border-radius: 3rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: .95rem;
+  text-decoration: none;
+  transition: all .15s;
+}
+.pn-plan-btn--secondary {
+  background: rgba(255,255,255,.08);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.18);
+}
+.pn-plan-btn--secondary:hover { background: rgba(255,255,255,.14); transform: translateY(-2px); }
+.pn-plan-btn--primary {
+  background: var(--limao);
+  color: var(--dark);
+}
+.pn-plan-btn--primary:hover { background: var(--limao-dark); color: #fff; transform: translateY(-2px); }
+
+.pn-plans-footnote {
+  text-align: center;
+  color: rgba(255,255,255,.25);
+  font-size: .8rem;
+}
+
+/* ── POR QUE TNL ── */
+.pn-why {
+  background: var(--cream);
+  padding: 5rem 1.5rem;
+}
+.pn-why-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.pn-why-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.pn-why-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.pn-why-icon {
+  width: 42px; height: 42px;
+  border-radius: .75rem;
+  background: var(--limao-light);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+.pn-why-item h4 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: .95rem;
+  color: var(--ltext);
+  margin-bottom: .2rem;
+}
+.pn-why-item p {
+  font-size: .84rem;
+  color: var(--text-light);
+  line-height: 1.55;
+}
+.pn-why-cta-block {
+  background: var(--dark);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+}
+.pn-why-cta-block .pn-sec-label { color: var(--limao); }
+.pn-why-cta-block h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: #fff;
+  line-height: 1.2;
+  margin: .5rem 0 .75rem;
+  letter-spacing: -.02em;
+}
+.pn-why-cta-block h3 em { color: var(--limao); font-style: normal; }
+.pn-why-cta-block p {
+  font-size: .88rem;
+  color: rgba(255,255,255,.5);
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+}
+.pn-why-cta-btn {
+  display: block;
+  background: var(--limao);
+  color: var(--dark);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: .95rem;
+  padding: .95rem 1.5rem;
+  border-radius: 3rem;
+  text-decoration: none;
+  transition: all .15s;
+  margin-bottom: .75rem;
+}
+.pn-why-cta-btn:hover { background: var(--limao-dark); color: #fff; transform: translateY(-2px); }
+.pn-why-cta-note {
+  font-size: .75rem;
+  color: rgba(255,255,255,.2);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .pn-hero { padding: 6rem 1.25rem 4rem; }
+  .pn-stats-inner { gap: 0; }
+  .pn-stat { min-width: 100px; padding: .75rem 1rem; }
+  .pn-stat-num { font-size: 1.6rem; }
+  .pn-steps-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .pn-plans-grid { grid-template-columns: 1fr; }
+  .pn-plan--destaque { order: -1; }
+  .pn-why-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="tnl-nav">
+  <a href="index.html" class="tnl-nav-logo"><img src="logo-tnl.png" alt="Tem no Limão" style="height:58px;width:auto"></a>
+  <ul class="tnl-nav-links">
+    <li><a href="index.html#negocios">Negócios</a></li>
+    <li><a href="index.html#quem-somos">Quem Somos</a></li>
+    <li><a href="index.html#vagas">Vagas</a></li>
+    <li><a href="noticias.html">Notícias</a></li>
+    <li><a href="para-negocios.html" style="color:var(--limao)">Para Negócios</a></li>
+  </ul>
+  <div class="tnl-nav-socials">
+    <a class="tnl-nav-social-icon" href="https://www.instagram.com/temnolimao/" title="Instagram" target="_blank">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    </a>
+    <a class="tnl-nav-cta" href="https://tally.so/r/2EkGlD" target="_blank" onclick="if(typeof gtag==='function')gtag('event','cta_click',{cta_id:'cadastro_negocio',location:'header'})">
+      Cadastrar negócio
+    </a>
+  </div>
+  <button class="tnl-hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="pn-hero">
+  <div class="pn-hero-label">Para Negócios</div>
+  <h1>Coloque seu negócio<br>no <em>mapa do Limão</em></h1>
+  <p class="pn-hero-sub">Mais de 49 negócios já aparecem para quem mora, trabalha e circula pelo bairro. Escolha seu plano e comece esta semana.</p>
+  <a class="pn-hero-cta" href="https://tally.so/r/2EkGlD" target="_blank" onclick="if(typeof gtag==='function')gtag('event','cta_click',{cta_id:'cadastro_negocio',location:'hero'})">
+    Quero aparecer no guia →
+  </a>
+  <span class="pn-hero-note">Sem fidelidade · Cancele quando quiser · Pagamento via PIX</span>
+</section>
+
+<!-- STATS -->
+<div class="pn-stats">
+  <div class="pn-stats-inner">
+    <div class="pn-stat">
+      <div class="pn-stat-num">49+</div>
+      <div class="pn-stat-label">Negócios no guia</div>
+    </div>
+    <div class="pn-stat">
+      <div class="pn-stat-num">21k</div>
+      <div class="pn-stat-label">Seguidores no Instagram</div>
+    </div>
+    <div class="pn-stat">
+      <div class="pn-stat-num">1</div>
+      <div class="pn-stat-label">Bairro · foco total no Limão</div>
+    </div>
+    <div class="pn-stat">
+      <div class="pn-stat-num">100%</div>
+      <div class="pn-stat-label">Audiência local</div>
+    </div>
+  </div>
+</div>
+
+<!-- COMO FUNCIONA -->
+<section class="pn-steps">
+  <div class="pn-steps-inner">
+    <div class="pn-sec-label">Como funciona</div>
+    <div class="pn-sec-title">Três passos para<br><em>estar no bairro</em></div>
+    <div class="pn-steps-grid">
+      <div class="pn-step">
+        <div class="pn-step-num">01</div>
+        <h3>Preencha o formulário</h3>
+        <p>Informe os dados do seu negócio — nome, categoria, endereço, horário, WhatsApp e redes sociais. Leva menos de 3 minutos.</p>
+      </div>
+      <div class="pn-step">
+        <div class="pn-step-num">02</div>
+        <h3>Pague via PIX</h3>
+        <p>Após o formulário você recebe o link de pagamento do plano escolhido. PIX simples, sem cadastro e sem fidelidade mínima.</p>
+      </div>
+      <div class="pn-step">
+        <div class="pn-step-num">03</div>
+        <h3>Apareça no guia</h3>
+        <p>Confirmado o pagamento, seu negócio entra no diretório ainda esta semana. Logo, categoria, endereço e links — tudo no ar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANOS -->
+<section class="pn-plans" id="planos">
+  <div class="pn-plans-inner">
+    <div class="pn-plans-header">
+      <div class="pn-sec-label">Planos</div>
+      <div class="pn-sec-title">Escolha como<br><em>quer aparecer</em></div>
+    </div>
+    <div class="pn-plans-grid">
+
+      <!-- Parceiro -->
+      <div class="pn-plan">
+        <div class="pn-plan-name">Parceiro</div>
+        <div class="pn-plan-price">
+          <span class="pn-plan-currency">R$</span>
+          <span class="pn-plan-int">49</span>
+          <span class="pn-plan-cents">,90</span>
+          <span class="pn-plan-period">/mês</span>
+        </div>
+        <p class="pn-plan-tagline">Presença completa no guia do bairro, para quem está buscando agora.</p>
+        <ul class="pn-plan-items">
+          <li>Card no diretório do bairro</li>
+          <li>Logo, nome e categoria</li>
+          <li>Endereço e horário de funcionamento</li>
+          <li>Link para WhatsApp, Instagram e site</li>
+          <li>Aparece nas buscas e filtros</li>
+        </ul>
+        <a class="pn-plan-btn pn-plan-btn--secondary" href="https://tally.so/r/2EkGlD" target="_blank"
+           onclick="if(typeof gtag==='function')gtag('event','cta_click',{cta_id:'cadastro_negocio',location:'planos-parceiro'})">
+          Quero ser Parceiro
+        </a>
+      </div>
+
+      <!-- Destaque -->
+      <div class="pn-plan pn-plan--destaque">
+        <div class="pn-plan-badge">Mais popular</div>
+        <div class="pn-plan-name">Destaque</div>
+        <div class="pn-plan-price">
+          <span class="pn-plan-currency">R$</span>
+          <span class="pn-plan-int">99</span>
+          <span class="pn-plan-cents">,90</span>
+          <span class="pn-plan-period">/mês</span>
+        </div>
+        <p class="pn-plan-tagline">Tudo do Parceiro mais visibilidade prioritária e posição de destaque na home.</p>
+        <ul class="pn-plan-items">
+          <li>Tudo do plano Parceiro</li>
+          <li>Posição prioritária na categoria</li>
+          <li>Badge <strong style="color:var(--limao)">★ Destaque</strong> no card</li>
+          <li>Aparece na vitrine "Destaques do Limão" na home</li>
+        </ul>
+        <a class="pn-plan-btn pn-plan-btn--primary" href="https://tally.so/r/2EkGlD" target="_blank"
+           onclick="if(typeof gtag==='function')gtag('event','cta_click',{cta_id:'cadastro_negocio',location:'planos-destaque'})">
+          Quero ser Destaque
+        </a>
+      </div>
+
+    </div>
+    <p class="pn-plans-footnote">Pagamento via PIX · Sem fidelidade · Cancele quando quiser</p>
+  </div>
+</section>
+
+<!-- POR QUE TNL -->
+<section class="pn-why">
+  <div class="pn-why-inner">
+    <div>
+      <div class="pn-sec-label">Por que o Tem no Limão</div>
+      <div class="pn-sec-title">Chegue em quem<br><em>já está buscando</em></div>
+      <div class="pn-why-items">
+        <div class="pn-why-item">
+          <div class="pn-why-icon">📍</div>
+          <div>
+            <h4>Audiência 100% local</h4>
+            <p>Quem acessa o Tem no Limão mora, trabalha ou circula pelo bairro. Não é tráfego genérico — é vizinho buscando onde ir.</p>
+          </div>
+        </div>
+        <div class="pn-why-item">
+          <div class="pn-why-icon">📱</div>
+          <div>
+            <h4>Comunidade ativa no Instagram</h4>
+            <p>21 mil seguidores acompanham o @temnolimao. Seu negócio aparece no site e ganha visibilidade no conteúdo do bairro.</p>
+          </div>
+        </div>
+        <div class="pn-why-item">
+          <div class="pn-why-icon">🔍</div>
+          <div>
+            <h4>Busca e filtro por categoria</h4>
+            <p>Os moradores buscam por tipo de negócio. Apareça exatamente quando alguém procura o que você oferece.</p>
+          </div>
+        </div>
+        <div class="pn-why-item">
+          <div class="pn-why-icon">💰</div>
+          <div>
+            <h4>Custo acessível para negócio local</h4>
+            <p>A partir de R$49,90/mês — menos que um impulsionamento de post. Sem contrato, sem taxa de setup, cancele quando quiser.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pn-why-cta-block">
+      <div class="pn-sec-label">Pronto para começar?</div>
+      <h3>Seu negócio no <em>guia do bairro</em></h3>
+      <p>Preencha o formulário em menos de 3 minutos e entre no guia ainda esta semana.</p>
+      <a class="pn-why-cta-btn" href="https://tally.so/r/2EkGlD" target="_blank"
+         onclick="if(typeof gtag==='function')gtag('event','cta_click',{cta_id:'cadastro_negocio',location:'por-que-tnl'})">
+        Cadastrar meu negócio →
+      </a>
+      <p class="pn-why-cta-note">Pagamento via PIX · Sem fidelidade</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="tnl-footer">
+  <div class="tnl-footer-inner">
+    <div class="tnl-footer-brand">
+      <a href="index.html" class="tnl-footer-logo"><img src="logo-tnl.png" alt="Tem no Limão" style="height:50px;width:auto"></a>
+      <p class="tnl-footer-desc">O guia definitivo do bairro do Limão em São Paulo. Conectando moradores, negócios e histórias locais.</p>
+      <div class="tnl-footer-brand-socials">
+        <a href="https://www.instagram.com/temnolimao/" target="_blank" class="tnl-footer-soc-btn" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@temnolimao" target="_blank" class="tnl-footer-soc-btn" aria-label="TikTok">
+          <svg width="14" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="tnl-footer-col">
+      <h4>Explorar</h4>
+      <ul>
+        <li><a href="index.html#negocios">Negócios</a></li>
+        <li><a href="index.html#vagas">Vagas</a></li>
+        <li><a href="noticias.html">Notícias</a></li>
+        <li><a href="index.html#quem-somos">Quem somos</a></li>
+      </ul>
+    </div>
+    <div class="tnl-footer-col">
+      <h4>Negócios</h4>
+      <ul>
+        <li><a href="https://tally.so/r/2EkGlD" target="_blank" onclick="if(typeof gtag==='function')gtag('event','cta_click',{cta_id:'cadastro_negocio',location:'footer'})">Cadastrar negócio</a></li>
+        <li><a href="#planos">Ver planos</a></li>
+      </ul>
+    </div>
+    <div class="tnl-footer-col">
+      <h4>Contato</h4>
+      <ul>
+        <li><a href="https://wa.me/5511983592721" target="_blank">WhatsApp</a></li>
+        <li><a href="index.html#quem-somos">Sobre nós</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="tnl-footer-bottom">
+    <p class="tnl-footer-copy">© 2025 Tem no Limão. Feito com 💛 no bairro do Limão, SP.</p>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  const nav = document.querySelector('.tnl-nav');
+  nav.classList.toggle('menu-open');
+}
+</script>
+</body>
+</html>

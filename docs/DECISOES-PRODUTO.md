@@ -1,5 +1,28 @@
 # TNL — Decisões de Produto
-**Documento vivo — atualizado em 13/05/2026**
+**Documento vivo — atualizado em 14/05/2026**
+
+---
+
+## ✅ Decisões tomadas em 14/05/2026
+
+### Gateway de pagamento — FECHADO
+- **Sem integração de API de pagamento no momento**
+- O sócio gera **2 links fixos de pagamento manualmente** (um para R$49,90, outro para R$99,90) — provavelmente via Mercado Pago ou similar, mas sem integração ao código
+- Esse modelo funciona enquanto o volume for pequeno e manual
+
+### Fluxo de captação de parceiros — FECHADO
+- **Novo fluxo:** botão "Quero ser parceiro" → formulário Tally (captura nome, negócio, categoria, contato) → redireciona direto para o link de pagamento correto
+- **Elimina o WhatsApp como etapa obrigatória** — o lead qualificado vai direto para o pagamento
+- WhatsApp continua disponível como opção secundária para quem tiver dúvidas
+
+### O que precisa ser construído (desbloqueado por essas decisões)
+1. **Página `/para-negocios`** — landing page com planos, preços e benefícios (vende antes de mandar pro Tally)
+2. **Seção resumida na home** — entre "Quem Somos" e "Notícias", com CTA linkando para `/para-negocios`
+3. **Formulário Tally** — configurado para redirecionar para o link de pagamento ao final
+
+### Casa Verde — FECHADO (por ora)
+- Expansão para Casa Verde adiada
+- Foco total no TNL Limão até o modelo estar rodando com pagamento
 
 ---
 
