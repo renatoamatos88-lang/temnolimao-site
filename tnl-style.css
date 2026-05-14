@@ -354,9 +354,9 @@ tr:hover td { background: rgba(255,255,255,.02); }
   color: white; letter-spacing: -.02em; display: flex; flex-direction: column; line-height: 1.1;
 }
 .tnl-nav-logo span em { font-style: italic; color: var(--limao); }
-.tnl-nav-links { display: flex; align-items: center; gap: 1.5rem; list-style: none; }
+.tnl-nav-links { display: flex; align-items: center; gap: 1.25rem; list-style: none; }
 .tnl-nav-links a {
-  color: rgba(255,255,255,.7); text-decoration: none; font-size: .875rem;
+  color: rgba(255,255,255,.7); text-decoration: none; font-size: .8rem;
   font-weight: 500; letter-spacing: .02em; transition: color .2s;
   display: flex; align-items: center; gap: .35rem; white-space: nowrap;
 }
