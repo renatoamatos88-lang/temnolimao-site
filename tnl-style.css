@@ -1889,10 +1889,18 @@ html.tnl-scene-on body {
 }
 .tnl-popup-plan-price em { font-style: normal; font-size: .7rem; font-weight: 400; color: rgba(255,255,255,.35); }
 .tnl-popup-plan-card--destaque {
-  background: rgba(200,224,74,.1); border-color: rgba(200,224,74,.35);
+  background: rgba(255,194,15,.1); border-color: rgba(255,194,15,.45);
+  position: relative;
 }
-.tnl-popup-plan-card--destaque .tnl-popup-plan-name { color: var(--limao); }
-.tnl-popup-plan-card--destaque:hover { background: rgba(200,224,74,.16); border-color: rgba(200,224,74,.6); }
+.tnl-popup-plan-card--destaque .tnl-popup-plan-name { color: var(--amarelo); }
+.tnl-popup-plan-card--destaque .tnl-popup-plan-price { color: #fff; }
+.tnl-popup-plan-card--destaque:hover { background: rgba(255,194,15,.16); border-color: rgba(255,194,15,.9); box-shadow: 0 6px 20px rgba(255,194,15,.15); }
+.tnl-popup-plan-popular {
+  display: inline-block; position: absolute; top: -.7rem; right: .9rem;
+  background: var(--amarelo); color: #161A0E;
+  font-size: .6rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+  padding: .15rem .55rem; border-radius: 99px;
+}
 .tnl-popup-plans-link {
   font-size: .78rem; color: rgba(255,255,255,.35);
   text-decoration: none; text-align: center;
