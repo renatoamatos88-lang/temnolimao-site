@@ -1412,18 +1412,21 @@ if (_savedDB) aplicarDB(_savedDB);
 renderFilterBar();
 renderDestaqueStrip();
 (function initDestaqueCarousel() {
-  if (!window.matchMedia('(max-width: 640px)').matches) return;
   const strip = document.getElementById('destaque-strip');
   if (!strip) return;
   const origCards = Array.from(strip.querySelectorAll('.tnl-business-card'));
-  if (origCards.length < 2) return;
-  const gap = 14;
-  const cardWidth = Math.round((strip.offsetWidth - gap) / 2);
+  if (!origCards.length) return;
+  // Sempre cria o track (desktop e mobile)
   const track = document.createElement('div');
   track.className = 'tnl-destaque-track';
-  origCards.forEach(c => { c.style.width = cardWidth + 'px'; track.appendChild(c); });
-  origCards.forEach(c => { const cl = c.cloneNode(true); track.appendChild(cl); });
+  origCards.forEach(c => track.appendChild(c));
   strip.appendChild(track);
+  // Carrossel só no mobile
+  if (!window.matchMedia('(max-width: 640px)').matches) return;
+  const gap = 14;
+  const cardWidth = Math.round((strip.offsetWidth - gap) / 2);
+  origCards.forEach(c => { c.style.width = cardWidth + 'px'; });
+  origCards.forEach(c => { track.appendChild(c.cloneNode(true)); });
   const totalWidth = origCards.length * (cardWidth + gap);
   track.style.setProperty('--carousel-dur', Math.round(totalWidth / 55) + 's');
   track.classList.add('playing');

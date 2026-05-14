@@ -847,18 +847,32 @@ tr:hover td { background: rgba(255,255,255,.02); }
 .tnl-filter-btn-destaque:hover, .tnl-filter-btn-destaque.active { background: var(--amarelo); border-color: var(--amarelo); color: #161A0E; }
 /* ── DESTAQUE STRIP ───────────────────────────── */
 .tnl-destaque-strip {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: .875rem;
+  overflow: hidden;
   margin-bottom: 2rem;
 }
+/* desktop: track centralizado, cards mais baixos e largos */
+.tnl-destaque-track {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+.tnl-destaque-track .tnl-business-card {
+  flex: 1 1 0;
+  max-width: 360px;
+  height: 160px;
+}
+/* mobile: carrossel contínuo */
 @media (max-width: 640px) {
-  .tnl-destaque-strip { overflow: hidden; }
-  .tnl-destaque-strip .tnl-business-card { flex-shrink: 0; }
   .tnl-destaque-track {
-    display: flex;
-    gap: .875rem;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
     will-change: transform;
+  }
+  .tnl-destaque-track .tnl-business-card {
+    flex-shrink: 0;
+    height: 220px;
+    max-width: none;
   }
   @keyframes tnl-destaque-scroll {
     from { transform: translateX(0); }
