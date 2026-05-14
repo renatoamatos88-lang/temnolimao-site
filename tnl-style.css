@@ -992,14 +992,14 @@ tr:hover td { background: rgba(255,255,255,.02); }
   position: relative;
 }
 .tnl-b2b-plan--destaque {
-  background: rgba(200,224,74,.07);
-  border-color: rgba(200,224,74,.35);
+  background: rgba(255,194,15,.07);
+  border-color: rgba(255,194,15,.45);
 }
 .tnl-b2b-plan-badge {
   position: absolute;
   top: -1px; right: 1.5rem;
-  background: var(--limao);
-  color: var(--dark);
+  background: var(--amarelo);
+  color: #161A0E;
   font-size: .7rem;
   font-weight: 800;
   letter-spacing: .08em;
@@ -1016,7 +1016,7 @@ tr:hover td { background: rgba(255,255,255,.02); }
   color: rgba(255,255,255,.5);
   margin-bottom: .75rem;
 }
-.tnl-b2b-plan--destaque .tnl-b2b-plan-name { color: var(--limao); }
+.tnl-b2b-plan--destaque .tnl-b2b-plan-name { color: var(--amarelo); }
 .tnl-b2b-plan-price {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 800;
@@ -1053,6 +1053,7 @@ tr:hover td { background: rgba(255,255,255,.02); }
   color: var(--limao);
   font-weight: 700;
 }
+.tnl-b2b-plan--destaque .tnl-b2b-plan-items li::before { color: var(--amarelo); }
 .tnl-b2b-plan--destaque .tnl-b2b-plan-items li { color: rgba(255,255,255,.85); }
 .tnl-b2b-btn {
   display: block;
@@ -1073,10 +1074,10 @@ tr:hover td { background: rgba(255,255,255,.02); }
 }
 .tnl-b2b-btn--secondary:hover { background: rgba(255,255,255,.14); }
 .tnl-b2b-btn--primary {
-  background: var(--limao);
-  color: var(--dark);
+  background: var(--amarelo);
+  color: #161A0E;
 }
-.tnl-b2b-btn--primary:hover { background: var(--limao-dark); color: white; }
+.tnl-b2b-btn--primary:hover { background: #e6ab00; color: #161A0E; }
 
 .tnl-b2b-footnote {
   text-align: center;
