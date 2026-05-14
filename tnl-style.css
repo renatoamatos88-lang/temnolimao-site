@@ -783,11 +783,10 @@ tr:hover td { background: rgba(255,255,255,.02); }
 /* ── DESTAQUE STRIP ───────────────────────────── */
 .tnl-destaque-strip {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: .875rem;
   margin-bottom: 2rem;
 }
-@media (max-width: 700px) { .tnl-destaque-strip { grid-template-columns: repeat(2, 1fr); } }
 .tnl-business-card.tnl-card--destaque { border: 1.5px solid rgba(255,194,15,.45); }
 .tnl-business-card.tnl-card--destaque:hover { border-color: rgba(255,194,15,.9); box-shadow: 0 0 22px rgba(255,194,15,.18); }
 .tnl-business-card.tnl-card--destaque .tnl-card-badge { background: var(--amarelo); color: #161A0E; }
