@@ -14,6 +14,8 @@
 - **Novo fluxo:** botão "Quero ser parceiro" → formulário Tally (captura nome, negócio, categoria, contato) → redireciona direto para o link de pagamento correto
 - **Elimina o WhatsApp como etapa obrigatória** — o lead qualificado vai direto para o pagamento
 - WhatsApp continua disponível como opção secundária para quem tiver dúvidas
+- **Formulário público:** https://tally.so/r/2EkGlD
+- **Formulário editar:** https://tally.so/forms/2EkGlD/edit
 
 ### O que precisa ser construído (desbloqueado por essas decisões)
 1. **Página `/para-negocios`** — landing page com planos, preços e benefícios (vende antes de mandar pro Tally)
