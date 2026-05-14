@@ -806,11 +806,11 @@ tr:hover td { background: rgba(255,255,255,.02); }
 }
 .tnl-dir-plan-btn-price em { font-style: normal; font-size: .72rem; font-weight: 500; color: rgba(255,255,255,.35); }
 .tnl-dir-plan-btn--destaque {
-  background: rgba(200,224,74,.12); border-color: rgba(200,224,74,.4);
+  background: rgba(255,194,15,.12); border-color: rgba(255,194,15,.45);
 }
-.tnl-dir-plan-btn--destaque .tnl-dir-plan-btn-name { color: var(--limao); }
+.tnl-dir-plan-btn--destaque .tnl-dir-plan-btn-name { color: var(--amarelo); }
 .tnl-dir-plan-btn--destaque .tnl-dir-plan-btn-price { color: white; }
-.tnl-dir-plan-btn--destaque:hover { border-color: var(--limao); box-shadow: 0 8px 24px rgba(200,224,74,.15); }
+.tnl-dir-plan-btn--destaque:hover { border-color: var(--amarelo); box-shadow: 0 8px 24px rgba(255,194,15,.15); }
 
 .tnl-search-wrap { position: relative; margin-bottom: 1.5rem; }
 .tnl-search-input {
