@@ -3,28 +3,55 @@
 
 ---
 
-## ✅ Decisões tomadas em 14/05/2026
+## ✅ Implementado em 14/05/2026
 
-### Gateway de pagamento — FECHADO
-- **Sem integração de API de pagamento no momento**
-- O sócio gera **2 links fixos de pagamento manualmente** (um para R$49,90, outro para R$99,90) — provavelmente via Mercado Pago ou similar, mas sem integração ao código
-- Esse modelo funciona enquanto o volume for pequeno e manual
+### Site — o que foi ao ar
+- **Bug crítico corrigido:** tags `</script><script>` residuais no `tnl-app.js` impediam qualquer negócio de carregar
+- **Logos migradas:** Figma CDN → arquivos WebP locais em `Logo Negocios/` (43 logos, 400px, q82)
+- **Strip de Destaques** no topo do diretório — curadoria manual no JS
+- **Strip CTA de planos** abaixo do diretório — layout horizontal desktop / coluna mobile
+- **Seção "Para Negócios"** (`id="para-negocios"`) — apresenta os 2 planos com preços e benefícios
+- **Funil completo:** todos os CTAs "Cadastrar negócio" → `#para-negocios` → Tally (sem WhatsApp obrigatório)
+- **Popup de engajamento:** card @temnolimao + planos, dispara após 10s OU 40% de scroll, 1x por sessão
+- **Identidade Destaque:** `--amarelo` (#FFC20F) aplicado em todo o site (badge, borda, nome, checks, botão) — consistente em strip, seção e popup
+- **Nav:** reordenado (Podcast e Mídia Kit com pill "Em breve" no final), glassmorphism, sem "Para Negócios" no menu
+- **CSS/JS separados:** `tnl-style.css` e `tnl-app.js` (migrado do monolítico inline)
+
+### Gateway de pagamento — FECHADO (fase atual)
+- **Plataforma:** Nubank PJ (conta da TNL)
+- **Modelo:** links manuais de cobrança — sem integração de API, sem PIX recorrente automático
+- O sócio gera 2 links de cobrança no painel do Nubank PJ:
+  - **Parceiro:** R$49,90 → ⚠️ link ainda não gerado
+  - **Destaque:** R$99,90 → ⚠️ link ainda não gerado
+- Controle de renovação: manual, via planilha + WhatsApp
+- **Próximo passo:** sócio gera os links e passa para configurar redirect no Tally
+
+### PIX recorrente — DECISÃO FUTURA
+- Nubank PJ **não tem** PIX recorrente nativo (cobra automaticamente + email de aviso)
+- Quando o volume justificar, migrar para:
+  - **Asaas** (recomendado): R$1,99/transação, painel simples, PIX recorrente + email automático
+  - **Mercado Pago Assinaturas**: ~1,99%, mais familiar, painel menos intuitivo
+- Avaliar na v2 ou quando o sócio precisar de automação de renovação
 
 ### Fluxo de captação de parceiros — FECHADO
-- **Novo fluxo:** botão "Quero ser parceiro" → formulário Tally (captura nome, negócio, categoria, contato) → redireciona direto para o link de pagamento correto
-- **Elimina o WhatsApp como etapa obrigatória** — o lead qualificado vai direto para o pagamento
-- WhatsApp continua disponível como opção secundária para quem tiver dúvidas
+- **Novo fluxo:** CTA "Cadastrar negócio" → seção `#para-negocios` → botão do plano → Tally → link de pagamento
 - **Formulário público:** https://tally.so/r/2EkGlD
 - **Formulário editar:** https://tally.so/forms/2EkGlD/edit
-
-### O que precisa ser construído (desbloqueado por essas decisões)
-1. **Página `/para-negocios`** — landing page com planos, preços e benefícios (vende antes de mandar pro Tally)
-2. **Seção resumida na home** — entre "Quem Somos" e "Notícias", com CTA linkando para `/para-negocios`
-3. **Formulário Tally** — configurado para redirecionar para o link de pagamento ao final
+- Tally conectado ao Google Sheets (Drive TNL Parceiros) via integração nativa
+- Tally com notificação por e-mail a cada novo preenchimento ✅
+- **Redirect condicional pendente:** aguarda links de pagamento do Nubank PJ
 
 ### Casa Verde — FECHADO (por ora)
 - Expansão para Casa Verde adiada
 - Foco total no TNL Limão até o modelo estar rodando com pagamento
+
+### Pendências abertas (produto/operação)
+- [ ] Sócio gerar os 2 links no Nubank PJ e passar as URLs
+- [ ] Configurar redirect condicional no Tally (plano selecionado → link correto)
+- [ ] Mídia Kit: criar PDF/página antes de lançar oficialmente a seção B2B
+- [ ] Player de música: botão flutuante para "Tem no Limão" do Guigo (arquivo de áudio pendente)
+- [ ] Barra de busca: reposicionamento em aberto
+- [ ] Mensagem para o grupo TNL sobre as atualizações (rascunho pronto, envio manual)
 
 ---
 
