@@ -871,6 +871,7 @@ tr:hover td { background: rgba(255,255,255,.02); }
   }
   .tnl-destaque-track .tnl-business-card {
     flex-shrink: 0;
+    width: calc(50vw - 27px);
     height: 220px;
     max-width: none;
   }
@@ -883,6 +884,9 @@ tr:hover td { background: rgba(255,255,255,.02); }
   }
   .tnl-destaque-track.playing:hover,
   .tnl-destaque-track.paused { animation-play-state: paused; }
+}
+@media (min-width: 641px) {
+  .tnl-destaque-track [data-clone] { display: none; }
 }
 .tnl-business-card.tnl-card--destaque { border: 1.5px solid rgba(255,194,15,.45); }
 .tnl-business-card.tnl-card--destaque:hover { border-color: rgba(255,194,15,.9); box-shadow: 0 0 22px rgba(255,194,15,.18); }

@@ -51,7 +51,7 @@ const _negociosDefault = [
   { id:28, nome:'Pescados Bairro do Limão', cat:'Alimentação',    desc:'Os melhores pescados e cortes de carnes nobres do bairro.',                                                logo: 'logo-pescados.webp', logoCls:'', end:'', hora:'Ter–Sex 10h–19h · Sáb 11h–19h · Dom 11h–13h', tipo:'wpp', wpp:'5511940028824', entrada:'2026-04-04' },
   { id:29, nome:'ELC Lash',            cat:'Estética',            desc:'Trabalhamos a sua autoestima através de seu olhar com cílios maravilhosos! Aplicações e cursos.',          logo: 'logo-elc-lash.webp', logoCls:'', end:'Rua Marechal Xavier da Câmara, 21 sala 12', hora:'Seg–Sex 9h–18h30 · Sáb 9h–16h', tipo:'wpp', wpp:'5511994155429', entrada:'2026-04-04', paused:true },
   { id:30, nome:'Sol e Lua Flores',    cat:'Eventos',             desc:'Floricultura e presentes especiais!',                                                                        logo: 'logo-sol-e-lua.webp', logoCls:'', end:'Av. Dep. Emílio Carlos, 370', hora:'Seg–Sáb 9h–21h · Dom 9h–16h', tipo:'wpp', wpp:'551139668987', entrada:'2026-04-04' },
-  { id:31, nome:'Imbali',              cat:'Saúde',               desc:'Tratamentos naturais para aliviar dores e cuidar da saúde do corpo e mente.',                              logo: 'https://storage.tally.so/private/ebce64a3-6b6f-449b-9e46-78d4c420907e.jpeg?id=jv2BqJ&accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Imp2MkJxSiIsImZvcm1JZCI6IjJFa0dsRCIsImlhdCI6MTc3NjEwMzQ5N30.k9evoK_KLyIzK4Qs7tE_rKSLVpgK5X3oyX3yPn8kARk&signature=6c9a41cde7af444454039ee44e61620eb4b8641fa86b39982aa347aee37c2222', logoCls:'', end:'Av. Nossa Senhora do Ó, 865 – Conjunto 1011', hora:'Seg–Sex 8h–20h · Sáb 8h–13h', tipo:'wpp', wpp:'5511979895751', entrada:'2026-04-04' },
+  { id:31, nome:'Imbali',              cat:'Saúde',               desc:'Tratamentos naturais para aliviar dores e cuidar da saúde do corpo e mente.',                              logo: 'logo-imbali.webp', logoCls:'', end:'Av. Nossa Senhora do Ó, 865 – Conjunto 1011', hora:'Seg–Sex 8h–20h · Sáb 8h–13h', tipo:'wpp', wpp:'5511979895751', entrada:'2026-04-04' },
   { id:32, nome:'PMC Pro Cleaning',    cat:'Serviços',            desc:'Especialistas em higienização e impermeabilização de estofados.',                                           logo: 'logo-pmc-cleaning.webp', logoCls:'', end:'', hora:'', tipo:'wpp', wpp:'5521975822207', entrada:'2026-04-04' },
   { id:33, nome:'Campione Imóveis',    cat:'Imobiliária',            desc:'Mais de 15 anos no mercado imobiliário. Compra, venda, locação e administração de imóveis. CRECI 21991.',  logo: 'logo-campione.webp', logoCls:'', end:'Rua Antônio Vera Cruz, 60 – Casa Verde Alta', hora:'Seg–Qui 8h–18h · Sex 8h–17h', tipo:'wpp', wpp:'5511947533214', entrada:'2026-04-04' },
   { id:34, nome:'Barbara Valieri',     cat:'Estética',            desc:'Drenagem linfática com resultados imediatos — Pupila do método Renata França.',                            logo: 'logo-barbara-valieri.webp', logoCls:'', end:'Av. Nossa Senhora do Ó, 865 – Sala 1401', hora:'9h–19h', tipo:'wpp', wpp:'5511976456485', entrada:'2026-04-04' },
@@ -1427,14 +1427,17 @@ renderDestaqueStrip();
   track.className = 'tnl-destaque-track';
   origCards.forEach(c => track.appendChild(c));
   strip.appendChild(track);
-  // Carrossel só no mobile — aguarda layout para ler offsetWidth corretamente
+  // Carrossel só no mobile — largura via CSS calc(50vw - 27px)
   if (!window.matchMedia('(max-width: 640px)').matches) return;
   requestAnimationFrame(function() {
     const gap = 14;
-    const cardWidth = Math.round((strip.offsetWidth - gap) / 2);
+    const cardWidth = Math.round(window.innerWidth / 2) - 27;
     if (cardWidth <= 0) return;
-    origCards.forEach(c => { c.style.width = cardWidth + 'px'; });
-    origCards.forEach(c => { track.appendChild(c.cloneNode(true)); });
+    origCards.forEach(c => {
+      const clone = c.cloneNode(true);
+      clone.dataset.clone = '1';
+      track.appendChild(clone);
+    });
     const totalWidth = origCards.length * (cardWidth + gap);
     track.style.setProperty('--carousel-dur', Math.round(totalWidth / 55) + 's');
     track.classList.add('playing');
