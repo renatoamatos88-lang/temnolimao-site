@@ -825,7 +825,7 @@ tr:hover td { background: rgba(255,255,255,.02); }
 
 .tnl-search-wrap { position: relative; margin-bottom: 1.5rem; }
 .tnl-search-input {
-  width: 100%; padding: .75rem 1rem .75rem 2.75rem;
+  width: 100%; padding: .75rem 2.75rem .75rem 2.75rem;
   border-radius: 2rem; border: 1.5px solid var(--cream2);
   background: rgba(255,255,255,.8); font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: .9rem; color: var(--ltext); outline: none;
@@ -834,6 +834,15 @@ tr:hover td { background: rgba(255,255,255,.02); }
 .tnl-search-input:focus { border-color: var(--dark); box-shadow: 0 0 0 3px rgba(22,26,14,.08); }
 .tnl-search-input::placeholder { color: var(--text-light); }
 .tnl-search-icon { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-light); pointer-events: none; }
+.tnl-search-clear {
+  display: none; align-items: center; justify-content: center;
+  position: absolute; right: .75rem; top: 50%; transform: translateY(-50%);
+  width: 1.5rem; height: 1.5rem; border-radius: 50%;
+  background: none; border: none; cursor: pointer;
+  color: var(--text-light); transition: color .15s, background .15s;
+}
+.tnl-search-clear:hover { color: var(--ltext); background: rgba(22,26,14,.08); }
+.tnl-search-input:not(:placeholder-shown) ~ .tnl-search-clear { display: flex; }
 .tnl-filter-bar {
   display: flex; gap: .6rem; flex-wrap: wrap; margin-bottom: 2.5rem;
 }
