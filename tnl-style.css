@@ -870,8 +870,7 @@ tr:hover td { background: rgba(255,255,255,.02); }
     will-change: transform;
   }
   .tnl-destaque-track .tnl-business-card {
-    flex-shrink: 0;
-    width: calc(50vw - 27px);
+    flex: 0 0 calc(50vw - 27px);
     height: 220px;
     max-width: none;
   }
