@@ -280,6 +280,8 @@ tr:hover td { background: rgba(255,255,255,.02); }
 .adm-sm-btn.unpause { color: var(--adm-active); }
 .adm-sm-btn.unpause:hover { background: rgba(39,174,96,.15); border-color: var(--adm-active); }
 .adm-sm-btn.del:hover { background: rgba(231,76,60,.15); color: #e74c3c; border-color: #e74c3c; }
+.adm-sm-btn.adm-btn-destaque-on { background: rgba(255,194,15,.15); color: #FFC20F; border-color: rgba(255,194,15,.5); font-weight: 700; }
+.adm-sm-btn.adm-btn-destaque-on:hover { background: rgba(255,194,15,.28); border-color: #FFC20F; }
 
 /* Search */
 .adm-search {

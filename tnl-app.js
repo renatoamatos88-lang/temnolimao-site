@@ -463,9 +463,11 @@ function toggleVaga(i) {}
 
 // ── ADMIN — PERSISTÊNCIA VIA localStorage ─────────────────────────────
 
-const SENHA_KEY = 'tnl_senha';
-const DB_KEY    = 'tnl_db';
-const SENHA     = 'limao2024';
+const SENHA_KEY         = 'tnl_senha';
+const DB_KEY            = 'tnl_db';
+const _NEGOCIOS_VK      = 'tnl_neg_v';
+const _NEGOCIOS_VERSION = '20260522';
+const SENHA             = 'limao2024';
 function getSenha() { return localStorage.getItem(SENHA_KEY) || SENHA; }
 
 // ── DB ────────────────────────────────────────────
@@ -481,22 +483,24 @@ function aplicarDB(db) {
   if (db.negocios) {
     const defaultMap = new Map(_negociosDefault.map(n => [n.id, n]));
     const idsDB = new Set(db.negocios.map(n => n.id));
-    // Merge: preserva edições do admin, mas preenche campos novos que só existem no código.
-    // destaque e entrada sempre vêm do código (fonte da verdade).
+    // Se versão do código mudou, força sync de destaque/entrada do código.
+    // Se versão ok, respeita destaque configurado pelo admin via painel.
+    const versaoOk = localStorage.getItem(_NEGOCIOS_VK) === _NEGOCIOS_VERSION;
     const merged = db.negocios.map(n => {
       const def = defaultMap.get(n.id);
       if (!def) return n;
       const extra = {};
       for (const k of Object.keys(def)) { if (!(k in n)) extra[k] = def[k]; }
       const result = {...n, ...extra};
-      // destaque: sempre sincroniza do código
-      if (def.destaque) { result.destaque = true; } else { delete result.destaque; }
-      // entrada: sempre usa a do código
-      result.entrada = def.entrada;
+      if (!versaoOk) {
+        if (def.destaque) { result.destaque = true; } else { delete result.destaque; }
+        result.entrada = def.entrada;
+      }
       return result;
     });
     const novas = _negociosDefault.filter(n => !idsDB.has(n.id));
     negocios = [...merged, ...novas];
+    if (!versaoOk) localStorage.setItem(_NEGOCIOS_VK, _NEGOCIOS_VERSION);
   }
   if (db.vagas)       vagas       = db.vagas;
   if (db.podcasts)    podcasts    = db.podcasts;
@@ -915,6 +919,7 @@ function renderTblNegs() {
       <td style="font-size:.78rem">${tel}</td>
       <td style="font-size:.72rem;color:var(--adm-muted);max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${n.end||'—'}</td>
       <td><span class="adm-badge ${n.paused?'badge-paused':'badge-active'}">${n.paused?'⏸ Pausado':'● Ativo'}</span></td>
+      <td><button class="adm-sm-btn${n.destaque?' adm-btn-destaque-on':''}" onclick="toggleDestaque(${ri})" title="${n.destaque?'Remover destaque':'Ativar destaque'}">${n.destaque?'★ Destaque':'☆ Destaque'}</button></td>
       <td><div class="adm-td-acts">
         <button class="adm-sm-btn" onclick="editNeg(${ri})">✏️ Editar</button>
         <button class="adm-sm-btn ${n.paused?'unpause':'pause'}" onclick="togglePause('negs',${ri})">${n.paused?'▶ Ativar':'⏸ Pausar'}</button>
@@ -1064,6 +1069,15 @@ function renderTblDeps() {
 }
 
 // ── PAUSE / DELETE (generic) ──────────────────────
+function toggleDestaque(ri) {
+  negocios[ri].destaque = !negocios[ri].destaque;
+  salvarDB();
+  renderTblNegs();
+  renderDestaqueStrip();
+  initDestaqueCarousel();
+  toast(negocios[ri].destaque ? '★ Destaque ativado!' : 'Destaque removido.');
+}
+
 function togglePause(type, i) {
   const map = { negs: negocios, vags: vagas, pods: podcasts, nots: noticias, deps: depoimentos };
   const arr = map[type];
