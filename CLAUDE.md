@@ -65,10 +65,11 @@ git push
 
 ## Diretório de negócios
 - Array `_negociosDefault` no **`tnl-app.js`**
-- **43 negócios** cadastrados (IDs 1–43); logos em `Logo Negocios/*.webp`
+- **55 negócios** cadastrados (IDs 1–55); logos em `Site/*.webp` (todos locais — sem CDN)
 - Merge automático com `localStorage` via `aplicarDB()` para não perder entries
-- Categorias com filtro; paginação: 6 cards visíveis + "Carregar mais"
-- Strip de Destaques (`id="destaque-strip"`) no topo do diretório — curadoria manual no JS
+- Categorias com filtro; paginação: 6 cards visíveis + "Carregar mais" (paginação só em "Todos")
+- Strip de Destaques (`id="destaque-strip"`) — mostra os 3 destaques mais recentes (sort por `entrada` DESC)
+- Carousel mobile: largura via CSS `calc(50vw - 27px)`; clones marcados com `data-clone="1"` e ocultos no desktop via `@media (min-width: 641px)`
 
 ## Funil de captação de parceiros (implementado em 14/05/2026)
 - **Fluxo:** CTA "Cadastrar negócio" → âncora `#para-negocios` → seção com planos → botão → Tally
@@ -143,6 +144,14 @@ Merge automático: entradas do código que não existam no `localStorage` são a
 - Funil completo: todos os CTAs → `#para-negocios` → Tally
 - Popup de engajamento (Instagram + planos, 10s / 40% scroll)
 - Identidade visual Destaque consolidada em `--amarelo` (#FFC20F) em todo o site
+
+### ✅ Sprint 4.0 — Diretório & bugs (concluído 16/05/2026)
+- 4 novos parceiros adicionados: Rokay (Destaque), Di Primo, Luciene Nunes, TR Clinic
+- Todos os logos CDN Tally migrados para WebP local (sem tokens que expiram)
+- Imbali: logo local `logo-imbali.webp` substituiu CDN expirado
+- Carousel Destaques: mobile corrigido (CSS calc) + desktop sem duplicação (data-clone)
+- Filtro de categorias: mostra todos os resultados ao filtrar (sem paginação truncada)
+- Strip Destaques: curadoria automática pelos 3 mais recentes (sort por entrada DESC)
 
 ### 🔜 Sprint 4.1 — Pagamento (próxima)
 - [ ] Sócio gera 2 links no Nubank PJ (R$49,90 e R$99,90)
