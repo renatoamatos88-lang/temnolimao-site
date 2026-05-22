@@ -481,13 +481,19 @@ function aplicarDB(db) {
   if (db.negocios) {
     const defaultMap = new Map(_negociosDefault.map(n => [n.id, n]));
     const idsDB = new Set(db.negocios.map(n => n.id));
-    // Merge: preserva edições do admin, mas preenche campos novos que só existem no código
+    // Merge: preserva edições do admin, mas preenche campos novos que só existem no código.
+    // destaque e entrada sempre vêm do código (fonte da verdade).
     const merged = db.negocios.map(n => {
       const def = defaultMap.get(n.id);
       if (!def) return n;
       const extra = {};
       for (const k of Object.keys(def)) { if (!(k in n)) extra[k] = def[k]; }
-      return Object.keys(extra).length ? {...n, ...extra} : n;
+      const result = {...n, ...extra};
+      // destaque: sempre sincroniza do código
+      if (def.destaque) { result.destaque = true; } else { delete result.destaque; }
+      // entrada: sempre usa a do código
+      result.entrada = def.entrada;
+      return result;
     });
     const novas = _negociosDefault.filter(n => !idsDB.has(n.id));
     negocios = [...merged, ...novas];
