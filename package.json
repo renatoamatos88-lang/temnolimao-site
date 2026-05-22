@@ -6,7 +6,7 @@
     "node": "24.x"
   },
   "scripts": {
-    "build": "npx terser tnl-app.js --compress passes=2 --mangle --output tnl-app.min.js && npx postcss tnl-style.css -o tnl-style.min.css"
+    "minify": "npx terser tnl-app.js --compress passes=2 --mangle --output tnl-app.min.js && npx postcss tnl-style.css -o tnl-style.min.css"
   },
   "devDependencies": {
     "cssnano": "^8.0.1",
