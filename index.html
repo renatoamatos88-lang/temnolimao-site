@@ -1302,7 +1302,7 @@
 (function(){
   var KEY = 'tnl_popup_shown';
   var last = localStorage.getItem(KEY);
-  if (last && Date.now() - parseInt(last) < 86400000) return;
+  if (last && Date.now() - parseInt(last) < 7200000) return; /* 2h cooldown */
   var shown = false;
 
   function showPopup() {
