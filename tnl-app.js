@@ -166,7 +166,15 @@ function renderDestaqueStrip() {
     .slice(0,3);
   if (!destaques.length) { strip.style.display='none'; return; }
   strip.style.display='';
-  strip.innerHTML = destaques.map(n => _makeCard(n, true)).join('');
+  const cards = destaques.map(n => _makeCard(n, true)).join('');
+  // Clones para loop infinito no mobile
+  const clones = destaques.map(n => {
+    const c = _makeCard(n, true);
+    return c.replace('<div class="tnl-business-card', '<div data-clone="1" class="tnl-business-card');
+  }).join('');
+  const isMobile = window.innerWidth <= 640;
+  const dur = destaques.length * 4; // 4s por card
+  strip.innerHTML = `<div class="tnl-destaque-track${isMobile ? ' playing' : ''}" style="--carousel-dur:${dur}s">${cards}${clones}</div>`;
 }
 
 function renderFilterBar() {
