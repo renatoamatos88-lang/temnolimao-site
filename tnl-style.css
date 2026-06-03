@@ -531,6 +531,51 @@ tr:hover td { background: rgba(255,255,255,.02); }
   text-transform: uppercase; letter-spacing: .12em; color: rgba(255,255,255,.75);
 }
 
+/* Overlay stats — sobre a área preta da imagem do slide B */
+.tnl-ig-overlay-stats {
+  position: absolute; z-index: 3;
+  right: 4%; top: 50%; transform: translateY(-50%);
+  display: flex; flex-direction: column; gap: .9rem;
+}
+.tnl-ig-ov-card {
+  display: flex; align-items: center; gap: .85rem;
+  background: rgba(8, 14, 4, .7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(200, 224, 74, .2);
+  border-radius: 14px;
+  padding: .9rem 1.2rem;
+  min-width: 210px;
+  transition: border-color .25s, transform .25s;
+}
+.tnl-ig-ov-card:hover {
+  border-color: rgba(200, 224, 74, .5);
+  transform: translateX(-4px);
+}
+.tnl-ig-ov-icon {
+  display: flex; align-items: center; justify-content: center;
+  width: 46px; height: 46px; flex-shrink: 0;
+  background: rgba(200, 224, 74, .12);
+  border-radius: 12px;
+  color: var(--limao);
+}
+.tnl-ig-ov-data { display: flex; flex-direction: column; }
+.tnl-ig-ov-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.75rem; font-weight: 700;
+  color: #fff; line-height: 1; letter-spacing: -.02em;
+}
+.tnl-ig-ov-num span {
+  font-size: .65em; font-weight: 600;
+  color: var(--limao); margin-left: .06em;
+}
+.tnl-ig-ov-lbl {
+  font-family: 'Space Mono', monospace;
+  font-size: .6rem; font-weight: 400;
+  text-transform: uppercase; letter-spacing: .14em;
+  color: rgba(255,255,255,.55); margin-top: .25rem;
+}
+
 /* Dots */
 .tnl-hero-dots {
   position: absolute; bottom: 1.5rem; left: 0; right: 0;
@@ -629,6 +674,7 @@ tr:hover td { background: rgba(255,255,255,.02); }
   .tnl-hero-stats,
   .tnl-ig-stats { flex-direction: row; flex-wrap: wrap; gap: 1rem; }
   .tnl-hero-stat { text-align: left; }
+  .tnl-ig-overlay-stats { display: none; }
   .tnl-hero-slide-b { flex-direction: column; gap: 1.5rem; padding: 5.5rem 1.25rem 2rem; align-items: center; }
   .tnl-ig-phone { width: 200px; }
   .tnl-ig-side { max-width: 100%; }
