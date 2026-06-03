@@ -101,12 +101,15 @@ let depoimentos = [
   { texto:'O Tem no Limão foi uma das melhores coisas que me aconteceram. Minha divulgação era só no boca a boca, o que limitava minha visibilidade. Conheci o Tem no Limão e de lá pra cá só tenho motivos para comemorar. Meu alcance aumentou, minha lista de clientes cresceu muito e hoje sou grato ao Tem no Limão e sua equipe. 👏', nome:'Josué', role:'JM Marido de Aluguel' },
 ];
 
-let vagas = [
+const _vagasDefault = [
   { cargo:'Operadora de Loja', empresa:'Pizzaria Casa Verde', tipo:'CLT', area:'Alimentação', sal:'R$ 2.200 + Vale-Transporte + Janta', local:'Casa Verde – Zona Norte, SP', tempo:'Novo', icon:'🍕',
     desc:'Atendimento ao cliente, trabalho em equipe e logística de motoboys. Carga horária de 6h diárias.',
     horario:'Ter–Qui e Dom 18h–23h30 · Sex–Sáb 18h–00h30',
     requisitos:'Morar na Zona Norte · Experiência em atendimento · Ser comunicativa e proativa',
     wpp:'https://wa.me/5511976272415?text=Oi!%20Vi%20a%20vaga%20de%20Operadora%20de%20Loja%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse!' },
+  { cargo:'Motoboy', empresa:'Pega Boy', tipo:'Freelance', area:'Entregas', sal:'A combinar', local:'Rua Santa Auta, 131B – Freguesia do Ó, SP', tempo:'Novo', icon:'🏍️',
+    desc:'Precisa-se de motoboy para serviços esporádicos.',
+    wpp:'https://wa.me/5511940313143?text=Oi!%20Vi%20a%20vaga%20de%20Motoboy%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse!' },
   { cargo:'Atendente de Loja', empresa:'Compre Mais', tipo:'CLT', area:'Varejo', sal:'R$ 1.800 – R$ 2.200', local:'Limão, SP', tempo:'Há 2 dias', icon:'🛒', desc:'Atendimento ao cliente, organização de prateleiras e operação de caixa. Experiência mínima de 6 meses.',
     wpp:'https://wa.me/5511983592721?text=Oi!%20Vi%20a%20vaga%20de%20Atendente%20de%20Loja%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse!', paused: true },
   { cargo:'Personal Trainer', empresa:'ACM Limão', tipo:'PJ', area:'Academia', sal:'R$ 3.000 – R$ 5.000', local:'Limão, SP', tempo:'Há 3 dias', icon:'💪', desc:'Montagem de treinos personalizados e acompanhamento de alunos. CREF obrigatório.',
@@ -116,6 +119,7 @@ let vagas = [
   { cargo:'Técnico de TI', empresa:'MRI Tecnologia', tipo:'CLT', area:'Tecnologia', sal:'R$ 3.500 – R$ 4.500', local:'Vila Bonilha, SP', tempo:'Há 1 semana', icon:'💻', desc:'Manutenção de hardware, suporte técnico presencial e remoto. Desejável experiência em redes.',
     wpp:'https://wa.me/5511983592721?text=Oi!%20Vi%20a%20vaga%20de%20T%C3%A9cnico%20de%20TI%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse!', paused: true },
 ];
+let vagas = [..._vagasDefault];
 
 // ── RENDER ────────────────────────────────────────
 function _makeCard(n, isDestaque) {
@@ -502,7 +506,13 @@ function aplicarDB(db) {
     negocios = [...merged, ...novas];
     if (!versaoOk) localStorage.setItem(_NEGOCIOS_VK, _NEGOCIOS_VERSION);
   }
-  if (db.vagas)       vagas       = db.vagas;
+  if (db.vagas) {
+    // Merge: vagas do código que não existem no localStorage são adicionadas
+    const chaveVag = v => `${v.cargo}|${v.local}`;
+    const existentes = new Set(db.vagas.map(chaveVag));
+    const novasVagas = _vagasDefault.filter(v => !existentes.has(chaveVag(v)));
+    vagas = [...db.vagas, ...novasVagas];
+  }
   if (db.podcasts)    podcasts    = db.podcasts;
   if (db.noticias && db.noticias.length) noticias = db.noticias;
   if (db.depoimentos) depoimentos = db.depoimentos;
