@@ -651,18 +651,21 @@ tr:hover td { background: rgba(255,255,255,.02); }
   .tnl-hero-video-wrap::before { background: linear-gradient(to bottom, var(--dark) 0%, transparent 30%), linear-gradient(to right, var(--dark) 0%, transparent 100%); }
   .tnl-hero-stats,
   .tnl-ig-stats { flex-direction: row; flex-wrap: wrap; gap: 1rem; }
-  .tnl-ig-stats-v2 { flex-direction: column; gap: .5rem; width: 100%; }
+  .tnl-ig-stats-v2 {
+    flex-direction: row; gap: .4rem; width: 100%;
+  }
   .tnl-ig-stat-card {
-    padding: .65rem .85rem; gap: .55rem;
+    flex: 1 1 0; flex-direction: column; text-align: center;
+    padding: .55rem .4rem; gap: .3rem;
     background: rgba(6, 10, 2, .92);
     border-color: rgba(200, 224, 74, .25);
   }
-  .tnl-ig-stat-icon { width: 36px; height: 36px; }
-  .tnl-ig-stat-icon svg { width: 18px; height: 18px; }
-  .tnl-ig-stat-num { font-size: 1.3rem; }
-  .tnl-ig-stat-lbl { font-size: .5rem; }
+  .tnl-ig-stat-icon { width: 32px; height: 32px; }
+  .tnl-ig-stat-icon svg { width: 16px; height: 16px; }
+  .tnl-ig-stat-num { font-size: 1.15rem; }
+  .tnl-ig-stat-lbl { font-size: .45rem; }
   .tnl-hero-slide-b .tnl-hero-actions { width: auto; align-self: flex-start; }
-  .tnl-hero-slide-b .tnl-hero-actions .tnl-btn-ig-follow { flex: none; }
+  .tnl-hero-slide-b .tnl-hero-actions .tnl-btn-ig-follow { flex: none; font-size: .82rem; padding: .7rem 1.5rem; }
   .tnl-hero-stat { text-align: left; }
   .tnl-hero-slide-b { flex-direction: column; gap: 1.5rem; padding: 5.5rem 1.25rem 2rem; align-items: center; }
   .tnl-ig-phone { width: 200px; }
