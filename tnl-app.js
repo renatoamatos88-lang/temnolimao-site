@@ -107,16 +107,16 @@ const _vagasDefault = [
     horario:'Ter–Qui e Dom 18h–23h30 · Sex–Sáb 18h–00h30',
     requisitos:'Morar na Zona Norte · Experiência em atendimento · Ser comunicativa e proativa',
     wpp:'https://wa.me/5511976272415?text=Oi!%20Vi%20a%20vaga%20de%20Operadora%20de%20Loja%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse!' },
-  { cargo:'Motoboy', empresa:'Pega Boy', tipo:'Freelance', area:'Entregas', sal:'A combinar', local:'Rua Santa Auta, 131B – Freguesia do Ó, SP', tempo:'Novo', icon:'🏍️',
+  { cargo:'Motoboy', empresa:'Pega Boy', tipo:'Freelance', area:'Entregas', sal:'A combinar', local:'Freguesia do Ó – Rua Santa Auta, 131B, SP', tempo:'Novo', icon:'🏍️',
     desc:'Precisa-se de motoboy para serviços esporádicos.',
     wpp:'https://wa.me/5511940313143?text=Oi!%20Vi%20a%20vaga%20de%20Motoboy%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse!' },
-  { cargo:'Atendente de Loja', empresa:'Compre Mais', tipo:'CLT', area:'Varejo', sal:'R$ 1.800 – R$ 2.200', local:'Limão, SP', tempo:'Há 2 dias', icon:'🛒', desc:'Atendimento ao cliente, organização de prateleiras e operação de caixa. Experiência mínima de 6 meses.',
+  { cargo:'Atendente de Loja', empresa:'Compre Mais', tipo:'CLT', area:'Varejo', sal:'R$ 1.800 – R$ 2.200', local:'Limão, SP', tempo:'Novo', icon:'🛒', desc:'Atendimento ao cliente, organização de prateleiras e operação de caixa. Experiência mínima de 6 meses.',
     wpp:'https://wa.me/5511983592721?text=Oi!%20Vi%20a%20vaga%20de%20Atendente%20de%20Loja%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse!', paused: true },
-  { cargo:'Personal Trainer', empresa:'ACM Limão', tipo:'PJ', area:'Academia', sal:'R$ 3.000 – R$ 5.000', local:'Limão, SP', tempo:'Há 3 dias', icon:'💪', desc:'Montagem de treinos personalizados e acompanhamento de alunos. CREF obrigatório.',
+  { cargo:'Personal Trainer', empresa:'ACM Limão', tipo:'PJ', area:'Academia', sal:'R$ 3.000 – R$ 5.000', local:'Limão, SP', tempo:'Novo', icon:'💪', desc:'Montagem de treinos personalizados e acompanhamento de alunos. CREF obrigatório.',
     wpp:'https://wa.me/5511983592721?text=Oi!%20Vi%20a%20vaga%20de%20Personal%20Trainer%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse!', paused: true },
-  { cargo:'Auxiliar Administrativo', empresa:'Felix e Navarro', tipo:'CLT', area:'Serviços', sal:'R$ 2.000 – R$ 2.500', local:'Limão, SP', tempo:'Há 5 dias', icon:'📋', desc:'Suporte em processos de imobiliária: contratos, atendimento telefônico e organização de documentos.',
+  { cargo:'Auxiliar Administrativo', empresa:'Felix e Navarro', tipo:'CLT', area:'Serviços', sal:'R$ 2.000 – R$ 2.500', local:'Limão, SP', tempo:'Novo', icon:'📋', desc:'Suporte em processos de imobiliária: contratos, atendimento telefônico e organização de documentos.',
     wpp:'https://wa.me/5511983592721?text=Oi!%20Vi%20a%20vaga%20de%20Auxiliar%20Administrativo%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse!', paused: true },
-  { cargo:'Técnico de TI', empresa:'MRI Tecnologia', tipo:'CLT', area:'Tecnologia', sal:'R$ 3.500 – R$ 4.500', local:'Vila Bonilha, SP', tempo:'Há 1 semana', icon:'💻', desc:'Manutenção de hardware, suporte técnico presencial e remoto. Desejável experiência em redes.',
+  { cargo:'Técnico de TI', empresa:'MRI Tecnologia', tipo:'CLT', area:'Tecnologia', sal:'R$ 3.500 – R$ 4.500', local:'Vila Bonilha, SP', tempo:'Novo', icon:'💻', desc:'Manutenção de hardware, suporte técnico presencial e remoto. Desejável experiência em redes.',
     wpp:'https://wa.me/5511983592721?text=Oi!%20Vi%20a%20vaga%20de%20T%C3%A9cnico%20de%20TI%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse!', paused: true },
 ];
 let vagas = [..._vagasDefault];
@@ -508,10 +508,17 @@ function aplicarDB(db) {
   }
   if (db.vagas) {
     // Merge: vagas do código que não existem no localStorage são adicionadas
-    const chaveVag = v => `${v.cargo}|${v.local}`;
+    const chaveVag = v => `${v.cargo}|${(v.empresa||'')}`;
     const existentes = new Set(db.vagas.map(chaveVag));
     const novasVagas = _vagasDefault.filter(v => !existentes.has(chaveVag(v)));
-    vagas = [...db.vagas, ...novasVagas];
+    // Normaliza tempo para "Novo" e sincroniza campos default
+    const defaultMap = new Map(_vagasDefault.map(v => [chaveVag(v), v]));
+    vagas = [...db.vagas.map(v => {
+      const def = defaultMap.get(chaveVag(v));
+      const patched = {...v, tempo: 'Novo'};
+      if (def) { for (const k of Object.keys(def)) { if (!(k in patched) || patched[k]==='') patched[k] = def[k]; } }
+      return patched;
+    }), ...novasVagas];
   }
   if (db.podcasts)    podcasts    = db.podcasts;
   if (db.noticias && db.noticias.length) noticias = db.noticias;
@@ -1163,24 +1170,27 @@ function buildModal(tipo, d, idx) {
     </div>
     ${acts}`;
 
-  if (tipo==='vag') return `<h4>${tit} Vaga</h4>
+  if (tipo==='vag') {
+    const vagIcons = ['💼','🍕','🛒','💪','📋','💻','🏍️','🍔','✂️','🔧','🚗','📦','🎨','🩺','📚','👷','🧹','🛵','☕','🏪'];
+    const iconGrid = vagIcons.map(ic => `<button type="button" class="adm-icon-pick${(d.icon||'💼')===ic?' active':''}" onclick="document.getElementById('m-icon').value=this.textContent;document.querySelectorAll('.adm-icon-pick').forEach(b=>b.classList.remove('active'));this.classList.add('active')" style="font-size:1.4rem;padding:.3rem .45rem;border:2px solid ${(d.icon||'💼')===ic?'var(--adm-limao)':'rgba(200,224,74,.15)'};border-radius:.5rem;background:rgba(200,224,74,.06);cursor:pointer;transition:border .15s">${ic}</button>`).join('');
+    return `<h4>${tit} Vaga</h4>
     <div class="fg"><label>Cargo *</label><input id="m-cargo" type="text" value="${d.cargo||''}"></div>
     <div class="fg-row">
       <div class="fg"><label>Empresa *</label><input id="m-emp" type="text" value="${d.empresa||''}"></div>
-      <div class="fg"><label>Tipo</label><select id="m-tipo"><option${d.tipo==='CLT'?' selected':''}>CLT</option><option${d.tipo==='PJ / Autônomo'?' selected':''}>PJ / Autônomo</option><option${d.tipo==='Estágio'?' selected':''}>Estágio</option></select></div>
+      <div class="fg"><label>Tipo</label><select id="m-tipo"><option${d.tipo==='CLT'?' selected':''}>CLT</option><option${d.tipo==='PJ'||d.tipo==='PJ / Autônomo'?' selected':''}>PJ</option><option${d.tipo==='Freelance'?' selected':''}>Freelance</option><option${d.tipo==='Estágio'?' selected':''}>Estágio</option></select></div>
     </div>
+    <div class="fg"><label>Ícone</label><input type="hidden" id="m-icon" value="${d.icon||'💼'}"><div style="display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.3rem">${iconGrid}</div></div>
     <div class="fg-row">
       <div class="fg"><label>Área</label><input id="m-area" type="text" value="${d.area||''}"></div>
-      <div class="fg"><label>Emoji</label><input id="m-icon" type="text" value="${d.icon||'💼'}" style="max-width:70px"></div>
-    </div>
-    <div class="fg-row">
       <div class="fg"><label>Salário</label><input id="m-sal" type="text" value="${d.sal||''}" placeholder="R$ 2.000–R$ 3.000"></div>
-      <div class="fg"><label>Local</label><input id="m-local" type="text" value="${d.local||''}" placeholder="Limão, SP"></div>
     </div>
+    <div class="fg"><label>Local</label><input id="m-local" type="text" value="${d.local||''}" placeholder="Limão, SP"></div>
+    <div class="fg"><label>Horário</label><input id="m-horario" type="text" value="${d.horario||''}" placeholder="Seg–Sex 9h–18h"></div>
     <div class="fg"><label>Descrição</label><textarea id="m-desc" rows="3">${d.desc||''}</textarea></div>
     <div class="fg"><label>Requisitos (separar por ·)</label><input id="m-req" type="text" value="${d.requisitos||''}" placeholder="Ex: CNH categoria B · Experiência na área"></div>
     <div class="fg"><label>WhatsApp (só dígitos)</label><input id="m-wpp" type="text" value="${(d.wpp||'').replace(/.*wa\.me\//,'').replace(/\?.*/,'')}" placeholder="5511983592721"></div>
     ${acts}`;
+  }
 
   if (tipo==='pod') return `<h4>${tit} Episódio</h4>
     <div class="fg-row">
@@ -1281,7 +1291,7 @@ function save_vag(idx) {
   const obj = {
     cargo, empresa: fv('m-emp'), tipo: fv('m-tipo'), area: fv('m-area'),
     icon: fv('m-icon')||'💼', sal: fv('m-sal'), local: fv('m-local'),
-    desc: fv('m-desc'), requisitos: fv('m-req'), tempo: 'Recente',
+    desc: fv('m-desc'), horario: fv('m-horario')||'', requisitos: fv('m-req'), tempo: 'Novo',
     wpp: `https://wa.me/${wppNum}?text=Oi!%20Vi%20a%20vaga%20de%20${encodeURIComponent(cargo)}%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse!`,
     paused: idx!=null ? (vagas[idx].paused||false) : false,
   };
