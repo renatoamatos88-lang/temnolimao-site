@@ -510,25 +510,48 @@ tr:hover td { background: rgba(255,255,255,.02); }
 }
 .tnl-ig-img-full { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-/* Métricas slide B — caixa escura com blur (padrão mobile + web) */
-.tnl-ig-stats {
-  display: flex; gap: 1.75rem; flex-wrap: wrap; z-index: 3;
+/* Métricas slide B — cards individuais com ícone */
+.tnl-ig-stats-v2 {
+  display: flex; gap: .75rem; flex-wrap: wrap; z-index: 3;
   margin-top: 1.25rem; margin-bottom: 1.5rem;
-  background: rgba(6, 10, 2, .72);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(184, 230, 30, .16);
-  border-radius: 16px;
-  padding: 1.1rem 1.4rem;
   align-self: flex-start;
 }
-.tnl-ig-stat-n {
-  font-family: 'Space Mono',monospace; font-size: 1.6rem; font-weight: 700;
-  color: var(--amarelo); line-height: 1; margin-bottom: .3rem;
+.tnl-ig-stat-card {
+  display: flex; align-items: center; gap: .75rem;
+  background: rgba(6, 10, 2, .78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(200, 224, 74, .18);
+  border-radius: 14px;
+  padding: .85rem 1.1rem;
+  transition: border-color .25s, transform .25s;
 }
-.tnl-ig-stat-l {
-  font-family: 'Space Mono',monospace; font-size: .55rem;
-  text-transform: uppercase; letter-spacing: .12em; color: rgba(255,255,255,.75);
+.tnl-ig-stat-card:hover {
+  border-color: rgba(200, 224, 74, .45);
+  transform: translateY(-2px);
+}
+.tnl-ig-stat-icon {
+  display: flex; align-items: center; justify-content: center;
+  width: 42px; height: 42px; flex-shrink: 0;
+  background: rgba(200, 224, 74, .12);
+  border-radius: 10px;
+  color: var(--limao);
+}
+.tnl-ig-stat-data { display: flex; flex-direction: column; }
+.tnl-ig-stat-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.65rem; font-weight: 700;
+  color: #fff; line-height: 1; letter-spacing: -.02em;
+}
+.tnl-ig-stat-num span {
+  font-size: .7em; font-weight: 600;
+  color: var(--limao); margin-left: .08em;
+}
+.tnl-ig-stat-lbl {
+  font-family: 'Space Mono', monospace;
+  font-size: .6rem; font-weight: 400;
+  text-transform: uppercase; letter-spacing: .14em;
+  color: rgba(255,255,255,.55); margin-top: .25rem;
 }
 
 /* Dots */
@@ -628,6 +651,12 @@ tr:hover td { background: rgba(255,255,255,.02); }
   .tnl-hero-video-wrap::before { background: linear-gradient(to bottom, var(--dark) 0%, transparent 30%), linear-gradient(to right, var(--dark) 0%, transparent 100%); }
   .tnl-hero-stats,
   .tnl-ig-stats { flex-direction: row; flex-wrap: wrap; gap: 1rem; }
+  .tnl-ig-stats-v2 { flex-direction: column; gap: .5rem; width: 100%; }
+  .tnl-ig-stat-card { padding: .65rem .9rem; gap: .6rem; }
+  .tnl-ig-stat-icon { width: 36px; height: 36px; border-radius: 8px; }
+  .tnl-ig-stat-icon svg { width: 18px; height: 18px; }
+  .tnl-ig-stat-num { font-size: 1.35rem; }
+  .tnl-ig-stat-lbl { font-size: .52rem; }
   .tnl-hero-stat { text-align: left; }
   .tnl-hero-slide-b { flex-direction: column; gap: 1.5rem; padding: 5.5rem 1.25rem 2rem; align-items: center; }
   .tnl-ig-phone { width: 200px; }
