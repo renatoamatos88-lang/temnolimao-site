@@ -113,7 +113,7 @@ const _vagasDefault = [
     wpp:'https://wa.me/5511976272415?text=Oi!%20Vi%20a%20vaga%20de%20Operadora%20de%20Loja%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse!' },
   { cargo:'Atendente de loja fast food', empresa:'Milk Shake Mix', tipo:'CLT', area:'Fast Food', sal:'R$ 1.980 + Vale-Transporte + Seguro de Vida + Refeição no Local', local:'Limão, SP', tempo:'Novo', icon:'🥤',
     desc:'Escala 5x2 | Carrefour Limão - Avenida Otaviano Alves de Lima, 1824',
-    wpp:'https://wa.me/5511983592721?text=Oi!%20Vi%20a%20vaga%20de%20Atendente%20de%20loja%20fast%20food%20%E2%80%93%20Milk%20Shake%20Mix%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse!' },
+    wpp:'https://wa.me/5511913435710?text=Oi!%20Vi%20a%20vaga%20de%20Atendente%20de%20loja%20fast%20food%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse!' },
   { cargo:'Motoboy', empresa:'Pega Boy', tipo:'Freelance', area:'Entregas', sal:'A combinar', local:'Freguesia do Ó – Rua Santa Auta, 131B, SP', tempo:'Novo', icon:'🏍️',
     desc:'Precisa-se de motoboy para serviços esporádicos.',
     wpp:'https://wa.me/5511940313143?text=Oi!%20Vi%20a%20vaga%20de%20Motoboy%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse!' },
