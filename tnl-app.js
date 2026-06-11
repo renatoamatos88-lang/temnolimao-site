@@ -102,11 +102,18 @@ let depoimentos = [
 ];
 
 const _vagasDefault = [
+  { cargo:'Assistente de Cobrança', empresa:'Ace Efficiency', tipo:'CLT', area:'Cobrança', sal:'Salário compatível com o mercado + VR + VT', local:'Bairro do Limão, SP', tempo:'Novo', icon:'📞',
+    desc:'Vaga para Assistente de Cobrança em ambiente colaborativo, com equipe unida, foco em resultados e crescimento profissional.',
+    horario:'Segunda a Sexta · 9h às 18h',
+    wpp:'mailto:atendimento@aceefficiency.com.br?subject=Vim%20pelo%20Tem%20no%20Lim%C3%A3o%20-%20Vaga%20Assistente%20de%20Cobran%C3%A7a&body=Ol%C3%A1!%20Vi%20a%20vaga%20de%20Assistente%20de%20Cobran%C3%A7a%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20e%20tenho%20interesse.%20Segue%20meu%20curr%C3%ADculo%20em%20anexo.' },
   { cargo:'Operadora de Loja', empresa:'Pizzaria Casa Verde', tipo:'CLT', area:'Alimentação', sal:'R$ 2.200 + Vale-Transporte + Janta', local:'Casa Verde – Zona Norte, SP', tempo:'Novo', icon:'🍕',
     desc:'Atendimento ao cliente, trabalho em equipe e logística de motoboys. Carga horária de 6h diárias.',
     horario:'Ter–Qui e Dom 18h–23h30 · Sex–Sáb 18h–00h30',
     requisitos:'Morar na Zona Norte · Experiência em atendimento · Ser comunicativa e proativa',
     wpp:'https://wa.me/5511976272415?text=Oi!%20Vi%20a%20vaga%20de%20Operadora%20de%20Loja%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse!' },
+  { cargo:'Atendente de loja fast food', empresa:'Milk Shake Mix', tipo:'CLT', area:'Fast Food', sal:'R$ 1.980 + Vale-Transporte + Seguro de Vida + Refeição no Local', local:'Limão, SP', tempo:'Novo', icon:'🥤',
+    desc:'Escala 5x2 | Carrefour Limão - Avenida Otaviano Alves de Lima, 1824',
+    wpp:'https://wa.me/5511983592721?text=Oi!%20Vi%20a%20vaga%20de%20Atendente%20de%20loja%20fast%20food%20%E2%80%93%20Milk%20Shake%20Mix%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse!' },
   { cargo:'Motoboy', empresa:'Pega Boy', tipo:'Freelance', area:'Entregas', sal:'A combinar', local:'Freguesia do Ó – Rua Santa Auta, 131B, SP', tempo:'Novo', icon:'🏍️',
     desc:'Precisa-se de motoboy para serviços esporádicos.',
     wpp:'https://wa.me/5511940313143?text=Oi!%20Vi%20a%20vaga%20de%20Motoboy%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse!' },
