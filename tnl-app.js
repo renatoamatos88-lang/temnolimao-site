@@ -142,6 +142,60 @@ const _vagasDefault = [
 ];
 let vagas = [..._vagasDefault];
 
+// ── EXPIRAÇÃO DE VAGAS (30 DIAS) ─────────────────
+const VAGA_VALIDADE_DIAS = 30;
+const VAGA_ATENCAO_DIAS  = 5;  // contador "vencendo" no painel
+const VAGA_AVISO_DIAS    = 3;  // mostra botão de lembrete
+
+function _vagaDiasRestantes(v) {
+  if (!v.dataPublicacao) return null;
+  const pub  = new Date(v.dataPublicacao + 'T00:00:00');
+  const hoje = new Date(); hoje.setHours(0,0,0,0);
+  return Math.floor((pub.getTime() + VAGA_VALIDADE_DIAS*86400000 - hoje.getTime()) / 86400000);
+}
+
+function vagaExpirada(v) {
+  const d = _vagaDiasRestantes(v);
+  return d !== null && d < 0;
+}
+
+function vagaStatusBadge(v) {
+  const d = _vagaDiasRestantes(v);
+  if (d === null)            return '<span class="adm-badge" style="background:rgba(255,255,255,.08);color:var(--adm-muted);border:1px solid rgba(255,255,255,.15)">— Sem data</span>';
+  if (d < 0)                 return `<span class="adm-badge" style="background:rgba(255,80,80,.15);color:#ff8080;border:1px solid rgba(255,80,80,.3)">🔴 Expirada há ${-d}d</span>`;
+  if (d === 0)               return `<span class="adm-badge" style="background:rgba(255,194,15,.18);color:var(--amarelo);border:1px solid rgba(255,194,15,.35)">🟡 Vence hoje</span>`;
+  if (d <= VAGA_ATENCAO_DIAS) return `<span class="adm-badge" style="background:rgba(255,194,15,.18);color:var(--amarelo);border:1px solid rgba(255,194,15,.35)">🟡 Vence em ${d}d</span>`;
+  return `<span class="adm-badge" style="background:rgba(200,224,74,.15);color:var(--adm-limao);border:1px solid rgba(200,224,74,.3)">🟢 ${d}d restantes</span>`;
+}
+
+function renovarVaga(i) {
+  if (!confirm(`Renovar a vaga "${vagas[i].cargo}" por mais 30 dias?`)) return;
+  vagas[i].dataPublicacao = new Date().toISOString().slice(0,10);
+  salvarDB(); renderTblVags(); renderDashStats(); renderVagas();
+}
+
+function enviarLembreteVaga(i) {
+  const v = vagas[i];
+  const d = _vagaDiasRestantes(v);
+  let estado;
+  if (d === null)      estado = 'precisa de data de publicação';
+  else if (d < 0)      estado = `expirou há ${-d} dia${-d===1?'':'s'}`;
+  else if (d === 0)    estado = 'vence hoje';
+  else                 estado = `vence em ${d} dia${d===1?'':'s'}`;
+  const msg = `Oi! Sua vaga de ${v.cargo} no Tem no Limão 🍋 ${estado}. Quer renovar por mais 30 dias (R$50)? Me responde aqui que eu mantenho ela no ar pra você.`;
+  const wpp = v.wpp || '';
+  if (wpp.startsWith('mailto:')) {
+    const email = wpp.slice(7).split('?')[0];
+    window.open(`mailto:${email}?subject=${encodeURIComponent('Sua vaga no Tem no Limão')}&body=${encodeURIComponent(msg)}`, '_blank');
+  } else if (wpp.startsWith('https://wa.me/')) {
+    const fone = wpp.match(/wa\.me\/(\d+)/)?.[1];
+    if (!fone) return alert('Não consegui extrair o telefone do contato.');
+    window.open(`https://wa.me/${fone}?text=${encodeURIComponent(msg)}`, '_blank');
+  } else {
+    alert('Contato indisponível para envio de lembrete.');
+  }
+}
+
 // ── RENDER ────────────────────────────────────────
 function _makeCard(n, isDestaque) {
   const isWpp = n.tipo === 'wpp';
@@ -471,7 +525,7 @@ function renderVagas() {
   const clkSvg  = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`;
   const calSvg  = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`;
 
-  document.getElementById('vagas-grid').innerHTML = vagas.filter(v => !v.paused).map(v => `
+  document.getElementById('vagas-grid').innerHTML = vagas.filter(v => !v.paused && !vagaExpirada(v)).map(v => `
     <div class="tnl-vaga-card-v2">
       <div class="tnl-vaga-face-top">
         <span class="tnl-vaga-emoji">${escText(v.icon)}</span>
@@ -979,6 +1033,22 @@ function renderTblNegs() {
 // ── VAGAS TABLE ────────────────────────────────────
 function renderTblVags() {
   const cnt=document.getElementById('cnt-vags'); if(cnt) cnt.textContent=`(${vagas.length})`;
+
+  // Banner de alerta no topo
+  const alertEl = document.getElementById('vagas-alert');
+  if (alertEl) {
+    const vencendo = vagas.filter(v => { const d = _vagaDiasRestantes(v); return d !== null && d >= 0 && d <= VAGA_ATENCAO_DIAS; }).length;
+    const expiradas = vagas.filter(v => vagaExpirada(v)).length;
+    if (vencendo || expiradas) {
+      const parts = [];
+      if (vencendo)  parts.push(`<strong style="color:var(--amarelo)">🔔 ${vencendo} vaga${vencendo===1?'':'s'} vence${vencendo===1?'':'m'} em até ${VAGA_ATENCAO_DIAS} dias</strong>`);
+      if (expiradas) parts.push(`<strong style="color:#ff8080">🔴 ${expiradas} vaga${expiradas===1?'':'s'} expirada${expiradas===1?'':'s'}</strong>`);
+      alertEl.innerHTML = `<div style="padding:.85rem 1rem;background:rgba(255,194,15,.08);border:1px solid rgba(255,194,15,.3);border-radius:.6rem;font-size:.88rem">${parts.join(' · ')} <span style="color:var(--adm-muted);font-weight:normal"> — use os botões 📲 Lembrete e 🔄 Renovar abaixo.</span></div>`;
+    } else {
+      alertEl.innerHTML = '';
+    }
+  }
+
   const sort = document.getElementById('sort-vags')?.value || 'cargo-asc';
   const cmp = (a,b) => String(a||'').localeCompare(String(b||''),'pt-BR',{sensitivity:'base'});
   const sorters = {
@@ -987,19 +1057,26 @@ function renderTblVags() {
     'emp-asc':    (a,b)=> cmp(a.empresa,b.empresa) || cmp(a.cargo,b.cargo),
     'tipo-asc':   (a,b)=> cmp(a.tipo,b.tipo) || cmp(a.cargo,b.cargo),
     'status-asc': (a,b)=> (a.paused?1:0)-(b.paused?1:0) || cmp(a.cargo,b.cargo),
+    'valid-asc':  (a,b)=> (_vagaDiasRestantes(a) ?? 99999) - (_vagaDiasRestantes(b) ?? 99999),
   };
   const lista = [...vagas].sort(sorters[sort] || sorters['cargo-asc']);
   document.getElementById('tbl-vags').innerHTML = lista.map((v)=> {
     const i = vagas.indexOf(v);
+    const d = _vagaDiasRestantes(v);
+    const mostrarLembrete = d !== null && d <= VAGA_AVISO_DIAS;
+    const mostrarRenovar  = d !== null && d <= VAGA_ATENCAO_DIAS;
     return `
     <tr style="${v.paused?'opacity:.5':''}">
       <td><strong>${v.cargo}</strong></td>
       <td>${v.empresa}</td>
       <td><span class="adm-badge ${v.tipo==='CLT'?'badge-clt':'badge-pj'}">${v.tipo}</span></td>
       <td style="font-size:.78rem">${v.sal}</td>
+      <td>${vagaStatusBadge(v)}</td>
       <td><span class="adm-badge ${v.paused?'badge-paused':'badge-active'}">${v.paused?'⏸ Pausado':'● Ativo'}</span></td>
       <td><div class="adm-td-acts">
         <button class="adm-sm-btn" onclick="editVag(${i})">✏️ Editar</button>
+        ${mostrarLembrete ? `<button class="adm-sm-btn" style="background:rgba(255,194,15,.12);border-color:rgba(255,194,15,.35);color:var(--amarelo)" onclick="enviarLembreteVaga(${i})" title="Enviar lembrete de renovação">📲 Lembrete</button>` : ''}
+        ${mostrarRenovar  ? `<button class="adm-sm-btn" style="background:rgba(200,224,74,.12);border-color:rgba(200,224,74,.35);color:var(--adm-limao)" onclick="renovarVaga(${i})" title="Renovar por mais 30 dias">🔄 Renovar</button>` : ''}
         <button class="adm-sm-btn ${v.paused?'unpause':'pause'}" onclick="togglePause('vags',${i})">${v.paused?'▶ Ativar':'⏸ Pausar'}</button>
         <button class="adm-sm-btn del" onclick="delItem('vags',${i})">🗑</button>
       </div></td>
