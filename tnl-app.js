@@ -102,6 +102,11 @@ let depoimentos = [
 ];
 
 const _vagasDefault = [
+  { cargo:'Auxiliar de Injetora (Noturno)', empresa:'Sertha Brindes', tipo:'CLT', area:'Indústria', sal:'A combinar', local:'São Paulo, SP', tempo:'Novo', icon:'🏭',
+    desc:'Auxiliar operadores de injetoras plásticas: abastecimento, controle de qualidade, acabamento e embalagem. Indústria do setor de transformação de plásticos desde 1994.',
+    horario:'Noturno · Segunda a Sexta',
+    requisitos:'Ensino Médio completo · Disponibilidade noturna · Desejável experiência em indústria plástica',
+    wpp:'https://wa.me/5511953481486?text=Oi!%20Vi%20a%20vaga%20de%20Auxiliar%20de%20Injetora%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse!' },
   { cargo:'Assistente de Cobrança', empresa:'Ace Efficiency', tipo:'CLT', area:'Cobrança', sal:'Salário compatível com o mercado + VR + VT', local:'Bairro do Limão, SP', tempo:'Novo', icon:'📞',
     desc:'Vaga para Assistente de Cobrança em ambiente colaborativo, com equipe unida, foco em resultados e crescimento profissional.',
     horario:'Segunda a Sexta · 9h às 18h',
