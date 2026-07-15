@@ -142,6 +142,11 @@ const _vagasDefault = [
     desc:'Venha fazer parte do nosso time e compartilhar boas experiências! Atendimento ao cliente e operação de loja.',
     dataPublicacao:'2026-06-23',
     wpp:'mailto:limao@casadebolos.com.br?subject=Vim%20pelo%20Tem%20no%20Lim%C3%A3o%20-%20Vaga%20Atendente&body=Ol%C3%A1!%20Vi%20a%20vaga%20de%20Atendente%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20e%20tenho%20interesse.%20Segue%20meu%20curr%C3%ADculo%20em%20anexo.' },
+  { cargo:'Controlador de Acesso', empresa:'Acesso Estacionamento', tipo:'CLT', area:'Estacionamento', sal:'R$ 2.283,00 + Vale-Transporte + Cesta Básica', local:'Bairro do Limão, SP', tempo:'Novo', icon:'🅿️',
+    desc:'Controle de acesso e apoio na operação do estacionamento.',
+    horario:'Segunda a Sexta · 09h às 19h',
+    dataPublicacao:'2026-07-15',
+    wpp:'https://wa.me/5511970740090?text=Oi!%20Vi%20a%20vaga%20de%20Controlador%20de%20Acesso%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse!' },
 ];
 let vagas = [..._vagasDefault];
 
