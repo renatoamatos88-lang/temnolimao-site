@@ -148,6 +148,24 @@ const _vagasDefault = [
     horario:'Segunda a Sexta · 09h às 19h',
     dataPublicacao:'2026-07-15',
     wpp:'https://wa.me/5511970740090?text=Oi!%20Vi%20a%20vaga%20de%20Controlador%20de%20Acesso%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse!' },
+  { cargo:'Auxiliar de Logística', tipo:'CLT', area:'Logística', sal:'A combinar', local:'Limão, SP', tempo:'Novo', icon:'📦',
+    desc:'Vaga para Auxiliar de Logística. Envie currículo para se candidatar.',
+    dataPublicacao:'2026-07-23',
+    wpp:'https://wa.me/5511974845402?text=Oi!%20Vi%20a%20vaga%20de%20Auxiliar%20de%20Log%C3%ADstica%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse!' },
+  { cargo:'Motorista', tipo:'CLT', area:'Logística', sal:'A combinar', local:'Limão, SP', tempo:'Novo', icon:'🚚',
+    desc:'Vaga para Motorista. Envie currículo para se candidatar.',
+    dataPublicacao:'2026-07-23',
+    wpp:'https://wa.me/5511974845402?text=Oi!%20Vi%20a%20vaga%20de%20Motorista%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse!' },
+  { cargo:'Manicure', empresa:'Fast Escova Limão', tipo:'PJ', area:'Beleza', sal:'A combinar', local:'Limão, SP', tempo:'Novo', icon:'💅',
+    desc:'Vaga para Manicure na Fast Escova Limão.',
+    requisitos:'Experiência na área de atuação · Disponibilidade para trabalhar como MEI',
+    dataPublicacao:'2026-07-23',
+    wpp:'https://wa.me/5511983592721?text=Oi!%20Vi%20a%20vaga%20de%20Manicure%20(Fast%20Escova%20Lim%C3%A3o)%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse!' },
+  { cargo:'Escovista', empresa:'Fast Escova Limão', tipo:'PJ', area:'Beleza', sal:'A combinar', local:'Limão, SP', tempo:'Novo', icon:'💇',
+    desc:'Vaga para Escovista na Fast Escova Limão.',
+    requisitos:'Experiência na área de atuação · Disponibilidade para trabalhar como MEI',
+    dataPublicacao:'2026-07-23',
+    wpp:'https://wa.me/5511983592721?text=Oi!%20Vi%20a%20vaga%20de%20Escovista%20(Fast%20Escova%20Lim%C3%A3o)%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse!' },
 ];
 let vagas = [..._vagasDefault];
 
@@ -544,7 +562,7 @@ function renderVagas() {
         </div>
       </div>
       <div class="tnl-vaga-title">${escText(v.cargo)}</div>
-      <div class="tnl-vaga-company">${escText(v.empresa)}</div>
+      ${v.empresa ? `<div class="tnl-vaga-company">${escText(v.empresa)}</div>` : ''}
       <p class="tnl-vaga-desc">${escText(v.desc)}</p>
       <div class="tnl-vaga-meta">
         <span>${pinSvg} ${escText(v.local)}</span>
