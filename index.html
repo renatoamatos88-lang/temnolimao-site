@@ -138,6 +138,104 @@
 <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,600;1,700;1,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"></noscript>
 
   <link rel="stylesheet" href="tnl-style.css?v=20260603">
+
+<!-- ═══ LIMÃO WEEK — faixa + item do nav (remover após 01/08/2026) ═══ -->
+<style>
+:root{ --lw-strip-h:46px; }
+@media (max-width:640px){ :root{ --lw-strip-h:40px; } }
+/* Empurra o nav fixed para baixo da faixa */
+#main-site .tnl-nav{ top:var(--lw-strip-h) !important; }
+
+.lw-strip{
+  position:fixed; top:0; left:0; right:0; z-index:200;
+  display:flex; align-items:center; justify-content:center; gap:12px;
+  padding:10px 44px 10px 16px;
+  background:linear-gradient(90deg, #A6D138 0%, #FFC20F 50%, #A6D138 100%);
+  background-size:200% 100%;
+  color:#161A0E; font-weight:600; font-size:14px;
+  text-decoration:none; line-height:1.3;
+  animation:lw-strip-shine 8s linear infinite;
+  border-bottom:2px solid rgba(0,0,0,.1);
+  height:var(--lw-strip-h);
+  box-sizing:border-box;
+}
+@keyframes lw-strip-shine{
+  0%{background-position:0% 50%}
+  100%{background-position:200% 50%}
+}
+.lw-strip-emoji{font-size:18px}
+.lw-strip-txt strong{font-weight:800; letter-spacing:.05em}
+.lw-strip-link{text-decoration:underline; text-underline-offset:3px; font-weight:700}
+.lw-strip:hover .lw-strip-link{text-decoration-thickness:2px}
+.lw-strip-close{
+  position:absolute; right:10px; top:50%; transform:translateY(-50%);
+  background:rgba(0,0,0,.12); border:none; color:#161A0E; cursor:pointer;
+  width:26px; height:26px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:14px; font-weight:700; line-height:1;
+  transition:.2s;
+}
+.lw-strip-close:hover{background:rgba(0,0,0,.25)}
+@media (max-width:640px){
+  .lw-strip{font-size:12px; padding:8px 40px 8px 12px; gap:8px}
+  .lw-strip-emoji{font-size:16px}
+}
+
+.lw-nav-link{
+  display:inline-flex !important; align-items:center; gap:6px;
+  background:linear-gradient(90deg, rgba(200,224,74,.15), rgba(255,194,15,.15));
+  padding:5px 12px !important; border-radius:99px;
+  border:1px solid rgba(255,194,15,.4);
+  font-weight:700 !important;
+  transition:.2s;
+}
+.lw-nav-link:hover{
+  background:linear-gradient(90deg, rgba(200,224,74,.3), rgba(255,194,15,.3));
+  border-color:var(--amarelo, #FFC20F);
+  color:var(--amarelo, #FFC20F) !important;
+}
+.lw-nav-badge{font-size:14px; line-height:1}
+.lw-nav-mob{border-radius:8px !important; margin:4px 0}
+</style>
+
+<script>
+(function(){
+  var END = new Date('2026-08-01T00:00:00-03:00').getTime();
+  var DISMISS_KEY = 'tnl_limao_week_dismissed';
+
+  function hideStrip(){
+    var s = document.getElementById('lw-strip');
+    if(s) s.style.display = 'none';
+    // reseta o offset do nav
+    document.documentElement.style.setProperty('--lw-strip-h', '0px');
+  }
+
+  window.lwStripDismiss = function(){
+    localStorage.setItem(DISMISS_KEY, '1');
+    hideStrip();
+  };
+
+  document.addEventListener('DOMContentLoaded', function(){
+    var now = Date.now();
+    var popupCta = document.getElementById('lw-popup-cta');
+    var navItems = document.querySelectorAll('.lw-nav-item, .lw-nav-mob');
+
+    if(now >= END){
+      // Encerrada — esconde tudo
+      hideStrip();
+      if(popupCta) popupCta.style.display = 'none';
+      navItems.forEach(function(el){ el.style.display = 'none'; });
+      return;
+    }
+    // Faixa: esconde se já foi fechada
+    if(localStorage.getItem(DISMISS_KEY) === '1'){
+      hideStrip();
+    }
+  });
+})();
+</script>
+<!-- ═══ FIM LIMÃO WEEK ═══ -->
+
 </head>
 <body>
 
@@ -501,6 +599,16 @@
 <!-- ═══════════ MAIN SITE ═══════════ -->
 <div id="main-site">
 
+  <!-- ═══ FAIXA LIMÃO WEEK (auto-hide após 01/08/2026) ═══ -->
+  <a id="lw-strip" class="lw-strip" href="limao-week.html"
+     onclick="if(typeof gtag==='function')gtag('event','cta_click',{cta_id:'limao_week_strip',location:'header'})">
+    <span class="lw-strip-emoji">🍋</span>
+    <span class="lw-strip-txt">
+      <strong>LIMÃO WEEK</strong> · 27 a 31 de julho · <span class="lw-strip-link">confira as promoções →</span>
+    </span>
+    <button class="lw-strip-close" aria-label="Fechar" onclick="event.preventDefault();event.stopPropagation();lwStripDismiss()">✕</button>
+  </a>
+
   <!-- NAV -->
   <nav class="tnl-nav">
     <a href="#" class="tnl-nav-logo"><img src="logo-tnl.png" alt="Tem no Limão" style="height:58px;width:auto"></a>
@@ -509,6 +617,7 @@
       <li><a href="#quem-somos">Quem Somos</a></li>
       <li><a href="#vagas">Vagas</a></li>
       <li><a href="noticias.html">Notícias</a></li>
+      <li class="lw-nav-item"><a href="limao-week.html" class="lw-nav-link">Limão Week <span class="lw-nav-badge">🔥</span></a></li>
       <li><a href="#" data-nav="podcast" onclick="return false" style="cursor:default;opacity:.6">Podcast <span class="tnl-em-breve">Em breve</span></a></li>
       <li><a href="#" onclick="return false" style="cursor:default;opacity:.6">Mídia Kit <span class="tnl-em-breve">Em breve</span></a></li>
     </ul>
@@ -541,6 +650,7 @@
     <a href="#quem-somos" onclick="closeMenu()">Quem Somos</a>
     <a href="#vagas" onclick="closeMenu()">Vagas</a>
     <a href="noticias.html">Notícias</a>
+    <a href="limao-week.html" class="lw-nav-link lw-nav-mob" onclick="closeMenu()">Limão Week <span class="lw-nav-badge">🔥</span></a>
     <a href="#" data-nav="podcast" onclick="return false" style="opacity:.6">Podcast <span class="tnl-em-breve">Em breve</span></a>
     <a href="#" onclick="return false" style="opacity:.6">Mídia Kit <span class="tnl-em-breve">Em breve</span></a>
     <a class="tnl-mob-cta" href="#para-negocios" onclick="closeMenu();if(typeof gtag==='function')gtag('event','cta_click',{cta_id:'cadastro_negocio',location:'header'})">Cadastrar negócio</a>
@@ -1271,6 +1381,40 @@
 <div id="tnl-popup-overlay" class="tnl-popup-overlay" aria-hidden="true">
   <div class="tnl-popup" role="dialog" aria-modal="true" aria-label="Conheça o Tem no Limão">
     <button class="tnl-popup-close" id="tnl-popup-close" aria-label="Fechar">✕</button>
+
+    <!-- ═══ CTA Limão Week (auto-hide após 01/08/2026) — faixa cheia, fora do grid ═══ -->
+    <a id="lw-popup-cta" class="lw-popup-cta" href="limao-week.html"
+       onclick="tnlPopupDismiss();if(typeof gtag==='function')gtag('event','cta_click',{cta_id:'limao_week_popup',location:'popup'})">
+      <div class="lw-popup-cta-icon">🍋</div>
+      <div class="lw-popup-cta-txt">
+        <span class="lw-popup-cta-lbl">3ª edição · 27 a 31 de julho</span>
+        <strong class="lw-popup-cta-title">Ver promoções da Limão Week</strong>
+      </div>
+      <span class="lw-popup-cta-arrow">→</span>
+    </a>
+    <style>
+      .lw-popup-cta{
+        display:flex; align-items:center; gap:14px;
+        padding:14px 20px; margin:0 0 0 0;
+        background:linear-gradient(135deg, #A6D138 0%, #FFC20F 100%);
+        text-decoration:none; color:#161A0E;
+        transition:.2s;
+        border-radius:16px 16px 0 0;
+      }
+      .lw-popup-cta:hover{filter:brightness(1.05)}
+      .lw-popup-cta-icon{font-size:26px; flex-shrink:0}
+      .lw-popup-cta-txt{flex:1; display:flex; flex-direction:column; gap:2px; line-height:1.25; text-align:left}
+      .lw-popup-cta-lbl{font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; opacity:.7}
+      .lw-popup-cta-title{font-size:15px; font-weight:800}
+      .lw-popup-cta-arrow{font-size:20px; font-weight:700; flex-shrink:0; transition:transform .2s}
+      .lw-popup-cta:hover .lw-popup-cta-arrow{transform:translateX(4px)}
+      @media (max-width:640px){
+        .lw-popup-cta{padding:12px 16px; border-radius:16px 16px 0 0}
+        .lw-popup-cta-title{font-size:13px}
+        .lw-popup-cta-lbl{font-size:10px}
+      }
+    </style>
+
     <div class="tnl-popup-body">
 
       <!-- Card Instagram -->
