@@ -166,6 +166,11 @@ const _vagasDefault = [
     requisitos:'Experiência na área de atuação · Disponibilidade para trabalhar como MEI',
     dataPublicacao:'2026-07-23',
     wpp:'https://wa.me/5511983592721?text=Oi!%20Vi%20a%20vaga%20de%20Escovista%20(Fast%20Escova%20Lim%C3%A3o)%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse!' },
+  { cargo:'Operador(a) de Telemarketing', tipo:'CLT', area:'Telemarketing', sal:'Compatível com a categoria + possibilidade de ganhos maiores', local:'Bom Retiro – Região Central, SP', tempo:'Novo', icon:'📞',
+    desc:'Vaga CLT registrada em carteira. Benefícios: Vale Cesta (Cartão VA), Plano Odontológico gratuito, Wellhub (Gympass), convênio com faculdades e Sesc, entre outros. Envie seu currículo pelo WhatsApp — falar com Renata Rozzi.',
+    horario:'Segunda a Sexta · 6h por dia',
+    dataPublicacao:'2026-08-03',
+    wpp:'https://wa.me/551132256034?text=Oi!%20Vi%20a%20vaga%20de%20Operador(a)%20de%20Telemarketing%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse!' },
 ];
 let vagas = [..._vagasDefault];
 
