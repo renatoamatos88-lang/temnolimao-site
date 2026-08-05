@@ -22,7 +22,7 @@ const LOGO = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeAAAAHbCAYAAAATaUn7
 
 const _negociosDefault = [
   { id:1,  nome:'Migui',              cat:'Loja', desc:'Materiais elétricos, ferramentas e soluções para obra e manutenção do seu lar.',                              logo: 'Logo Negocios/84ce72b20311b61ebeae8e5291956c03f4fc7a97.webp',  logoCls:'lg',      end:'Av. Mandaqui, 46 - Limão',                           hora:'Seg–Sex 8h–18h · Sáb 8h–13h',     tipo:'wpp', wpp:'5511977631776', entrada:'2026-04-04' },
-  { id:2,  nome:'Fridali Shop',       cat:'Jóias / Acessórios',  desc:'Joalheria contemporânea com peças únicas e acessórios de alto padrão para todos os estilos.',               logo: 'Logo Negocios/1662f800e0290a98fd7f7eed9f5e92c14d087ffc.webp', logoCls:'lg',      end:'24h — Loja Online',                                  hora:'Todos os dias',                    tipo:'site', siteUrl:'https://www.fridalishop.com', entrada:'2026-05-22', destaque:true },
+  { id:2,  nome:'Fridali Shop',       cat:'Jóias / Acessórios',  desc:'Joalheria contemporânea com peças únicas e acessórios de alto padrão para todos os estilos.',               logo: 'Logo Negocios/1662f800e0290a98fd7f7eed9f5e92c14d087ffc.webp', logoCls:'lg',      end:'24h — Loja Online',                                  hora:'Todos os dias',                    tipo:'site', siteUrl:'https://www.fridalishop.com', entrada:'2026-05-22' },
   { id:3,  nome:'Compre Mais',        cat:'Alimentação',        desc:'Supermercado com 4 unidades no bairro. Tudo que você precisa perto de casa.',                                logo: 'Logo Negocios/fe53c43af56d92b930b1574c4943c29a5c0dc9f2.webp', logoCls:'',        end:'Rua Firminópolis, 223 - Jd. Vista Alegre',           hora:'Todos os dias 7h–22h',             tipo:'wpp', wpp:'5511982418180', entrada:'2026-04-04' },
   { id:4,  nome:'Pseq',               cat:'Saúde',               desc:'Clínica de saúde com atendimento especializado para toda a família.',                                        logo: 'Logo Negocios/f3bcd75236d0c94838feabb73f3374ea31fdcdbc.webp', logoCls:'',        end:'Rua José Kileber, 242 - Limão',                      hora:'Seg–Sex 8h–18h',                   tipo:'wpp', wpp:'5511953395484', entrada:'2026-04-04' },
   { id:5,  nome:'Dom Capuchon',       cat:'Alimentação',         desc:'Gastronomia artesanal com duas unidades. Sabores únicos que conquistam o paladar.',                         logo: 'Logo Negocios/8d35fc64c5b6cea5a359b760d6dde8ce3e936930.webp', logoCls:'',        end:'Rua Jaboatão, 180 - Casa Verde',                     hora:'Ter–Dom 11h–22h',                  tipo:'wpp', wpp:'551127743746', entrada:'2026-04-04' },
@@ -64,11 +64,11 @@ const _negociosDefault = [
   { id:41, nome:'GDigital - Gisele Mendes', cat:'Serviços',      desc:'Terceirização de serviços financeiros, administrativos e secretariado para profissionalizar seu negócio.', logo: 'logo-gdigital.webp', logoCls:'', end:'', hora:'10h–17h', tipo:'wpp', wpp:'5511975063857', entrada:'2026-04-13' },
   { id:42, nome:'Hurbana Soluções',       cat:'Serviços',        desc:'Soluções urbanas e empresariais.', logo: 'logo-hurbana.webp', logoCls:'', end:'Av. Deputado Emílio Carlos, 188 – Limão', hora:'-', tipo:'wpp', wpp:'5511955558502', entrada:'2026-04-16' },
   { id:43, nome:'ADV Partners',           cat:'Advocacia',       desc:'Firma de advogados — Cristiane Oliveira.', logo: 'logo-advpartners.webp', logoCls:'', end:'Av. Deputado Emílio Carlos, 188 – Limão', hora:'-', tipo:'wpp', wpp:'5511955558502', entrada:'2026-04-16' },
-  { id:44, nome:'Espaço Nathacha Araújo', cat:'Estética',        desc:'Alongamento de unhas, esmaltação em gel, banho de gel e blindagem.', logo: 'logo-nathacha-araujo.webp', logoCls:'', end:'Rua Paulo Vidigal Vicente de Azevedo, 91', hora:'', tipo:'wpp', wpp:'5511988447160', inst:'https://www.instagram.com/espaconathachaaraujo', entrada:'2026-04-15', destaque:true },
-  { id:45, nome:'Óticas Diniz Limão',     cat:'Óptica',          desc:'Óculos de grau, solares e lentes de contato com exame de vista. Espaço kids, estacionamento e cafezinho na loja.', logo: 'logo-oticas-diniz.webp', logoCls:'', end:'Av. Prof. Celestino Bourrol, 762', hora:'', tipo:'wpp', wpp:'551123618404', inst:'https://www.instagram.com/oticasdinizlimao', entrada:'2026-04-16', destaque:true },
+  { id:44, nome:'Espaço Nathacha Araújo', cat:'Estética',        desc:'Alongamento de unhas, esmaltação em gel, banho de gel e blindagem.', logo: 'logo-nathacha-araujo.webp', logoCls:'', end:'Rua Paulo Vidigal Vicente de Azevedo, 91', hora:'', tipo:'wpp', wpp:'5511988447160', inst:'https://www.instagram.com/espaconathachaaraujo', entrada:'2026-04-15' },
+  { id:45, nome:'Óticas Diniz Limão',     cat:'Óptica',          desc:'Óculos de grau, solares e lentes de contato com exame de vista. Espaço kids, estacionamento e cafezinho na loja.', logo: 'logo-oticas-diniz.webp', logoCls:'', end:'Av. Prof. Celestino Bourrol, 762', hora:'', tipo:'wpp', wpp:'551123618404', inst:'https://www.instagram.com/oticasdinizlimao', entrada:'2026-04-16' },
   { id:46, nome:'Tangerina. Naturais',    cat:'Alimentação',     desc:'Grãos, cereais, chás, temperos e itens a granel. Opções veganas, sem açúcar e sem lactose. Queijos e petiscos.', logo: 'logo-tangerina-naturais.webp', logoCls:'', end:'Av. Mandaqui, 119', hora:'', tipo:'wpp', wpp:'5511974400950', inst:'https://www.instagram.com/tangerina.naturais', entrada:'2026-04-17' },
   { id:48, nome:'Ralves Assessoria Contábil', cat:'Serviços',  desc:'Contabilidade, impostos, folha de pagamento e abertura de empresas para profissionais e pequenos negócios.', logo: 'logo-ralves.webp', logoCls:'', end:'Av. Gaspar Vaz da Cunha, 256 – sala 7 – Vila Prado', hora:'', tipo:'wpp', wpp:'5511987984008', inst:'https://www.instagram.com/ralvescontabil/', siteUrl:'https://ralvescontabil.com.br/', entrada:'2026-05-05' },
-  { id:49, nome:'Barca Burguer',          cat:'Alimentação',     desc:'Hambúrguer artesanal e sorvetes da Chef Thays Bordezani. Todos os dias das 15h às 22h30.', logo: 'logo-barca-burguer.webp', logoCls:'', end:'', hora:'Todos os dias 15h–22h30', tipo:'wpp', wpp:'5511991405067', inst:'https://www.instagram.com/BarcaBurguersp', siteUrl:'https://www.barcaburguer.com.br', entrada:'2026-05-06', destaque:true },
+  { id:49, nome:'Barca Burguer',          cat:'Alimentação',     desc:'Hambúrguer artesanal e sorvetes da Chef Thays Bordezani. Todos os dias das 15h às 22h30.', logo: 'logo-barca-burguer.webp', logoCls:'', end:'', hora:'Todos os dias 15h–22h30', tipo:'wpp', wpp:'5511991405067', inst:'https://www.instagram.com/BarcaBurguersp', siteUrl:'https://www.barcaburguer.com.br', entrada:'2026-05-06' },
   { id:50, nome:'Rokay Corretora de Seguros', cat:'Serviços',   desc:'Corretora de seguros e gestão de benefícios — proteção para pessoas, empresas e patrimônios com transparência.', logo: 'logo-rokay.webp', logoCls:'', end:'Rua Pedro Juan Cabaleiro, 165', hora:'08h30–17h30', tipo:'site', siteUrl:'https://www.rokaycorretora.com.br', wpp:'5511948966615', entrada:'2026-05-14' },
   { id:51, nome:'Pizzaria Di primo',      cat:'Alimentação',     desc:'Pizzaria da Casa Verde desde 1980 com forno à lenha. Uma tradição de família passada de geração em geração.', logo: 'logo-diprimo.webp', logoCls:'', end:'Rua Baroré, 301 – Casa Verde', hora:'Ter–Qui 18h–23h · Sex–Sáb 18h–23h30 · Dom 18h–23h', tipo:'site', siteUrl:'https://pedir.delivery/app/diprimo/menu', inst:'https://www.instagram.com/pizzariadiprimo', entrada:'2026-05-07' },
   { id:52, nome:'Luciene Nunes',          cat:'Estética',        desc:'Especialista em micropigmentação de sobrancelhas, lábios e olhos. Jato de plasma, depilação, limpeza de pele e peeling.', logo: 'logo-luciene-nunes.webp', logoCls:'', end:'Rua Conselheiro Moreira de Barros, 4201', hora:'Ter–Sáb 9h–18h', tipo:'wpp', wpp:'5511939212409', inst:'https://www.instagram.com/lucienenunesmicro', siteUrl:'https://www.lucienenunesmicro.com.br', entrada:'2026-05-07' },
@@ -76,7 +76,9 @@ const _negociosDefault = [
   { id:54, nome:'Karen Alves Nail',       cat:'Estética',        desc:'Nail designer especialista em alongamento e banho de gel molde F1. Resistência e durabilidade para suas unhas.', logo: 'logo-karen-alves-nail.webp', logoCls:'', end:'Rua Maria Renata, 98', hora:'Seg–Sex 9h–17h', tipo:'wpp', wpp:'5511952697143', inst:'https://www.instagram.com/karenalves.nails', entrada:'2026-05-19' },
   { id:55, nome:'MavÍ Culinária e Pizzaria Saudável', cat:'Alimentação', desc:'Especialistas em culinária saudável e fitness. Refeições, salgados, doces, massas e pizzas sem farinha.', logo:'logo-mavi.webp', logoCls:'', end:'Av. Deputado Emílio Carlos, 402', hora:'Seg–Sex 8h–21h · Sáb 10h–15h', tipo:'site', siteUrl:'https://pedido.anota.ai/loja/mav-culinria-saudvel?f=msa', wpp:'5511956847233', inst:'https://www.instagram.com/mavisaudavel/', entrada:'2026-05-20' },
   { id:56, nome:'Rudá Clínica de Estética',           cat:'Estética',        desc:'Clínica de estética facial e corporal, especializada em harmonização facial.',                                    logo:'logo-ruda.webp', logoCls:'dark', end:'Rua Atílio Piffer, 271 sala 11 - Casa Verde', hora:'Seg–Sáb, mediante agendamento', tipo:'wpp', wpp:'5511983282940', inst:'https://www.instagram.com/rudaestetica', entrada:'2026-07-15' },
-  { id:57, nome:'Espaço Samara Campos e Alex Santos', cat:'Estética',        desc:'Especialistas em sobrancelhas, micropigmentação e remoção a laser. Também no Instagram @samaracampos.pmu.', logo:'', logoCls:'', end:'Avenida Imirim, 4435 – Piso Térreo', hora:'', tipo:'wpp', wpp:'5511949184616', inst:'https://www.instagram.com/beautysacampos', email:'samaragondim@gmail.com', resp:'Samara Campos', entrada:'2026-08-04' },
+  { id:57, nome:'Espaço Samara Campos e Alex Santos', cat:'Estética',        desc:'Especialistas em sobrancelhas, micropigmentação e remoção a laser. Também no Instagram @samaracampos.pmu.', logo:'logo-samara-campos.webp', logoCls:'', end:'Avenida Imirim, 4435 – Piso Térreo', hora:'', tipo:'wpp', wpp:'5511949184616', inst:'https://www.instagram.com/beautysacampos', email:'samaragondim@gmail.com', resp:'Samara Campos', entrada:'2026-08-04' },
+  { id:58, nome:'Psicóloga Elisangela Gregori',       cat:'Saúde',           desc:'Atendimento psicológico para adolescentes, adultos, casais e idosos.',                                            logo:'logo-elisangela.webp', logoCls:'', end:'Rua Elias da Costa, 273 – Vila Carolina', hora:'Seg–Sex 8h–21h · Sáb 8h–14h', tipo:'wpp', wpp:'5511947050244', inst:'https://www.instagram.com/elisangela_gregori/', siteUrl:'https://elisangelagregori.com.br/', email:'eligregori2017@gmail.com', resp:'Elisangela Gregori', entrada:'2026-08-05' },
+  { id:59, nome:'Carrelli Corretora de Seguros',      cat:'Serviços',        desc:'Venda de seguros e consórcio, com atendimento remoto ou visita a empresas.',                                       logo:'logo-carrelli.webp', logoCls:'dark', end:'Atendimento remoto e visita a empresas', hora:'Horário comercial', tipo:'wpp', wpp:'5511991938852', inst:'https://www.instagram.com/carrelli_corretora', email:'carrellicorretora@gmail.com', resp:'Roberto Carrelli', entrada:'2026-08-05' },
 ];
 let negocios = [..._negociosDefault];
 let negociosVisiveis = 6;
@@ -230,7 +232,7 @@ function enviarLembreteVaga(i) {
 }
 
 // ── RENDER ────────────────────────────────────────
-function _makeCard(n, isDestaque) {
+function _makeCard(n) {
   const isWpp = n.tipo === 'wpp';
   const btnCls = isWpp ? 'tnl-card-ol-wa' : 'tnl-card-ol-wa tnl-card-ol-site';
   const btnHref = isWpp ? `https://wa.me/${n.wpp}` : (n.siteUrl||'#');
@@ -245,11 +247,9 @@ function _makeCard(n, isDestaque) {
   const logoHtml = n.logo
     ? `<div class="tnl-card-bg-logo ${escAttr(n.logoCls)}"><img src="${escAttr(n.logo)}" alt="${escAttr(n.nome)}" loading="lazy" decoding="async" onerror="this.parentElement.style.background='#1a2b18'"></div>`
     : `<div class="tnl-card-bg-logo" style="background:linear-gradient(135deg,#1a2b18,#2d4a22);display:flex;align-items:center;justify-content:center"><span style="font-size:2.8rem;opacity:.65">${getCatEmoji(n.cat)}</span></div>`;
-  const badgeHtml = isDestaque
-    ? `<div class="tnl-card-badge">★ Destaque</div>`
-    : `<div class="tnl-card-badge">${escText(n.cat)}</div>`;
+  const badgeHtml = `<div class="tnl-card-badge">${escText(n.cat)}</div>`;
   return `
-    <div class="tnl-business-card${isDestaque?' tnl-card--destaque':''}">
+    <div class="tnl-business-card">
       <div class="tnl-card-bg">${logoHtml}</div>
       ${badgeHtml}
       <div class="tnl-card-strip">
@@ -264,25 +264,6 @@ function _makeCard(n, isDestaque) {
         <a class="${btnCls}" href="${escAttr(btnHref)}" target="_blank" rel="noopener noreferrer" data-tnl-parceiro-nome="${escAttr(n.nome)}" data-tnl-parceiro-cat="${escAttr(n.cat)}" data-tnl-parceiro-tipo="${isWpp?'wpp':'site'}">${btnTxt}</a>
       </div>
     </div>`;
-}
-
-function renderDestaqueStrip() {
-  const strip = document.getElementById('destaque-strip');
-  if (!strip) return;
-  const destaques = negocios.filter(n => n.destaque && !n.paused)
-    .sort((a,b) => new Date(b.entrada) - new Date(a.entrada))
-    .slice(0,3);
-  if (!destaques.length) { strip.style.display='none'; return; }
-  strip.style.display='';
-  const cards = destaques.map(n => _makeCard(n, true)).join('');
-  // Clones para loop infinito no mobile
-  const clones = destaques.map(n => {
-    const c = _makeCard(n, true);
-    return c.replace('<div class="tnl-business-card', '<div data-clone="1" class="tnl-business-card');
-  }).join('');
-  const isMobile = window.innerWidth <= 640;
-  const dur = destaques.length * 4; // 4s por card
-  strip.innerHTML = `<div class="tnl-destaque-track${isMobile ? ' playing' : ''}" style="--carousel-dur:${dur}s">${cards}${clones}</div>`;
 }
 
 function renderFilterBar() {
@@ -318,7 +299,7 @@ function renderCards() {
   const visivel = catAtiva === 'Todos' ? lista.slice(0, negociosVisiveis) : lista;
   const temMais = catAtiva === 'Todos' && lista.length > negociosVisiveis;
 
-  document.getElementById('cards-grid').innerHTML = visivel.map(n => _makeCard(n, false)).join('');
+  document.getElementById('cards-grid').innerHTML = visivel.map(n => _makeCard(n)).join('');
 
   // Show/hide "Carregar mais" button
   const loadWrap = document.querySelector('.tnl-load-more-wrap');
@@ -587,7 +568,7 @@ function toggleVaga(i) {}
 const SENHA_KEY         = 'tnl_senha';
 const DB_KEY            = 'tnl_db';
 const _NEGOCIOS_VK      = 'tnl_neg_v';
-const _NEGOCIOS_VERSION = '20260522';
+const _NEGOCIOS_VERSION = '20260805';
 const SENHA             = 'limao2024';
 function getSenha() { return localStorage.getItem(SENHA_KEY) || SENHA; }
 
@@ -604,8 +585,7 @@ function aplicarDB(db) {
   if (db.negocios) {
     const defaultMap = new Map(_negociosDefault.map(n => [n.id, n]));
     const idsDB = new Set(db.negocios.map(n => n.id));
-    // Se versão do código mudou, força sync de destaque/entrada do código.
-    // Se versão ok, respeita destaque configurado pelo admin via painel.
+    // Se versão do código mudou, força sync de entrada do código.
     const versaoOk = localStorage.getItem(_NEGOCIOS_VK) === _NEGOCIOS_VERSION;
     const merged = db.negocios.map(n => {
       const def = defaultMap.get(n.id);
@@ -614,7 +594,6 @@ function aplicarDB(db) {
       for (const k of Object.keys(def)) { if (!(k in n)) extra[k] = def[k]; }
       const result = {...n, ...extra};
       if (!versaoOk) {
-        if (def.destaque) { result.destaque = true; } else { delete result.destaque; }
         result.entrada = def.entrada;
       }
       return result;
@@ -1053,7 +1032,6 @@ function renderTblNegs() {
       <td style="font-size:.78rem">${tel}</td>
       <td style="font-size:.72rem;color:var(--adm-muted);max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${n.end||'—'}</td>
       <td><span class="adm-badge ${n.paused?'badge-paused':'badge-active'}">${n.paused?'⏸ Pausado':'● Ativo'}</span></td>
-      <td><button class="adm-sm-btn${n.destaque?' adm-btn-destaque-on':''}" onclick="toggleDestaque(${ri})" title="${n.destaque?'Remover destaque':'Ativar destaque'}">${n.destaque?'★ Destaque':'☆ Destaque'}</button></td>
       <td><div class="adm-td-acts">
         <button class="adm-sm-btn" onclick="editNeg(${ri})">✏️ Editar</button>
         <button class="adm-sm-btn ${n.paused?'unpause':'pause'}" onclick="togglePause('negs',${ri})">${n.paused?'▶ Ativar':'⏸ Pausar'}</button>
@@ -1226,15 +1204,6 @@ function renderTblDeps() {
 }
 
 // ── PAUSE / DELETE (generic) ──────────────────────
-function toggleDestaque(ri) {
-  negocios[ri].destaque = !negocios[ri].destaque;
-  salvarDB();
-  renderTblNegs();
-  renderDestaqueStrip();
-  initDestaqueCarousel();
-  toast(negocios[ri].destaque ? '★ Destaque ativado!' : 'Destaque removido.');
-}
-
 function togglePause(type, i) {
   const map = { negs: negocios, vags: vagas, pods: podcasts, nots: noticias, deps: depoimentos };
   const arr = map[type];
@@ -1598,35 +1567,6 @@ const _savedDB = carregarDB();
 if (_savedDB) aplicarDB(_savedDB);
 
 renderFilterBar();
-renderDestaqueStrip();
-(function initDestaqueCarousel() {
-  const strip = document.getElementById('destaque-strip');
-  if (!strip) return;
-  const origCards = Array.from(strip.querySelectorAll('.tnl-business-card'));
-  if (!origCards.length) return;
-  // Sempre cria o track (desktop e mobile)
-  const track = document.createElement('div');
-  track.className = 'tnl-destaque-track';
-  origCards.forEach(c => track.appendChild(c));
-  strip.appendChild(track);
-  // Carrossel só no mobile — largura via CSS calc(50vw - 27px)
-  if (!window.matchMedia('(max-width: 640px)').matches) return;
-  requestAnimationFrame(function() {
-    const gap = 14;
-    const cardWidth = Math.round(window.innerWidth / 2) - 27;
-    if (cardWidth <= 0) return;
-    origCards.forEach(c => {
-      const clone = c.cloneNode(true);
-      clone.dataset.clone = '1';
-      track.appendChild(clone);
-    });
-    const totalWidth = origCards.length * (cardWidth + gap);
-    track.style.setProperty('--carousel-dur', Math.round(totalWidth / 55) + 's');
-    track.classList.add('playing');
-    strip.addEventListener('touchstart', () => track.classList.add('paused'), { passive: true });
-    strip.addEventListener('touchend',   () => track.classList.remove('paused'), { passive: true });
-  });
-})();
 renderCards();
 renderPodcast();
 renderNews();
