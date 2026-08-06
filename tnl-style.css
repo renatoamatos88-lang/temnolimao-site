@@ -1892,6 +1892,9 @@ html.tnl-scene-on body {
 .tnl-popup-plan-card:hover, .tnl-popup-plan-card:active { animation-play-state: paused; }
 .tnl-popup-plan-card:hover { background: rgba(255,255,255,.11); border-color: rgba(255,255,255,.25); transform: translateY(-2px); }
 @media (prefers-reduced-motion: reduce) { .tnl-popup-plan-card { animation: none; } }
+.tnl-popup-plan-card--premium { background: rgba(255,194,15,.08); border-color: rgba(255,194,15,.4); }
+.tnl-popup-plan-card--premium:hover { background: rgba(255,194,15,.14); border-color: var(--amarelo); }
+.tnl-popup-plan-card--premium .tnl-popup-plan-name { color: var(--amarelo); }
 .tnl-popup-plan-name {
   font-size: .82rem; font-weight: 700; color: rgba(255,255,255,.7);
   text-transform: uppercase; letter-spacing: .06em;
