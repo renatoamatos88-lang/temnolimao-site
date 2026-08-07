@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Império Depilação — Cera de Mel · Bairro do Limão</title>
+<meta name="description" content="Depilação profissional com cera quente de mel no Bairro do Limão. Ambiente acolhedor, atendimento cuidadoso e a pele que você merece.">
+<meta name="theme-color" content="#2A1F1A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #FBF6EE;
+  --cream-2: #F3EBDD;
+  --nude: #E8D3BB;
+  --gold: #B8935A;
+  --gold-dark: #967341;
+  --dark: #1F1712;
+  --dark-2: #2D231C;
+  --brown: #6E5540;
+  --muted: #8E7D6E;
+  --rose: #D4A597;
+  --white: #FEFCF8;
+  --radius: 20px;
+  --radius-lg: 32px;
+  --shadow-sm: 0 2px 12px rgba(31,23,18,0.06);
+  --shadow-md: 0 12px 40px rgba(31,23,18,0.12);
+  --shadow-lg: 0 30px 80px rgba(31,23,18,0.18);
+  --easing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--cream);
+  color: var(--dark);
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+::selection { background: var(--gold); color: var(--white); }
+
+/* ── NAV ── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  padding: 1.25rem 2rem;
+  z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: all .4s var(--easing);
+}
+.nav.scrolled {
+  background: rgba(251, 246, 238, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: .9rem 2rem;
+  box-shadow: 0 1px 0 rgba(31,23,18,0.06);
+}
+.nav-logo {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 1.35rem;
+  letter-spacing: .02em;
+  color: var(--white);
+  transition: color .4s var(--easing);
+}
+.nav.scrolled .nav-logo { color: var(--dark); }
+.nav-logo em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold);
+}
+.nav-links {
+  display: flex; align-items: center; gap: 2.5rem;
+  list-style: none;
+}
+.nav-links a {
+  font-size: .88rem;
+  font-weight: 500;
+  color: rgba(255, 252, 248, 0.85);
+  transition: color .3s var(--easing);
+  position: relative;
+}
+.nav.scrolled .nav-links a { color: var(--dark-2); }
+.nav-links a:hover { color: var(--gold); }
+.nav-cta {
+  padding: .7rem 1.6rem;
+  background: var(--gold);
+  color: var(--white);
+  border-radius: 50px;
+  font-size: .85rem;
+  font-weight: 600;
+  transition: all .3s var(--easing);
+  display: inline-flex; align-items: center; gap: .5rem;
+}
+.nav-cta:hover { background: var(--gold-dark); transform: translateY(-1px); box-shadow: var(--shadow-sm); }
+.nav-toggle { display: none; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 8rem 2rem 4rem;
+  overflow: hidden;
+  color: var(--white);
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(31,23,18,0.55) 0%, rgba(31,23,18,0.75) 100%),
+    url('https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+  z-index: -1;
+}
+.hero-inner {
+  max-width: 1200px; margin: 0 auto;
+  width: 100%;
+  display: grid; grid-template-columns: 1.4fr 1fr;
+  gap: 4rem; align-items: center;
+}
+.hero-label {
+  display: inline-flex; align-items: center; gap: .6rem;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.8rem;
+}
+.hero-label::before {
+  content: ''; width: 32px; height: 1px; background: var(--gold);
+}
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  line-height: 1.02;
+  letter-spacing: -.02em;
+  margin-bottom: 1.6rem;
+}
+.hero h1 em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--gold);
+}
+.hero-sub {
+  font-size: 1.1rem;
+  color: rgba(255, 252, 248, 0.75);
+  max-width: 480px;
+  margin-bottom: 2.5rem;
+  line-height: 1.65;
+}
+.hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: .6rem;
+  padding: 1.1rem 2rem;
+  border-radius: 50px;
+  font-size: .95rem;
+  font-weight: 600;
+  transition: all .3s var(--easing);
+}
+.btn-primary {
+  background: var(--gold);
+  color: var(--white);
+  box-shadow: 0 10px 30px rgba(184,147,90,0.35);
+}
+.btn-primary:hover { background: var(--gold-dark); transform: translateY(-2px); box-shadow: 0 15px 40px rgba(184,147,90,0.45); }
+.btn-ghost {
+  border: 1px solid rgba(255,252,248,0.3);
+  color: var(--white);
+  background: rgba(255,252,248,0.05);
+  backdrop-filter: blur(10px);
+}
+.btn-ghost:hover { background: rgba(255,252,248,0.12); border-color: rgba(255,252,248,0.5); }
+.hero-visual {
+  display: flex; justify-content: flex-end;
+}
+.hero-card {
+  background: rgba(251, 246, 238, 0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,252,248,0.15);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  max-width: 340px;
+  width: 100%;
+}
+.hero-card-label {
+  font-size: .68rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1rem;
+}
+.hero-card h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  margin-bottom: .8rem;
+  line-height: 1.2;
+}
+.hero-card p {
+  font-size: .9rem;
+  color: rgba(255,252,248,0.7);
+  margin-bottom: 1.5rem;
+}
+.hero-badges {
+  display: flex; flex-direction: column; gap: .8rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,252,248,0.12);
+}
+.hero-badge {
+  display: flex; align-items: center; gap: .8rem;
+  font-size: .88rem;
+  color: rgba(255,252,248,0.85);
+}
+.hero-badge svg { flex-shrink: 0; color: var(--gold); }
+.scroll-hint {
+  position: absolute; bottom: 2rem; left: 50%;
+  transform: translateX(-50%);
+  font-size: .7rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase;
+  color: rgba(255,252,248,0.4);
+  display: flex; align-items: center; gap: .8rem;
+}
+.scroll-hint::after {
+  content: ''; width: 1px; height: 40px;
+  background: linear-gradient(180deg, rgba(255,252,248,0.5), transparent);
+  animation: scrollLine 2s ease-in-out infinite;
+}
+@keyframes scrollLine {
+  0%, 100% { opacity: .3; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(1.3); }
+}
+
+/* ── SECTIONS ── */
+section { padding: 7rem 2rem; }
+.container { max-width: 1200px; margin: 0 auto; }
+.section-label {
+  display: block;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+}
+.section-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -.02em;
+  margin-bottom: 1.5rem;
+}
+.section-title em { font-style: italic; color: var(--gold); }
+.section-sub {
+  font-size: 1.05rem;
+  color: var(--brown);
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+/* ── SIGNATURE (cera de mel) ── */
+.signature {
+  background: var(--cream-2);
+  position: relative;
+  overflow: hidden;
+}
+.signature-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.signature-visual {
+  position: relative;
+  aspect-ratio: 4/5;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.signature-visual img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 1.2s var(--easing);
+}
+.signature-visual:hover img { transform: scale(1.04); }
+.signature-tag {
+  position: absolute; top: 1.5rem; left: 1.5rem;
+  padding: .6rem 1.2rem;
+  background: rgba(251, 246, 238, 0.92);
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--gold-dark);
+}
+.signature-body p {
+  font-size: 1.1rem;
+  color: var(--brown);
+  margin-bottom: 1.2rem;
+  line-height: 1.75;
+}
+.signature-features {
+  list-style: none;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(31,23,18,0.1);
+  display: grid; gap: 1.2rem;
+}
+.signature-features li {
+  display: flex; gap: 1rem; align-items: flex-start;
+  font-size: .98rem;
+  color: var(--dark-2);
+}
+.check-icon {
+  flex-shrink: 0;
+  width: 24px; height: 24px;
+  background: var(--gold);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .7rem;
+  margin-top: 2px;
+}
+
+/* ── SERVICES ── */
+.services { background: var(--cream); }
+.services-header {
+  text-align: center; margin-bottom: 4rem;
+  display: flex; flex-direction: column; align-items: center;
+}
+.services-header .section-sub { text-align: center; }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.service-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 2rem;
+  transition: all .4s var(--easing);
+  border: 1px solid rgba(31,23,18,0.05);
+  position: relative;
+  overflow: hidden;
+}
+.service-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .4s var(--easing);
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.service-card:hover::before { transform: scaleX(1); }
+.service-icon {
+  width: 56px; height: 56px;
+  border-radius: 16px;
+  background: var(--cream-2);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.5rem;
+  color: var(--gold-dark);
+  font-family: 'Fraunces', serif;
+  font-size: 1.6rem;
+  font-style: italic;
+}
+.service-card h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 1.35rem;
+  margin-bottom: .6rem;
+  color: var(--dark);
+}
+.service-card p {
+  font-size: .92rem;
+  color: var(--brown);
+  margin-bottom: 1.5rem;
+  min-height: 3.2em;
+}
+.service-meta {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(31,23,18,0.06);
+  font-size: .82rem;
+}
+.service-time {
+  color: var(--muted);
+  display: flex; align-items: center; gap: .4rem;
+}
+.service-price {
+  color: var(--gold-dark);
+  font-weight: 600;
+}
+
+/* ── GALLERY ── */
+.gallery {
+  background: var(--dark);
+  color: var(--white);
+}
+.gallery .section-title { color: var(--white); }
+.gallery .section-sub { color: rgba(255,252,248,0.65); }
+.gallery-header { text-align: center; margin-bottom: 4rem; }
+.gallery-header .section-sub { margin: 0 auto; }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 240px 240px;
+  gap: 1rem;
+}
+.gallery-item {
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.gallery-item:nth-child(1) { grid-row: span 2; }
+.gallery-item img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 1s var(--easing);
+}
+.gallery-item::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(31,23,18,0.5) 100%);
+  opacity: 0;
+  transition: opacity .4s var(--easing);
+}
+.gallery-item:hover img { transform: scale(1.06); }
+.gallery-item:hover::after { opacity: 1; }
+
+/* ── TESTIMONIALS ── */
+.testimonials { background: var(--cream-2); }
+.testimonials-header { text-align: center; margin-bottom: 4rem; }
+.testimonials-header .section-sub { margin: 0 auto; }
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.testimonial {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 2.2rem;
+  display: flex; flex-direction: column;
+  gap: 1.5rem;
+  transition: transform .4s var(--easing);
+}
+.testimonial:hover { transform: translateY(-3px); }
+.testimonial-stars {
+  display: flex; gap: .2rem;
+  color: var(--gold);
+  font-size: 1rem;
+}
+.testimonial-text {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.55;
+  color: var(--dark-2);
+  flex: 1;
+}
+.testimonial-author {
+  display: flex; align-items: center; gap: 1rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(31,23,18,0.06);
+}
+.author-avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--nude);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  color: var(--dark);
+}
+.author-info { display: flex; flex-direction: column; }
+.author-name {
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+.author-meta {
+  font-size: .8rem;
+  color: var(--muted);
+}
+
+/* ── FAQ ── */
+.faq {
+  background: var(--cream);
+}
+.faq-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 5rem;
+  align-items: flex-start;
+}
+.faq-list {
+  display: flex; flex-direction: column;
+  border-top: 1px solid rgba(31,23,18,0.1);
+}
+.faq-item {
+  border-bottom: 1px solid rgba(31,23,18,0.1);
+}
+.faq-question {
+  width: 100%;
+  padding: 1.6rem 0;
+  display: flex; justify-content: space-between; align-items: center;
+  text-align: left;
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 1.15rem;
+  color: var(--dark);
+  transition: color .3s var(--easing);
+}
+.faq-question:hover { color: var(--gold-dark); }
+.faq-toggle {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--cream-2);
+  display: flex; align-items: center; justify-content: center;
+  transition: all .3s var(--easing);
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+.faq-item.open .faq-toggle {
+  background: var(--gold);
+  color: var(--white);
+  transform: rotate(45deg);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .5s var(--easing), padding .3s var(--easing);
+  color: var(--brown);
+  line-height: 1.75;
+}
+.faq-item.open .faq-answer {
+  max-height: 240px;
+  padding-bottom: 1.6rem;
+}
+
+/* ── CONTACT ── */
+.contact {
+  background: var(--dark);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.contact::before {
+  content: ''; position: absolute;
+  top: -30%; right: -20%; width: 60%; height: 100%;
+  background: radial-gradient(circle, rgba(184,147,90,0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+.contact-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  position: relative;
+}
+.contact .section-label { color: var(--gold); }
+.contact .section-title { color: var(--white); }
+.contact-info {
+  margin-top: 2.5rem;
+  display: flex; flex-direction: column; gap: 1.8rem;
+}
+.contact-item {
+  display: flex; gap: 1.2rem; align-items: flex-start;
+}
+.contact-item-icon {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: rgba(184,147,90,0.15);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+.contact-item-label {
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: .3rem;
+}
+.contact-item-value {
+  font-size: 1rem;
+  color: rgba(255,252,248,0.9);
+  line-height: 1.5;
+}
+.contact-cta {
+  margin-top: 2.5rem;
+  display: flex; gap: 1rem; flex-wrap: wrap;
+}
+.contact-map {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  border: 1px solid rgba(255,252,248,0.1);
+  background: rgba(255,252,248,0.03);
+  display: flex; align-items: center; justify-content: center;
+}
+.contact-map img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: grayscale(30%) brightness(0.85);
+}
+
+/* ── FOOTER ── */
+.footer {
+  background: #16110D;
+  color: rgba(255,252,248,0.55);
+  padding: 3rem 2rem;
+  border-top: 1px solid rgba(255,252,248,0.06);
+}
+.footer-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.footer-logo {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: var(--white);
+}
+.footer-logo em { font-style: italic; color: var(--gold); font-weight: 400; }
+.footer-note { font-size: .82rem; }
+.footer-note a { color: var(--gold); }
+.footer-social {
+  display: flex; gap: 1rem;
+}
+.footer-social a {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: rgba(255,252,248,0.05);
+  display: flex; align-items: center; justify-content: center;
+  transition: all .3s var(--easing);
+}
+.footer-social a:hover { background: var(--gold); color: var(--dark); }
+
+/* ── FLOATING WHATSAPP ── */
+.wa-float {
+  position: fixed; bottom: 1.5rem; right: 1.5rem;
+  z-index: 90;
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex; align-items: center; justify-content: center;
+  color: white;
+  box-shadow: 0 10px 30px rgba(37,211,102,0.45);
+  transition: transform .3s var(--easing);
+}
+.wa-float:hover { transform: scale(1.08); }
+.wa-float::before {
+  content: ''; position: absolute; inset: 0;
+  border-radius: 50%;
+  background: #25D366;
+  animation: pulse 2.5s ease-out infinite;
+  z-index: -1;
+}
+@keyframes pulse {
+  0% { transform: scale(1); opacity: .6; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .nav { padding: 1rem 1.25rem; }
+  .nav-links { display: none; }
+  .nav-cta { padding: .6rem 1.2rem; font-size: .8rem; }
+  .hero { padding: 7rem 1.25rem 3rem; text-align: left; }
+  .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .hero-visual { justify-content: flex-start; }
+  .hero-card { max-width: 100%; }
+  section { padding: 5rem 1.25rem; }
+  .signature-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .signature-visual { aspect-ratio: 4/3; }
+  .services-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 200px 200px 200px; }
+  .gallery-item:nth-child(1) { grid-column: span 2; grid-row: auto; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .faq-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .footer-inner { flex-direction: column; text-align: center; }
+}
+
+/* ── REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .8s var(--easing), transform .8s var(--easing);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-logo">Império<em> Depilação</em></a>
+  <ul class="nav-links">
+    <li><a href="#assinatura">Nossa cera</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#ambiente">Ambiente</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <a href="https://wa.me/5511000000000" class="nav-cta">
+    <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.83 9.83 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.82 11.82 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.88 11.88 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.48-8.413z"/></svg>
+    Agendar
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-label">Bairro do Limão · São Paulo</div>
+      <h1>A depilação<br>que sua <em>pele merece</em>.</h1>
+      <p class="hero-sub">Cera quente de mel, ambiente acolhedor e um atendimento pensado no seu conforto. Sua pele lisa, hidratada e cuidada por profissionais de confiança.</p>
+      <div class="hero-ctas">
+        <a href="https://wa.me/5511000000000" class="btn btn-primary">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.83 9.83 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.82 11.82 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.88 11.88 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.48-8.413z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+        <a href="#servicos" class="btn btn-ghost">Ver serviços</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-label">✦ Exclusivo Império</div>
+        <h3>Cera quente de mel importada</h3>
+        <p>Fórmula suave que respeita peles sensíveis e prolonga o tempo entre sessões.</p>
+        <div class="hero-badges">
+          <div class="hero-badge">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+            Menos dor, menos irritação
+          </div>
+          <div class="hero-badge">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+            Pele hidratada no fim da sessão
+          </div>
+          <div class="hero-badge">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+            Ambiente reservado e higienizado
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">Descer</div>
+</section>
+
+<!-- SIGNATURE -->
+<section class="signature" id="assinatura">
+  <div class="container signature-inner">
+    <div class="signature-visual reveal">
+      <div class="signature-tag">A nossa assinatura</div>
+      <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=1200&q=80" alt="Cera de mel">
+    </div>
+    <div class="signature-body reveal">
+      <span class="section-label">Cera Quente de Mel</span>
+      <h2 class="section-title">O carinho começa na <em>escolha da cera</em>.</h2>
+      <p>Enquanto a maioria dos salões usa cera comum, aqui no Império trabalhamos com uma cera de mel importada — mais suave, mais respeitosa e feita para peles como a sua.</p>
+      <p>Isso muda tudo. Menos vermelhidão, menos dor no puxão, e uma pele que sai da sessão hidratada de verdade.</p>
+      <ul class="signature-features">
+        <li><span class="check-icon">✓</span> <span>Fórmula suave que reduz a sensibilidade da pele</span></li>
+        <li><span class="check-icon">✓</span> <span>Puxa o pelo pela raiz, prolongando o intervalo entre sessões</span></li>
+        <li><span class="check-icon">✓</span> <span>Ideal para pele sensível, foliculite e virilha</span></li>
+        <li><span class="check-icon">✓</span> <span>Higienização entre atendimentos: nada de reaproveitamento</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="servicos">
+  <div class="container">
+    <div class="services-header reveal">
+      <span class="section-label">Serviços</span>
+      <h2 class="section-title">Cuidado completo,<br>do rosto <em>aos pés</em>.</h2>
+      <p class="section-sub">Depilação e cuidados estéticos para todas as áreas, com técnica e conforto que fazem diferença.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">♀</div>
+        <h3>Depilação Facial</h3>
+        <p>Buço, queixo, laterais do rosto e sobrancelha com precisão e delicadeza.</p>
+        <div class="service-meta">
+          <span class="service-time">⏱ 15 a 30 min</span>
+          <span class="service-price">a partir de R$25</span>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">✿</div>
+        <h3>Depilação Corporal</h3>
+        <p>Pernas, braços, axilas e abdômen. Cera de mel para pele lisa e hidratada.</p>
+        <div class="service-meta">
+          <span class="service-time">⏱ 30 a 60 min</span>
+          <span class="service-price">a partir de R$40</span>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">♥</div>
+        <h3>Depilação Íntima</h3>
+        <p>Cabine reservada, atendimento discreto e cuidado total com sua região mais sensível.</p>
+        <div class="service-meta">
+          <span class="service-time">⏱ 30 min</span>
+          <span class="service-price">a partir de R$55</span>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">✱</div>
+        <h3>Design de Sobrancelha</h3>
+        <p>Formato personalizado ao seu rosto, com opção de henna ou finalização natural.</p>
+        <div class="service-meta">
+          <span class="service-time">⏱ 30 min</span>
+          <span class="service-price">a partir de R$45</span>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">✧</div>
+        <h3>Design de Cílios</h3>
+        <p>Cílio a cílio ou volume brasileiro para um olhar mais marcante no dia a dia.</p>
+        <div class="service-meta">
+          <span class="service-time">⏱ 60 a 90 min</span>
+          <span class="service-price">a partir de R$120</span>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">◐</div>
+        <h3>Combos & Pacotes</h3>
+        <p>Combinamos áreas para você economizar. Ideal pra rotina fixa de depilação.</p>
+        <div class="service-meta">
+          <span class="service-time">⏱ Sob consulta</span>
+          <span class="service-price">valores especiais</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="ambiente">
+  <div class="container">
+    <div class="gallery-header reveal">
+      <span class="section-label">Ambiente</span>
+      <h2 class="section-title">Um espaço pensado<br>pro seu <em>bem-estar</em>.</h2>
+      <p class="section-sub">Cabines reservadas, higienização rigorosa e uma equipe que sabe fazer você se sentir em casa.</p>
+    </div>
+
+    <div class="gallery-grid reveal">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80" alt="Recepção">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=800&q=80" alt="Cabine">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" alt="Detalhe">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&w=800&q=80" alt="Produtos">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=800&q=80" alt="Espaço">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <div class="testimonials-header reveal">
+      <span class="section-label">Depoimentos</span>
+      <h2 class="section-title">Quem passa, <em>volta</em>.</h2>
+      <p class="section-sub">Mais de uma década cuidando das mulheres do Bairro do Limão. E elas contam a diferença.</p>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"A cera de mel muda tudo. Já fiz em vários lugares, mas aqui é o único que minha pele não fica irritada. Virei cliente fiel."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">M</div>
+          <div class="author-info">
+            <span class="author-name">Marina S.</span>
+            <span class="author-meta">Cliente há 3 anos</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Atendimento maravilhoso, cabine super reservada e limpa. Chego relaxada e saio ainda mais. Recomendo pra todas as amigas."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">P</div>
+          <div class="author-info">
+            <span class="author-name">Patrícia R.</span>
+            <span class="author-meta">Cliente há 2 anos</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Depois que descobri o Império, não faço em outro lugar. A técnica delas dura mais, e o preço é super justo. Amo."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">J</div>
+          <div class="author-info">
+            <span class="author-name">Juliana M.</span>
+            <span class="author-meta">Cliente há 4 anos</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container faq-inner">
+    <div class="reveal">
+      <span class="section-label">Dúvidas comuns</span>
+      <h2 class="section-title">Antes da sua<br><em>primeira sessão</em>.</h2>
+      <p class="section-sub">Se ficar qualquer dúvida, chama a gente no WhatsApp — a gente responde rapidinho.</p>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-question">
+          Preciso deixar o pelo crescer antes?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">O ideal é o pelo estar com pelo menos 3-5mm, para que a cera consiga puxar direitinho pela raiz. Se você depilou com lâmina recentemente, espere de 10 a 15 dias.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          Dói muito?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">A nossa cera de mel foi escolhida justamente pra reduzir o desconforto. Nas primeiras sessões incomoda um pouco, mas o corpo se acostuma rápido e a dor diminui muito com o tempo.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          Quanto tempo dura a depilação?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">Como puxamos pela raiz, o pelo demora de 3 a 4 semanas pra voltar. Com o tempo, ele nasce mais fino e mais ralo.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          Vocês atendem grávidas?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">Sim, com todo cuidado. A cera de mel é segura durante a gestação, e nossa equipe está preparada pra te acolher em qualquer trimestre.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          Precisa marcar horário?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">Sim, atendemos com hora marcada pra garantir seu conforto. Basta chamar no WhatsApp que a gente encaixa você o quanto antes.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contato">
+  <div class="container contact-inner">
+    <div class="reveal">
+      <span class="section-label">Contato</span>
+      <h2 class="section-title">Vem<br><em>conhecer a gente</em>.</h2>
+      <p class="section-sub" style="color: rgba(255,252,248,0.7);">Estamos no coração do Bairro do Limão, prontas pra receber você.</p>
+
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Endereço</div>
+            <div class="contact-item-value">Bairro do Limão, São Paulo — SP</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Horário</div>
+            <div class="contact-item-value">Segunda a Sábado · 9h às 19h<br>Atendimento com hora marcada</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">WhatsApp</div>
+            <div class="contact-item-value">(11) 00000-0000</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-cta">
+        <a href="https://wa.me/5511000000000" class="btn btn-primary">Agendar pelo WhatsApp</a>
+        <a href="https://instagram.com/depilacao.limao" class="btn btn-ghost">@depilacao.limao</a>
+      </div>
+    </div>
+
+    <div class="contact-map reveal">
+      <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1200&q=80" alt="Mapa">
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">Império<em> Depilação</em></div>
+    <div class="footer-note">
+      Site desenvolvido pelo <a href="https://www.temnolimao.com.br" target="_blank">Tem no Limão 🍋</a> · Bairro do Limão, SP
+    </div>
+    <div class="footer-social">
+      <a href="https://instagram.com/depilacao.limao" title="Instagram">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a href="https://facebook.com/imperiodepilacao" title="Facebook">
+        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WA -->
+<a href="https://wa.me/5511000000000" class="wa-float" title="Fale conosco">
+  <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.83 9.83 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.82 11.82 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.88 11.88 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.48-8.413z"/></svg>
+</a>
+
+<script>
+// Nav scroll effect
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// FAQ toggle
+document.querySelectorAll('.faq-question').forEach(q => {
+  q.addEventListener('click', () => {
+    q.parentElement.classList.toggle('open');
+  });
+});
+
+// Reveal on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
