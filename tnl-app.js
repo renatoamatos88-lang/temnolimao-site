@@ -182,6 +182,16 @@ const _vagasDefault = [
     requisitos:'Boa comunicação · Organização e proatividade · Facilidade para trabalhar em equipe · Gostar de vendas e atendimento · Facilidade com redes sociais e ferramentas digitais · Foco em resultados. Diferencial: experiência com vendas ou no segmento de moda/semijoias e criação de conteúdo (Instagram, WhatsApp Business).',
     dataPublicacao:'2026-08-05',
     wpp:'https://wa.me/5511961848460?text=Oi!%20Vi%20a%20vaga%20de%20Consultora%20de%20Vendas%20(Stella%20Semi-j%C3%B3ias)%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse!' },
+  { cargo:'Ajudante Geral', empresa:'Grafíssima Comunicação Visual', tipo:'Temporário', area:'Indústria', sal:'A combinar', local:'Bairro do Limão, SP', tempo:'Novo', icon:'🖨️',
+    desc:'Vaga temporária com possibilidade de efetivação em gráfica/comunicação visual. Envie seu currículo para o e-mail abaixo.',
+    horario:'Segunda a Sexta · 8h às 18h',
+    dataPublicacao:'2026-08-10',
+    wpp:'mailto:rh@grafissima.com.br?subject=Vim%20pelo%20Tem%20no%20Lim%C3%A3o%20-%20Vaga%20Ajudante%20Geral&body=Ol%C3%A1!%20Vi%20a%20vaga%20de%20Ajudante%20Geral%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20e%20tenho%20interesse.%20Segue%20meu%20curr%C3%ADculo%20em%20anexo.' },
+  { cargo:'Auxiliar de Confeitaria', empresa:'Bolos Paris Banoffee', tipo:'CLT', area:'Alimentação', sal:'A combinar + Benefícios (VR, VT, descontos em produtos)', local:'Bairro do Limão, SP', tempo:'Novo', icon:'🍰',
+    desc:'Venha fazer parte da equipe e adoçar momentos especiais. Oferecemos vale-refeição, vale-transporte, descontos em produtos e ambiente acolhedor.',
+    horario:'Segunda a Sexta · 9h às 18h · Sábado até 13h',
+    dataPublicacao:'2026-08-10',
+    wpp:'https://wa.me/5511961634544?text=Oi!%20Vi%20a%20vaga%20de%20Auxiliar%20de%20Confeitaria%20(Bolos%20Paris%20Banoffee)%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse!' },
 ];
 let vagas = [..._vagasDefault];
 
