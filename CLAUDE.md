@@ -218,3 +218,4 @@ Stack: Next.js 15 + TypeScript + Supabase + Tailwind + shadcn/ui + gateway a def
 - [`docs/GUIA-EDICAO.md`](docs/GUIA-EDICAO.md) — adicionar/editar conteúdo
 - [`docs/DECISOES-PRODUTO.md`](docs/DECISOES-PRODUTO.md) — decisões de produto com histórico
 - [`docs/ROADMAP.md`](docs/ROADMAP.md) — migração para v2
+- [`docs/AUDITORIA-PARCEIROS.md`](docs/AUDITORIA-PARCEIROS.md) — **linha de negócio "venda de sites"** (Criação R$1.000, Redesign R$1.000, Cuidado&Crescimento R$350/mês, separada dos planos Parceiro/Destaque de diretório): regras de ouro, classificação dos 60 parceiros por presença digital, templates de mensagem prontos, demos em `demos/*.html`, status de contato em andamento
