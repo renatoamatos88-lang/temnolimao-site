@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dias Gomes — Fisioterapia · Bairro do Limão, SP</title>
+<meta name="description" content="Clínica de fisioterapia com atendimento humanizado e equipe de especialistas dedicados. Bairro do Limão, São Paulo.">
+<meta name="theme-color" content="#1E4D4A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal: #1E4D4A;
+  --teal-dark: #123331;
+  --teal-light: #4F7D79;
+  --mint: #E9F0EC;
+  --mint-2: #DCE7E1;
+  --cream: #F7F5EF;
+  --coral: #D97748;
+  --coral-dark: #B85F35;
+  --ink: #182422;
+  --ink-2: #2C3835;
+  --muted: #7A8A86;
+  --border: rgba(24,36,34,0.08);
+  --white: #FEFDFB;
+  --radius: 20px;
+  --radius-lg: 32px;
+  --shadow-sm: 0 2px 12px rgba(18,51,49,0.06);
+  --shadow-md: 0 12px 40px rgba(18,51,49,0.10);
+  --shadow-lg: 0 30px 80px rgba(18,51,49,0.16);
+  --easing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.65;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+::selection { background: var(--teal); color: var(--white); }
+
+/* banner de demo — só pra referência interna, remover antes de publicar */
+.demo-banner {
+  background: var(--coral); color: var(--white); text-align: center;
+  font-size: .8rem; font-weight: 600; padding: .6rem 1rem; letter-spacing: .02em;
+}
+
+/* ── NAV ── */
+.nav { position: fixed; top: 34px; left: 0; right: 0; padding: 1.2rem 2.5rem; z-index: 100; display: flex; align-items: center; justify-content: space-between; transition: all .4s var(--easing); }
+.nav.scrolled { background: rgba(247, 245, 239, 0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: .8rem 2.5rem; box-shadow: 0 1px 0 rgba(18,51,49,0.06); }
+.nav-logo { display: flex; align-items: center; gap: .8rem; }
+.nav-logo-mark { width: 44px; height: 44px; border-radius: 10px; overflow: hidden; background: var(--white); box-shadow: 0 4px 12px rgba(18,51,49,0.25); flex-shrink: 0; }
+.nav-logo-mark img { width: 100%; height: 100%; object-fit: contain; }
+.nav-logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+.nav-logo-name { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.15rem; color: var(--white); transition: color .4s var(--easing); }
+.nav-logo-label { font-size: .66rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--mint-2); margin-top: 2px; transition: color .4s var(--easing); }
+.nav.scrolled .nav-logo-name { color: var(--teal-dark); }
+.nav.scrolled .nav-logo-label { color: var(--coral-dark); }
+.nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
+.nav-links a { font-size: .88rem; font-weight: 500; color: rgba(255,253,251,0.85); transition: color .3s var(--easing); }
+.nav.scrolled .nav-links a { color: var(--ink-2); }
+.nav-links a:hover { color: var(--coral); }
+.nav-cta { padding: .7rem 1.6rem; background: var(--coral); color: var(--white); border-radius: 50px; font-size: .85rem; font-weight: 600; transition: all .3s var(--easing); }
+.nav-cta:hover { background: var(--coral-dark); transform: translateY(-1px); box-shadow: var(--shadow-sm); }
+
+/* ── HERO ── */
+.hero { min-height: 100vh; position: relative; display: flex; align-items: center; padding: 9rem 2.5rem 5rem; overflow: hidden; color: var(--white); }
+.hero-bg { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(18,51,49,0.62) 0%, rgba(18,51,49,0.82) 100%), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat; z-index: -1; }
+.hero-inner { max-width: 1200px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1.3fr 1fr; gap: 4rem; align-items: center; }
+.hero-label { display: inline-flex; align-items: center; gap: .7rem; font-size: .72rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--coral); margin-bottom: 2rem; }
+.hero-label::before { content: ''; width: 36px; height: 1px; background: var(--coral); }
+.hero h1 { font-family: 'Fraunces', serif; font-weight: 400; font-size: clamp(2.6rem, 5.5vw, 4.6rem); line-height: 1.05; letter-spacing: -.02em; margin-bottom: 1.8rem; }
+.hero h1 em { font-style: italic; font-weight: 300; color: var(--coral); }
+.hero-sub { font-size: 1.1rem; color: rgba(255,253,251,0.8); max-width: 480px; margin-bottom: 2.5rem; line-height: 1.7; }
+.hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; gap: .6rem; padding: 1.1rem 2.1rem; border-radius: 50px; font-size: .95rem; font-weight: 600; transition: all .3s var(--easing); }
+.btn-primary { background: var(--coral); color: var(--white); box-shadow: 0 10px 30px rgba(217,119,72,0.35); }
+.btn-primary:hover { background: var(--coral-dark); transform: translateY(-2px); box-shadow: 0 15px 40px rgba(217,119,72,0.45); }
+.btn-ghost { border: 1px solid rgba(255,253,251,0.3); color: var(--white); background: rgba(255,253,251,0.05); backdrop-filter: blur(10px); }
+.btn-ghost:hover { background: rgba(255,253,251,0.12); border-color: rgba(255,253,251,0.5); }
+.hero-panel { padding: 2.5rem; background: rgba(247,245,239,0.06); backdrop-filter: blur(20px); border: 1px solid rgba(255,253,251,0.15); border-radius: var(--radius-lg); }
+.hero-panel-label { font-size: .68rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--coral); margin-bottom: 1.2rem; }
+.hero-panel-title { font-family: 'Fraunces', serif; font-weight: 400; font-size: 1.3rem; line-height: 1.35; color: var(--white); margin-bottom: 1.5rem; }
+.hero-panel-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,253,251,0.12); }
+.hero-panel-list li { display: flex; gap: .8rem; align-items: center; font-size: .92rem; color: rgba(255,253,251,0.88); }
+.hero-panel-list svg { flex-shrink: 0; color: var(--coral); }
+
+/* ── SECTIONS ── */
+section { padding: 7.5rem 2.5rem; }
+.container { max-width: 1200px; margin: 0 auto; }
+.section-label { display: block; font-size: .72rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--coral); margin-bottom: 1.4rem; }
+.section-title { font-family: 'Fraunces', serif; font-weight: 400; font-size: clamp(2rem, 4.5vw, 3.3rem); line-height: 1.08; letter-spacing: -.02em; color: var(--teal-dark); margin-bottom: 1.5rem; }
+.section-title em { font-style: italic; color: var(--coral); font-weight: 300; }
+.section-sub { font-size: 1.05rem; color: var(--teal-light); max-width: 620px; line-height: 1.75; }
+
+/* ── ABOUT ── */
+.about { background: var(--white); }
+.about-inner { display: grid; grid-template-columns: 1fr 1.15fr; gap: 5rem; align-items: center; }
+.about-visual { position: relative; aspect-ratio: 4/5; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
+.about-visual img { width: 100%; height: 100%; object-fit: cover; }
+.about-badge { position: absolute; bottom: 1.5rem; left: 1.5rem; padding: .8rem 1.4rem; background: rgba(247,245,239,0.95); backdrop-filter: blur(10px); border-radius: 50px; display: flex; align-items: center; gap: .6rem; font-size: .8rem; font-weight: 600; color: var(--teal-dark); }
+.about-badge-dot { width: 8px; height: 8px; background: #4CAF50; border-radius: 50%; animation: pulse-dot 2s ease-in-out infinite; }
+@keyframes pulse-dot { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .6; transform: scale(1.2); } }
+.about-body p { font-size: 1.05rem; color: var(--ink-2); margin-bottom: 1.3rem; line-height: 1.8; }
+.about-credentials { margin-top: 2.5rem; padding-top: 2.5rem; border-top: 1px solid var(--border); display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.credential { display: flex; gap: 1rem; align-items: flex-start; }
+.credential-icon { width: 40px; height: 40px; border-radius: 12px; background: var(--mint); color: var(--teal-dark); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.credential-label { font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--coral); margin-bottom: .3rem; }
+.credential-value { font-size: .95rem; font-weight: 500; color: var(--ink); line-height: 1.4; }
+
+/* ── ESPECIALIDADES ── */
+.specialties { background: var(--mint); }
+.specialties-header { text-align: center; margin-bottom: 4.5rem; display: flex; flex-direction: column; align-items: center; }
+.specialties-header .section-sub { text-align: center; }
+.specialties-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+.specialty-card { background: var(--white); border-radius: var(--radius); padding: 2.2rem; transition: all .4s var(--easing); border: 1px solid var(--border); position: relative; overflow: hidden; }
+.specialty-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--coral); transform: scaleX(0); transform-origin: left; transition: transform .4s var(--easing); }
+.specialty-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.specialty-card:hover::before { transform: scaleX(1); }
+.specialty-icon { width: 56px; height: 56px; border-radius: 16px; background: var(--mint-2); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: var(--teal-dark); }
+.specialty-card h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.3rem; margin-bottom: .6rem; color: var(--teal-dark); }
+.specialty-card p { font-size: .92rem; color: var(--ink-2); margin-bottom: 1.4rem; }
+.specialty-link { font-size: .85rem; font-weight: 600; color: var(--coral-dark); }
+
+/* ── HOW ── */
+.how { background: var(--teal-dark); color: var(--white); position: relative; overflow: hidden; }
+.how::before { content: ''; position: absolute; top: -30%; right: -20%; width: 60%; height: 100%; background: radial-gradient(circle, rgba(217,119,72,0.18) 0%, transparent 60%); pointer-events: none; }
+.how-header { text-align: center; margin-bottom: 5rem; position: relative; }
+.how .section-label { color: var(--coral); }
+.how .section-title { color: var(--white); }
+.how .section-sub { color: rgba(255,253,251,0.7); margin: 0 auto; }
+.how-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; position: relative; }
+.how-step { padding: 2.5rem; background: rgba(247,245,239,0.04); backdrop-filter: blur(10px); border: 1px solid rgba(255,253,251,0.08); border-radius: var(--radius-lg); transition: all .4s var(--easing); }
+.how-step:hover { background: rgba(247,245,239,0.08); transform: translateY(-4px); }
+.how-step-num { font-family: 'Fraunces', serif; font-weight: 300; font-style: italic; font-size: 3rem; color: var(--coral); line-height: 1; margin-bottom: 1.5rem; }
+.how-step h3 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 1.35rem; color: var(--white); margin-bottom: .8rem; }
+.how-step p { color: rgba(255,253,251,0.7); font-size: .95rem; line-height: 1.65; }
+
+/* ── FAQ ── */
+.faq { background: var(--white); }
+.faq-inner { display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; align-items: flex-start; }
+.faq-list { display: flex; flex-direction: column; border-top: 1px solid var(--border); }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-question { width: 100%; padding: 1.6rem 0; display: flex; justify-content: space-between; align-items: center; text-align: left; font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.1rem; color: var(--teal-dark); }
+.faq-question:hover { color: var(--coral-dark); }
+.faq-toggle { width: 32px; height: 32px; border-radius: 50%; background: var(--mint); display: flex; align-items: center; justify-content: center; transition: all .3s var(--easing); flex-shrink: 0; margin-left: 1rem; }
+.faq-item.open .faq-toggle { background: var(--coral); color: var(--white); transform: rotate(45deg); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height .5s var(--easing), padding .3s var(--easing); color: var(--ink-2); line-height: 1.75; }
+.faq-item.open .faq-answer { max-height: 240px; padding-bottom: 1.6rem; }
+
+/* ── CONTACT ── */
+.contact { background: var(--teal); color: var(--white); position: relative; overflow: hidden; }
+.contact::before { content: ''; position: absolute; top: -30%; right: -20%; width: 60%; height: 100%; background: radial-gradient(circle, rgba(217,119,72,0.18) 0%, transparent 60%); pointer-events: none; }
+.contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; position: relative; }
+.contact .section-label { color: var(--coral); }
+.contact .section-title { color: var(--white); }
+.contact-info { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.8rem; }
+.contact-item { display: flex; gap: 1.2rem; align-items: flex-start; }
+.contact-item-icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(247,245,239,0.12); display: flex; align-items: center; justify-content: center; color: var(--coral); flex-shrink: 0; }
+.contact-item-label { font-size: .72rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--coral); margin-bottom: .3rem; }
+.contact-item-value { font-size: 1rem; color: rgba(255,253,251,0.92); line-height: 1.5; }
+.contact-cta { margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+.contact-map { border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 4/5; border: 1px solid rgba(255,253,251,0.1); background: rgba(255,253,251,0.03); }
+.contact-map img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%) brightness(0.9); }
+
+/* ── FOOTER ── */
+.footer { background: #0F2A28; color: rgba(255,253,251,0.55); padding: 3rem 2.5rem; border-top: 1px solid rgba(255,253,251,0.06); }
+.footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+.footer-brand { display: flex; align-items: center; gap: .7rem; }
+.footer-brand-mark { width: 34px; height: 34px; border-radius: 8px; overflow: hidden; flex-shrink: 0; background: var(--white); }
+.footer-brand-mark img { width: 100%; height: 100%; object-fit: contain; }
+.footer-brand-name { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.1rem; color: var(--white); }
+.footer-note { font-size: .82rem; display: flex; align-items: center; gap: .5rem; }
+.footer-note img { width: 20px; height: 20px; border-radius: 5px; }
+.footer-note a { color: var(--coral); }
+.footer-social { display: flex; gap: 1rem; }
+.footer-social a { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,253,251,0.05); display: flex; align-items: center; justify-content: center; transition: all .3s var(--easing); }
+.footer-social a:hover { background: var(--coral); }
+
+/* ── WHATSAPP FLOAT ── */
+.wa-float { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 90; width: 60px; height: 60px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; color: white; box-shadow: 0 10px 30px rgba(37,211,102,0.45); transition: transform .3s var(--easing); }
+.wa-float:hover { transform: scale(1.08); }
+.wa-float::before { content: ''; position: absolute; inset: 0; border-radius: 50%; background: #25D366; animation: pulse-wa 2.5s ease-out infinite; z-index: -1; }
+@keyframes pulse-wa { 0% { transform: scale(1); opacity: .6; } 100% { transform: scale(1.6); opacity: 0; } }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .nav { top: 30px; padding: 1rem 1.25rem; }
+  .nav-links { display: none; }
+  .nav-cta { padding: .6rem 1.2rem; font-size: .8rem; }
+  .hero { padding: 8rem 1.25rem 3rem; }
+  .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  section { padding: 5rem 1.25rem; }
+  .about-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .about-visual { aspect-ratio: 4/3; }
+  .about-credentials { grid-template-columns: 1fr; }
+  .specialties-grid { grid-template-columns: 1fr; }
+  .faq-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .footer-inner { flex-direction: column; text-align: center; }
+}
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s var(--easing), transform .8s var(--easing); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<div class="demo-banner">PRÉVIA — redesign Dias Gomes · Tem no Limão (não é o site publicado, exemplo com dados reais do cadastro)</div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-logo">
+    <span class="nav-logo-mark"><img src="../logo-dias-gomes.webp" alt="Dias Gomes"></span>
+    <span class="nav-logo-text">
+      <span class="nav-logo-name">Dias Gomes</span>
+      <span class="nav-logo-label">Fisioterapia</span>
+    </span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#especialidades">Especialidades</a></li>
+    <li><a href="#como-funciona">Como funciona</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <a href="https://wa.me/5511947425564" class="nav-cta">Agendar</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-label">Bairro do Limão · São Paulo</div>
+      <h1>Fisioterapia que <em>devolve seu movimento</em>.</h1>
+      <p class="hero-sub">Atendimento humanizado com uma equipe de especialistas dedicados, focado em recuperar seu corpo no seu tempo — sem pressa, com acompanhamento de perto.</p>
+      <div class="hero-ctas">
+        <a href="https://wa.me/5511947425564" class="btn btn-primary">Agendar pelo WhatsApp</a>
+        <a href="#especialidades" class="btn btn-ghost">Ver especialidades</a>
+      </div>
+    </div>
+    <div class="hero-panel">
+      <div class="hero-panel-label">Por que a Dias Gomes</div>
+      <p class="hero-panel-title">Cuidado próximo, do jeito que a fisioterapia deveria ser.</p>
+      <ul class="hero-panel-list">
+        <li><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Atendimento humanizado, sem pressa</li>
+        <li><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Equipe de especialistas dedicados</li>
+        <li><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>No coração do Bairro do Limão</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="sobre">
+  <div class="container about-inner">
+    <div class="about-visual reveal">
+      <img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?auto=format&fit=crop&w=1200&q=80" alt="Atendimento de fisioterapia">
+      <div class="about-badge"><span class="about-badge-dot"></span>Agendando novos horários</div>
+    </div>
+    <div class="about-body reveal">
+      <span class="section-label">Sobre a clínica</span>
+      <h2 class="section-title">Especialistas dedicados a <em>cuidar de você</em>.</h2>
+      <p>A Dias Gomes é uma clínica de fisioterapia no Bairro do Limão, feita para quem busca um atendimento próximo, atencioso e realmente acompanhado — do primeiro dia até a alta.</p>
+      <p>Cada tratamento é pensado a partir da sua queixa e do seu histórico, com uma equipe pronta pra explicar cada etapa da sua recuperação.</p>
+      <div class="about-credentials">
+        <div class="credential">
+          <div class="credential-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><div class="credential-label">Endereço</div><div class="credential-value">Rua Roque de Morais, 131 – Limão</div></div>
+        </div>
+        <div class="credential">
+          <div class="credential-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div><div class="credential-label">Horário</div><div class="credential-value">Seg–Sex, 8h–18h</div></div>
+        </div>
+        <div class="credential">
+          <div class="credential-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2l3 6 6 1-4.5 4.5L18 20l-6-3-6 3 1.5-6.5L3 9l6-1z"/></svg></div>
+          <div><div class="credential-label">Abordagem</div><div class="credential-value">Atendimento humanizado</div></div>
+        </div>
+        <div class="credential">
+          <div class="credential-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg></div>
+          <div><div class="credential-label">Modalidade</div><div class="credential-value">Presencial, com hora marcada</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESPECIALIDADES -->
+<section class="specialties" id="especialidades">
+  <div class="container">
+    <div class="specialties-header reveal">
+      <span class="section-label">Especialidades</span>
+      <h2 class="section-title">Tratamento pra cada <em>fase da recuperação</em>.</h2>
+      <p class="section-sub">Exemplo de organização por especialidade — confirmar com a Dias Gomes os serviços exatos oferecidos hoje antes de publicar.</p>
+    </div>
+    <div class="specialties-grid">
+      <div class="specialty-card reveal">
+        <div class="specialty-icon"><svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 12h.01M18 12h.01M6 12a6 6 0 0 1 12 0M6 12v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3v-3"/></svg></div>
+        <h3>Fisioterapia Ortopédica</h3>
+        <p>Tratamento de dores, lesões e limitações de movimento em articulações, músculos e coluna.</p>
+        <span class="specialty-link">Perguntar sobre →</span>
+      </div>
+      <div class="specialty-card reveal">
+        <div class="specialty-icon"><svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></div>
+        <h3>Fisioterapia Esportiva</h3>
+        <p>Prevenção e recuperação de lesões pra quem pratica atividade física com regularidade.</p>
+        <span class="specialty-link">Perguntar sobre →</span>
+      </div>
+      <div class="specialty-card reveal">
+        <div class="specialty-icon"><svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <h3>RPG & Pilates Clínico</h3>
+        <p>Reeducação postural e fortalecimento com acompanhamento individualizado.</p>
+        <span class="specialty-link">Perguntar sobre →</span>
+      </div>
+      <div class="specialty-card reveal">
+        <div class="specialty-icon"><svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h3>Reabilitação Pós-Cirúrgica</h3>
+        <p>Acompanhamento próximo na recuperação depois de procedimentos cirúrgicos.</p>
+        <span class="specialty-link">Perguntar sobre →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="how" id="como-funciona">
+  <div class="container">
+    <div class="how-header reveal">
+      <span class="section-label">Como funciona</span>
+      <h2 class="section-title">Três passos até sua <em>primeira sessão</em>.</h2>
+      <p class="section-sub">Simples, sem burocracia. Você chama, a gente combina o melhor horário pra você.</p>
+    </div>
+    <div class="how-steps">
+      <div class="how-step reveal"><div class="how-step-num">01</div><h3>Você chama no WhatsApp</h3><p>Conta brevemente sua queixa ou o motivo do tratamento. A gente te orienta sobre os próximos passos.</p></div>
+      <div class="how-step reveal"><div class="how-step-num">02</div><h3>Avaliação inicial</h3><p>Uma primeira consulta pra entender seu histórico e montar o plano de tratamento ideal.</p></div>
+      <div class="how-step reveal"><div class="how-step-num">03</div><h3>Acompanhamento contínuo</h3><p>Sessões regulares com a mesma equipe, acompanhando sua evolução de perto.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container faq-inner">
+    <div class="reveal">
+      <span class="section-label">Dúvidas comuns</span>
+      <h2 class="section-title">Antes da sua <em>primeira consulta</em>.</h2>
+      <p class="section-sub">Qualquer dúvida, chama no WhatsApp — a gente responde rapidinho.</p>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item"><button class="faq-question">Preciso de encaminhamento médico?<span class="faq-toggle">+</span></button><div class="faq-answer">Chama a gente no WhatsApp pra confirmar o que é necessário pro seu caso específico.</div></div>
+      <div class="faq-item"><button class="faq-question">Vocês atendem por convênio?<span class="faq-toggle">+</span></button><div class="faq-answer">Chama no WhatsApp pra confirmar convênios aceitos e valores de particular.</div></div>
+      <div class="faq-item"><button class="faq-question">Quanto tempo dura o tratamento?<span class="faq-toggle">+</span></button><div class="faq-answer">Varia de acordo com cada caso — na avaliação inicial a equipe te passa uma estimativa.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contact" id="contato">
+  <div class="container contact-inner">
+    <div class="reveal">
+      <span class="section-label">Contato</span>
+      <h2 class="section-title">Vamos cuidar do seu <em>movimento</em>?</h2>
+      <p class="section-sub" style="color: rgba(255,253,251,0.75);">Chama no WhatsApp e conta o que você está sentindo.</p>
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-item-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><div class="contact-item-label">Endereço</div><div class="contact-item-value">Rua Roque de Morais, 131 – Limão, SP</div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div><div class="contact-item-label">Horário</div><div class="contact-item-value">Seg–Sex, 8h–18h</div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074z"/></svg></div>
+          <div><div class="contact-item-label">WhatsApp</div><div class="contact-item-value">(11) 94742-5564</div></div>
+        </div>
+      </div>
+      <div class="contact-cta"><a href="https://wa.me/5511947425564" class="btn btn-primary">Agendar pelo WhatsApp</a></div>
+    </div>
+    <div class="contact-map reveal"><img src="https://images.unsplash.com/photo-1512678080530-7760d81faba6?auto=format&fit=crop&w=1200&q=80" alt="Localização"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-brand-mark"><img src="../logo-dias-gomes.webp" alt="Dias Gomes"></div>
+      <span class="footer-brand-name">Dias Gomes Fisioterapia</span>
+    </div>
+    <div class="footer-note"><img src="../logo-tnl.png" alt="Tem no Limão">Site desenvolvido pelo <a href="https://www.temnolimao.com.br" target="_blank">Tem no Limão 🍋</a></div>
+    <div class="footer-social">
+      <a href="https://wa.me/5511947425564" title="WhatsApp"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074z"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/5511947425564" class="wa-float" title="Fale conosco">
+  <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.83 9.83 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.82 11.82 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.88 11.88 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.48-8.413z"/></svg>
+</a>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); });
+document.querySelectorAll('.faq-question').forEach(q => { q.addEventListener('click', () => { q.parentElement.classList.toggle('open'); }); });
+const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
