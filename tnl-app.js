@@ -192,6 +192,12 @@ const _vagasDefault = [
     horario:'Segunda a Sexta · 9h às 18h · Sábado até 13h',
     dataPublicacao:'2026-08-10',
     wpp:'https://wa.me/5511961634544?text=Oi!%20Vi%20a%20vaga%20de%20Auxiliar%20de%20Confeitaria%20(Bolos%20Paris%20Banoffee)%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse!' },
+  { cargo:'Cuidador(a)', empresa:'Chácara Mandaqui', tipo:'CLT', area:'Saúde', sal:'A combinar', local:'Mandaqui — Zona Norte, SP', tempo:'Novo', icon:'❤️',
+    desc:'Cuidados com os idosos residentes na Casa de Repouso Chácara Mandaqui — acompanhamento diário e apoio no bem-estar dos residentes.',
+    horario:'Regime 12x36 · Das 06h às 18h',
+    requisitos:'Diferencial: estar cursando Graduação em Enfermagem · Diferencial: residir na Zona Norte',
+    dataPublicacao:'2026-08-14',
+    wpp:'https://wa.me/5511982761235?text=Oi!%20Vi%20a%20vaga%20de%20Cuidador(a)%20(Ch%C3%A1cara%20Mandaqui)%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse!' },
 ];
 let vagas = [..._vagasDefault];
 
