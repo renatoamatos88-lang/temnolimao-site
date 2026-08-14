@@ -6,6 +6,18 @@
 
 ---
 
+## 📤 Fila de envio — manhã de 12/08/2026
+
+Renato decidiu enviar tudo de uma vez amanhã de manhã em vez de mandar na hora. Textos prontos já redigidos (ver seções B/Template B e Template A abaixo pros modelos-base; versões já personalizadas por negócio ficaram só no chat da sessão de 11/08, não duplicadas aqui — se precisar re-gerar, os dados técnicos estão nas tabelas desta página).
+
+**Follow-ups (2):** Elisangela (esclarecimento demo — texto pronto na seção "Mensagem de esclarecimento" abaixo), Dias Gomes (recuperação — confirmar se já não foi enviada antes)
+
+**Template B — redesign R$1.000, problema técnico confirmado (7):** HK Consultoria ⚠️ prioridade (SSL expirado), Van Gogh, MRI Tecnologia, Instituto Musicando, Hurbana Soluções, Dra Mayte Peres, Felix e Navarro
+
+**Template A — criação R$1.000, sem site nicho alto valor (6):** Zani Adv, ADV Partners (⚠️ mesmo WA da Hurbana — não confundir), Barbara Valieri, Karen Alves Nail, Arnaldo Personal, United Life
+
+---
+
 ## Regras de ouro
 
 1. **Demo-first pros leads de prioridade alta (atualizado 11/08/2026).** Observação do Renato: mensagens de texto puro (Template A/B/C) recebem pouca resposta; quando manda um demo visual junto, a taxa de resposta é muito maior — a pessoa vê o nome/contato/endereço dela num site bonito e sente propriedade imediata ("isso já é meu"), não uma oferta genérica.
@@ -307,18 +319,38 @@ Se der pra abordar todos, ótimo. Se precisar priorizar, começa pelos que já r
 
 ---
 
-## Status de contato — 11/08/2026
+## Status de contato — 14/08/2026
 
 ### Já enviados
 | Negócio | O que foi mandado | Status |
 |---|---|---|
-| Império Depilação | Demo | Aguardando resposta |
-| Carrelli Corretora | Demo | Aguardando resposta |
-| Elisangela Gregori | Demo | Respondeu "já vi que já está no ar" — precisa esclarecer que é demonstração, não site publicado de verdade. Ver mensagem de esclarecimento pendente de envio |
-| Miranda Odontologia | Template A (errado — tinha site) | Respondeu "já temos site". Recuperação já enviada |
-| Dias Gomes | Template A (errado — tinha site) | Ainda não respondeu. Recuperação proativa preparada, confirmar se foi enviada |
+| Império Depilação | Demo (07/08) + follow-up (11/08) | Sem resposta nos dois contatos — considerar pausar por ora, não insistir num 3º toque |
+| Carrelli Corretora (Roberto) | Demo + follow-up (11/08) | Respondeu "vou olhar sim" (11/08) — aguardando, contato recente, não precisa novo toque ainda |
+| Elisangela Gregori | Demo + esclarecimento + opções (redesign x cuidado) | "Pra mim ficou tudo ok" → "vou dar uma analisada, pode ser?" (terça) — 3 dias sem retorno, follow-up leve recomendado agora |
+| Miranda Odontologia | Template A (errado — tinha site) | Respondeu "já temos site". Recuperação já enviada, caso resolvido |
+| Dias Gomes (contato: Juliana) | Recuperação + demo redesign (`demos/dias-gomes.html`) | Respondeu "Pode sim" à recuperação; demo enviado na quarta, sem resposta desde então — follow-up recomendado |
+| Thaís (lead fora do diretório, indicação do Gui — ver [[project_thais_lead]] na memória) | Proposta em fases (institucional + portal dos pais) | Perguntou se dá pra desacoplar site da mensalidade — respondido por áudio (12/08, "sim, sem problema") — sem confirmação de fechamento desde então, follow-up recomendado |
+| Leandro | Proposta PDF (05/08) + follow-up (11/08) | Sem resposta desde o follow-up — novo toque recomendado |
+| Elmerson | Oferta de preço reduzido condicionada à confirmação de interesse (áudio 06/08 — Renato/Gui decidiram facilitar preço pra ganhar volume) | Nunca confirmou se ainda tinha interesse — proposta revisada prometida "até amanhã" nunca foi enviada por falta dessa confirmação. Retomar oferta pendente |
+| Samara Campos | Demo enviado (terça 20:30) | Renato mandou mensagem errada por engano no dia seguinte, apagou e pediu desculpa (quarta 19:49) — pergunta original ("o que achou?") ficou sem resposta, retomar |
+| Karen Alves Nail | Template A (terça) | Sem resposta, nem bot — follow-up leve recomendado (3 dias) |
+| Barbara Valieri | Template A (terça) | Sem resposta, nem bot — follow-up leve recomendado (3 dias) |
+| Edna Lopes / ELC Lash | Template A (terça) | Só bot respondeu (menu automático) — não conta como engajamento real, follow-up leve recomendado |
+| Espaço Nathacha Araujo | Template A (terça) | Só bot respondeu (intake de agendamento) — follow-up leve recomendado |
+| Espaço Imbali (contato: Letícia) | Template A (terça) | Só bot respondeu ("agradece seu contato") — follow-up leve recomendado |
+| Dra. Mayte Peres | Template Recuperação (terça) | Só bot respondeu logo em seguida — follow-up leve recomendado |
 
-### 🛑 TEM SITE — segurar Template A, usar Template Neutro (16 confirmados)
+### 📩 Mensagem de esclarecimento — Elisangela (pronta pra enviar)
+
+```
+Oi, Elisangela! Só passando rapidinho pra esclarecer uma coisa: aquele link que te mandei é uma demonstração — um protótipo do redesign, já com seus dados reais, pra você conseguir visualizar o resultado antes de decidir qualquer coisa.
+
+Não é o seu site novo publicado, nem mexe no que você já tem no ar (elisangelagregori.com.br). Ele só fica hospedado num endereço temporário do Tem no Limão como exemplo mesmo.
+
+Se você curtir o estilo e fizer sentido pra você, aí sim a gente publica de verdade no seu domínio. O que achou do padrão visual?
+```
+
+### 🛑 TEM SITE — segurar Template A, usar Template Neutro (18 confirmados)
 
 | Negócio | Site | WhatsApp |
 |---|---|---|
@@ -338,6 +370,32 @@ Se der pra abordar todos, ótimo. Se precisar priorizar, começa pelos que já r
 | Instituto Musicando | [institutomusicando.com.br](https://www.institutomusicando.com.br/) | wa.me/5511918375978 |
 | Miranda Odontologia | [mirandaodontologiasp.com.br](https://mirandaodontologiasp.com.br/) | wa.me/5511945357126 *(já em recuperação)* |
 | Dias Gomes | [fisioterapiadiasgomes.com.br](https://fisioterapiadiasgomes.com.br/) | wa.me/5511947425564 *(já em recuperação)* |
+| Van Gogh (Colégio) | [colegiovangoghsp.com.br](https://colegiovangoghsp.com.br/) | wa.me/551139661622 *(resolve o "alto risco" — confirmado 11/08)* |
+| Ary Design | [arydesignmoveis.com.br](https://arydesignmoveis.com.br/) | wa.me/5511946455286 *(⚠️ cadastro TNL não mostrava — confirmado via endereço "Edson Andrade Silva, 73" e WA idênticos ao site. Site parece bem cuidado — usar Template Neutro, não Template C direto, sem auditoria)* |
+
+#### Auditoria técnica (11/08) — Meta description / GA / GTM / Pixel / Schema / og:image
+
+| Negócio | Meta desc | GA | GTM | Pixel | Schema | og:image | Nota |
+|---|---|---|---|---|---|---|---|
+| **HK Consultoria** | ❌ | ✅ | ❌ | ❌ | ✅ | ❌ | 🔴 **Certificado SSL expirado** — navegador mostra alerta "conexão não é privada". Argumento forte: "seu site tá mostrando alerta de perigo pra quem tenta entrar" |
+| Van Gogh (Colégio) | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | 4/6 faltando — bom candidato a Template B (educação, ticket alto) |
+| MRI Tecnologia | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | 4/6 faltando |
+| Instituto Musicando | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | 4/6 faltando |
+| Hurbana Soluções | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ | 3/6 faltando |
+| Doce Mordida | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | 3/6 faltando |
+| Felix e Navarro | ❌ | ✅ | ❌ | ❌ | ✅ | ❌ | sem meta description nem Pixel — perde tráfego pago não medido |
+| Dra Mayte Peres | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | sem Pixel/Schema — estética premium, bom ticket |
+| ACM | ❌ | ✅ | ❌ | ✅ | ✅ | ❌ | já bem completo — instituição grande, baixa prioridade comercial |
+| Rudá Clínica | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ | razoável, falta Pixel/GTM |
+| Will Smartcell | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ | técnico ok — se vender redesign, argumento é visual (builder), não técnico |
+| Primolimp | ✅ | ✅ | ❌ | ❌ | ✅ | ✅ | razoável, falta Pixel/GTM |
+| Campione Imóveis | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | 5/6 — já bem completo, pitch é Cuidado&Crescimento, não redesign |
+| Ary Design | ❌ | ✅ | ✅ | ❌ | ✅ | ✅ | 4/6 — confirma impressão qualitativa de site cuidado |
+| Migui | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | pior cenário técnico, mas é loja — baixa prioridade |
+| Sol e Lua Flores | — | — | — | — | — | — | ⚠️ não deu pra auditar — falha de DNS local (não é erro do site, confirmado no ar via busca). Retry manual depois |
+| Dias Gomes | — | — | — | — | — | — | ⚠️ mesma falha de DNS local. Retry manual depois |
+
+**Leitura rápida:** HK Consultoria é o achado mais forte (SSL expirado = argumento imediato). Van Gogh, MRI Tecnologia, Instituto Musicando, Hurbana e Dra Mayte Peres são os próximos melhores candidatos a Template B (nicho de valor + vários itens técnicos faltando). Campione, Ary Design e Will Smartcell já estão tecnicamente OK — não forçar argumento de redesign nesses, manter Template Neutro/Cuidado.
 
 ### ✅ Confirmado SEM site — pronto pra Template A / A-Restaurante
 
@@ -350,18 +408,32 @@ Se der pra abordar todos, ótimo. Se precisar priorizar, começa pelos que já r
 | Esperia | Clube grande (40k seguidores), só Linktree | *(sem WA cadastrado, buscar)* |
 | Imbali | Só Fresha (agendamento) | wa.me/5511979895751 |
 | Espaço Nathacha Araújo | Só Fresha | wa.me/5511988447160 |
+| Zani Adv | Nenhum site encontrado (só escritórios "Zani" homônimos em outros bairros/cidades) | wa.me/5511958174412 |
+| ADV Partners (Cristiane Oliveira) | Divide endereço/WA com Hurbana Soluções, mas Hurbana confirmado sem citar ADV Partners — negócio distinto sem site próprio | wa.me/5511955558502 |
+| Barbara Valieri | Só drenagem linfática (método Renata França), sem site próprio | wa.me/5511976456485 |
+| Karen Alves Nail | Só Instagram (@karenalves.nails) | wa.me/5511952697143 |
+| Arnaldo Personal | Nenhuma presença web além do WA cadastrado | wa.me/5511975240598 |
+| United Life | Só Instagram (@unitedlifebjj, 739 seguidores) | wa.me/5511998660007 |
+| Camargo (despachante) | Nenhum site — só CNPJ/listagens | wa.me/5511955400139 |
+| SOS Parabéns | Nenhum site encontrado | wa.me/5511942229587 |
+| Evolution | Nenhum site encontrado | wa.me/5511940209437 |
+| Lemon Fast | Nenhum site — possível Facebook "Lemon cestas e Balões" não confirmado | wa.me/5511948586666 |
+| Drone Horizon | Nenhum site encontrado | wa.me/5511947188409 |
+| Cesar Ogata | Nenhum site encontrado | wa.me/5511981359276 |
+| PMC Pro Cleaning | Nenhum site encontrado | wa.me/5521975822207 |
+| Vivian Piacenti | Nenhum site encontrado | wa.me/5511992619389 |
+| Chega de Tanque | Só Instagram (@chegadetanque, 2113 seguidores) | wa.me/5511957388250 |
+| Redes SP | Nenhum site próprio (busca só traz concorrentes) | wa.me/5511947353557 |
+| GDigital - Gisele Mendes | Nenhum site encontrado | wa.me/5511975063857 |
+| Compre Mais | Só Instagram — *é loja, baixa prioridade* | wa.me/5511982418180 |
 
-### 🟡 Provável sem site (confiança média-baixa — checar rápido antes de mandar)
+### ⚠️ Nota — ELC Lash está `paused:true` no cadastro TNL
 
-ELC Lash, Barbara Valieri, Karen Alves Nail, Compre Mais *(loja)*, Arnaldo Personal, United Life, Camargo, SOS Parabéns, Evolution, Lemon Fast, Drone Horizon, Cesar Ogata, PMC Pro Cleaning, Vivian Piacenti, Chega de Tanque, Ary Design, Redes SP, Zani Adv, ADV Partners, GDigital
+Verificação em 11/08 confirma sem site próprio, mas o cadastro interno marca o parceiro como pausado (não aparece ativo no diretório). Confirmar com Renato se é intencional (ex: parceiro inadimplente/pediu pausa) antes de prospectar — pode não fazer sentido oferecer site pra quem não está nem ativo no TNL agora.
 
 ### 🟡 Ambíguo — link-in-bio, não site institucional
 
 Espaço Samara Campos — achado `samaracampos.com.br/beautysacampos`, parece link-in-bio, não site de verdade
-
-### ⚠️ Alto risco não resolvido
-
-**Van Gogh (Colégio)** — escola grande e estabelecida, busca não achou domínio próprio mas o padrão de hoje (46% de erro) sugere que provavelmente tem site não indexado nos resultados. **Verificar manualmente antes de mandar qualquer coisa.**
 
 ### 🔴 Caso especial — não é candidato padrão
 
@@ -370,6 +442,8 @@ Espaço Samara Campos — achado `samaracampos.com.br/beautysacampos`, parece li
 ### Ainda não verificados
 
 Todos os negócios classificados como "Site Bom" ou "Site Ruim" na seção de Classificação (Ralves, Reynal, Barca, Rokay, Luciene) foram verificados tecnicamente em 07/08 — essa verificação continua válida, não precisa refazer.
+
+**Varredura de 11/08 concluída:** todos os 20 itens da antiga lista "🟡 Provável sem site" foram verificados ao vivo — 18 confirmados sem site (prontos pra Template A), 1 virou "TEM SITE" (Ary Design, furo do cadastro TNL) e 1 ficou de fora por estar pausado no cadastro (ELC Lash, ver nota acima). Separadamente, também foi resolvido o "alto risco" do Van Gogh (Colégio), que tem site confirmado. Não sobrou nenhum item pendente de verificação nos 60 parceiros.
 
 ---
 
