@@ -183,7 +183,7 @@ Oi, [NOME]! Aqui é o Renato, do Tem no Limão 🍋
 
 Vi seu contato pelo TNL e notei que [NEGÓCIO] ainda não tem site — só WhatsApp/Instagram. Pra [NICHO] isso pesa mais do que parece: quem busca no Google não encontra, e cliente novo passa direto.
 
-A gente faz esse tipo de site pro seu negócio por R$1.000, pronto em até 7 dias úteis. Inclui:
+A gente faz esse tipo de site pro seu negócio por R$1.000, pronto em até 7 dias úteis — dá pra parcelar em 2x (metade na aprovação, metade na entrega), pra não pesar de uma vez. Inclui:
 • Serviços, fotos, endereço, horário
 • Botão de WhatsApp direto
 • Aparecer melhor no Google
@@ -191,6 +191,8 @@ A gente faz esse tipo de site pro seu negócio por R$1.000, pronto em até 7 dia
 
 Se quiser, monto um exemplo pra você ver antes de decidir. Me chama por aqui!
 ```
+
+**Nota sobre o parcelamento (14/08/2026):** adicionado a pedido do Renato pra reduzir a barreira de decisão. Por padrão o texto usa "2x, metade na aprovação e metade na entrega" (PIX, sem depender de maquininha) — se/quando ficar confirmado que há cartão de crédito com parcelamento configurado, trocar pra "2x no cartão" nos templates.
 
 **Instagram DM:**
 ```
