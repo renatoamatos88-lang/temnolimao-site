@@ -108,10 +108,10 @@ Os 50 completamente sem site + Di Primo e MavÍ (que só têm link de app de del
 
 | # | Negócio | Cat | WA |
 |---|---|---|---|
-| 1 | Migui | Loja | 5511977631776 |
+| 1 | Migui ⚠️ **TEM SITE** (miguieletrica.com.br, confirmado 14/08) — não mandar Template A, virou candidato a Redesign | Loja | 5511977631776 |
 | 3 | Compre Mais | Alimentação | 5511982418180 |
 | 4 | Pseq | Saúde | 5511953395484 |
-| 5 | Dom Capuchon | Alimentação | 551127743746 |
+| 5 | Dom Capuchon *(só Insta + iFood/99food, confirmado 14/08 — usar Template A-Restaurante)* | Alimentação | 551127743746 |
 | 6 | Van Gogh | Educação | 551139661622 |
 | 7 | Camargo | Serviços | 5511955400139 |
 | 8 | Doce Mordida | Alimentação | 5511988813637 |
@@ -121,7 +121,7 @@ Os 50 completamente sem site + Di Primo e MavÍ (que só têm link de app de del
 | 12 | Lift | Academia | 5511963797955 |
 | 13 | Miranda Odontologia | Saúde | 5511945357126 |
 | 14 | SOS Parabéns | Eventos | 5511942229587 |
-| 15 | CVC Limão | Serviços | 5511985580459 |
+| 15 | CVC Limão ⚠️ franquia de rede nacional (CVC Corp) — já tem site/marca nacional por trás, ICP ruim pra R$1.000 institucional. Pular ou abordar diferente | Serviços | 5511985580459 |
 | 16 | Evolution | Serviços | 5511940209437 |
 | 17 | Dias Gomes | Saúde | 5511947425564 |
 | 18 | ACM | Academia | 551139595050 |
@@ -147,14 +147,14 @@ Os 50 completamente sem site + Di Primo e MavÍ (que só têm link de app de del
 | 38 | Ary Design | Serviços | 5511946455286 |
 | 39 | Instituto Musicando | Educação | 5511918375978 |
 | 40 | Redes SP | Serviços | 5511947353557 |
-| 41 | GDigital - Gisele Mendes | Serviços | 5511975063857 |
+| 41 | GDigital - Gisele Mendes ⚠️ é agência de marketing digital — estranho vender "vocês precisam de site" pra quem já faz isso profissionalmente. Pular ou abordar como parceria, não como Template A | Serviços | 5511975063857 |
 | 42 | Hurbana Soluções | Serviços | 5511955558502 |
 | 43 | ADV Partners | Advocacia | 5511955558502 |
 | 44 | Espaço Nathacha Araújo | Estética | 5511988447160 |
 | 45 | Óticas Diniz Limão | Óptica | 551123618404 |
 | 46 | Tangerina. Naturais | Alimentação | 5511974400950 |
 | 51 | Pizzaria Di Primo *(só cardápio no Pedir.delivery — usar Template A-Restaurante)* | Alimentação | (via app) |
-| 53 | TR Clinic | Saúde | 5511985994383 |
+| 53 | TR Clinic ⚠️ busca de 14/08 achou uma "TRĒ Clinic" (odontológica estética) com Linktree/site, mas não confirmei se é o mesmo negócio nem a localização — checar manualmente antes de mandar Template A | Saúde | 5511985994383 |
 | 54 | Karen Alves Nail | Estética | 5511952697143 |
 | 55 | MavÍ Culinária *(só cardápio no Anota.ai — usar Template A-Restaurante)* | Alimentação | (via app) |
 | 56 | Rudá Clínica de Estética | Estética | 5511983282940 |
