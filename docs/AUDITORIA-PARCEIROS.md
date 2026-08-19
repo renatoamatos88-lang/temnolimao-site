@@ -39,7 +39,9 @@ Renato decidiu enviar tudo de uma vez amanhã de manhã em vez de mandar na hora
 
 5. **Nunca fazer julgamento de resultado/desempenho do negócio da pessoa sem ter verificado de verdade.** Frases como "acho que seu site não tá trazendo cliente novo" ou "não passa o nível do seu trabalho" são presunçosas e ofensivas quando não temos dado nenhum sobre a performance real do negócio — é dizer pra um estranho que o trabalho dele não está bom. Em vez de afirmar um problema, **oferecer olhar e dar uma opinião honesta depois**: "posso dar uma olhada com calma e te contar sinceramente o que acho". Isso vale tanto pra qualidade visual quanto técnica — só comentar especificamente o que foi de fato auditado (ex: os 4 sites com auditoria técnica completa em `Classificação dos 60 parceiros`).
 
-6. **⚠️ NUNCA confiar no campo `siteUrl` do cadastro interno (`tnl-app.js`) como prova de que o negócio não tem site.** Esse campo é preenchido manualmente por quem cadastrou via Tally, e fica vazio com frequência mesmo quando o negócio TEM site. **Verificação em 11/08/2026: de 35 negócios checados ao vivo (WebSearch), 16 (46%) tinham site real que o cadastro não mostrava.** Isso já gerou 2 furos reais com clientes (Miranda Odontologia e Dias Gomes responderam "já temos site" depois de receberem Template A por engano). **Antes de mandar qualquer Template A ("sem site"), sempre buscar ao vivo primeiro** (`"[nome do negócio]" bairro do limão site OR instagram`). Só mandar Template A depois de confirmar.
+6. **⚠️ NUNCA confiar no campo `siteUrl` do cadastro interno (`tnl-app.js`) como prova de que o negócio não tem site.** Esse campo é preenchido manualmente por quem cadastrou via Tally, e fica vazio com frequência mesmo quando o negócio TEM site. **Verificação em 11/08/2026: de 35 negócios checados ao vivo (WebSearch), 16 (46%) tinham site real que o cadastro não mostrava.** Isso já gerou furos reais com clientes (Miranda Odontologia, Dias Gomes, Drone Horizon e provavelmente SOS Parabéns responderam/confirmaram "já temos site" depois de receberem Template A por engano). **Antes de mandar qualquer Template A ("sem site"), sempre buscar ao vivo primeiro** (`"[nome do negócio]" bairro do limão site OR instagram`). Só mandar Template A depois de confirmar.
+
+   **⚠️ Correção de calibração (14/08/2026):** WebSearch não achar nada sobre um negócio **não é prova de que ele não tem site** — negócio pequeno com SEO fraco frequentemente tem site real que a busca simplesmente não indexa bem. "Busca não achou nada" = incerteza, não confirmação. Só tratar como "confirmado sem site" quando a busca acha ativamente evidência disso (ex: só Instagram/Linktree confirmado, ou "site OR instagram" retorna claramente as redes sociais como único canal). Pra negócio pequeno sem sinal nenhum, ou pedir confirmação mais direta (Google Maps, ligação rápida) antes do Template A, ou aceitar o risco residual e estar pronto pra usar Recuperação se vier resposta de "já temos site".
 
 ---
 
@@ -120,7 +122,7 @@ Os 50 completamente sem site + Di Primo e MavÍ (que só têm link de app de del
 | 11 | Arnaldo Personal | Academia | 5511975240598 |
 | 12 | Lift | Academia | 5511963797955 |
 | 13 | Miranda Odontologia | Saúde | 5511945357126 |
-| 14 | SOS Parabéns | Eventos | 5511942229587 |
+| 14 | SOS Parabéns ⚠️ **TEM SITE** (informado pelo Renato 14/08 — busca automática não achou, furo do processo de verificação) — usar Template Neutro, não sabemos se o site é bom ou ruim ainda | Eventos | 5511942229587 |
 | 15 | CVC Limão ⚠️ franquia de rede nacional (CVC Corp) — já tem site/marca nacional por trás, ICP ruim pra R$1.000 institucional. Pular ou abordar diferente | Serviços | 5511985580459 |
 | 16 | Evolution | Serviços | 5511940209437 |
 | 17 | Dias Gomes | Saúde | 5511947425564 |
@@ -129,7 +131,7 @@ Os 50 completamente sem site + Di Primo e MavÍ (que só têm link de app de del
 | 20 | Will Smartcell | Tecnologia | 5511960381591 |
 | 21 | Zani Adv | Advocacia | 5511958174412 |
 | 22 | Lemon Fast | Eventos | 5511948586666 |
-| 23 | Drone Horizon | Drone | 5511947188409 |
+| 23 | Drone Horizon ⚠️ **TEM SITE** — Template A errado foi enviado 14/08, ela respondeu "Temos site, sim" — Recuperação pendente de envio | Drone | 5511947188409 |
 | 24 | Cesar Ogata | Drone | 5511981359276 |
 | 25 | MRI Tecnologia | Tecnologia | 5511997503529 |
 | 26 | Primolimp | Serviços | 5511940806633 |
