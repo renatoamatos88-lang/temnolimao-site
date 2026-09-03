@@ -242,6 +242,11 @@ const _vagasDefault = [
     requisitos:'Experiência comprovada em massoterapia · Certificação em massoterapia · Conhecimento em anatomia e técnicas variadas · Perfil acolhedor e atencioso',
     dataPublicacao:'2026-09-02',
     wpp:'https://wa.me/5511983592721?text=Oi%21%20Vi%20a%20vaga%20de%20Massoterapeuta%20%28Fast%20Spa%20Lim%C3%A3o%29%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse%21' },
+  { cargo:'Auxiliar Administrativo', empresa:'Helka Corretora', tipo:'A combinar', area:'Serviços', sal:'A combinar + Vale-Transporte', local:'Limão, SP', tempo:'Novo', icon:'📋',
+    desc:'Vaga para Auxiliar Administrativo na Helka Corretora.',
+    horario:'Segunda a Sexta · 9h às 18h',
+    dataPublicacao:'2026-09-03',
+    wpp:'https://wa.me/5511947254821?text=Oi%21%20Vi%20a%20vaga%20de%20Auxiliar%20Administrativo%20%28Helka%20Corretora%29%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse%21' },
 ];
 let vagas = [..._vagasDefault];
 
