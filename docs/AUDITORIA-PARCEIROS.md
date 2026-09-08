@@ -353,7 +353,7 @@ Se der pra abordar todos, ótimo. Se precisar priorizar, começa pelos que já r
 | Bárbara Valieri | Template A (11/08) + follow-up leve (14/08) + **demo** (`demos/barbara-valieri.html`, 08/09) | Respondeu 14/08 ("recebi sim, quando tiver um tempinho falo contigo") e sumiu — demo montado em 08/09 pra destravar. ⚠️ Nome correto é **Bárbara** (com acento) e ela é **massoterapeuta** (fonte: logo dela), não só "estética" |
 | Edna Lopes / ELC Lash | Template A (terça) | Só bot respondeu (menu automático) — não conta como engajamento real, follow-up leve recomendado |
 | Espaço Nathacha Araujo | Template A (terça) | Só bot respondeu (intake de agendamento) — follow-up leve recomendado |
-| Espaço Imbali (contato: Letícia) | Template A (terça) | Só bot respondeu ("agradece seu contato") — follow-up leve recomendado |
+| Espaço Imbali (contato: Letícia) | Template A (11/08) + follow-up leve (14/08) + **demo enviado** (`demos/imbali.html`, 14/08 11:01) | 🔥 **LEAD MAIS QUENTE DA LISTA.** Respondeu em 14/08: "Nós temos interesse, super agradeço!" e recebeu o demo no mesmo dia. Sumiu ~3,5 semanas. Em 08/09 voltou a responder ao vivo. Próximo passo NÃO é reapresentar — é pedir os assets (fotos, lista de tratamentos, texto institucional). Agendamento fica no Fresha, o site não substitui |
 | Dra. Mayte Peres | Template Recuperação (terça) | Só bot respondeu logo em seguida — follow-up leve recomendado |
 | Redes SP | Template A (19/08) | Sem resposta nenhuma (~3 semanas). Follow-up em 08/09 com oferta explícita de montar demo. Serviço: **instalação de rede de proteção e varal de teto** — nicho de busca no Google, bom candidato a demo-first se responder |
 
@@ -390,7 +390,7 @@ Ambos foram commitados em agosto e estão no ar, mas **nenhuma linha da tabela d
 
 | Demo | Criado | Lead | Situação registrada |
 |---|---|---|---|
-| `demos/imbali.html` | 11/08 (commit "piloto de reskin rápido") | Espaço Imbali / Letícia | Tabela só registra "Template A (terça), só bot respondeu" — demo não aparece como enviado |
+| ~~`demos/imbali.html`~~ | 11/08 | Espaço Imbali / Letícia | ✅ **RESOLVIDO 08/09** — print do WhatsApp confirma envio em 14/08 11:01, logo após ela declarar interesse. Não estava na gaveta |
 | `demos/escola-thais-fase1.html` | 12/08 (commit "demo Fase 1 escola Thaís") | Thaís (Colégio Estrela Guia) | Tabela registra proposta em fases respondida por áudio; demo não aparece como enviado |
 
 ### ⚠️ Fila de 12/08 — envio não confirmado (auditado 08/09/2026)
