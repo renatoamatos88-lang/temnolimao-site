@@ -341,7 +341,7 @@ Se der pra abordar todos, ótimo. Se precisar priorizar, começa pelos que já r
 |---|---|---|
 | Império Depilação | Demo (07/08) + follow-up (11/08) | Sem resposta nos dois contatos — considerar pausar por ora, não insistir num 3º toque |
 | Carrelli Corretora (Roberto) | Demo + follow-up (11/08) | Respondeu "vou olhar sim" (11/08) — aguardando, contato recente, não precisa novo toque ainda |
-| Elisangela Gregori | Demo + esclarecimento + opções (redesign x cuidado) + follow-up leve (14/08) | Sem retorno desde 14/08 (~3,5 semanas). 3º toque em 08/09: mensagem de fechamento de ciclo, com saída fácil e o mensal (R50) como opção de menor atrito |
+| Elisangela Gregori | Demo + esclarecimento + opções (redesign x cuidado) + follow-up leve (14/08) | Sem retorno desde 14/08 (~3,5 semanas). 3º toque em 08/09: mensagem de fechamento de ciclo, com saída fácil e o mensal (R$350) como opção de menor atrito |
 | Miranda Odontologia | Template A (errado — tinha site) | Respondeu "já temos site". Recuperação já enviada, caso resolvido |
 | Dias Gomes (contato: Juliana) | Recuperação + demo redesign (`demos/dias-gomes.html`) | Respondeu "Pode sim" à recuperação; demo enviado na quarta, sem resposta desde então — follow-up recomendado |
 | Thaís (lead fora do diretório, indicação do Gui — ver [[project_thais_lead]] na memória) | Proposta em fases (institucional + portal dos pais) | Perguntou se dá pra desacoplar site da mensalidade — respondido por áudio (12/08, "sim, sem problema") — sem confirmação de fechamento desde então, follow-up recomendado |
@@ -355,6 +355,53 @@ Se der pra abordar todos, ótimo. Se precisar priorizar, começa pelos que já r
 | Espaço Imbali (contato: Letícia) | Template A (terça) | Só bot respondeu ("agradece seu contato") — follow-up leve recomendado |
 | Dra. Mayte Peres | Template Recuperação (terça) | Só bot respondeu logo em seguida — follow-up leve recomendado |
 | Redes SP | Template A (19/08) | Sem resposta nenhuma (~3 semanas). Follow-up em 08/09 com oferta explícita de montar demo. Serviço: **instalação de rede de proteção e varal de teto** — nicho de busca no Google, bom candidato a demo-first se responder |
+
+### 📩 Template Follow-up leve — 3ª+ tentativa, contato frio (criado 08/09/2026)
+
+Para quem recebeu Template A/B e não respondeu, ou só respondeu com bot. Regra: **oferecer o demo como isca**, não repetir o preço. Sempre dar saída fácil.
+
+```
+Oi! Renato aqui, do Tem no Limão 🍋
+
+Mandei uma mensagem lá em agosto sobre fazer um site pra [NEGÓCIO] e acho que caiu no automático — então tô só voltando rapidinho.
+
+Se quiser, monto um exemplo com o nome e os dados de vocês pra ver antes de decidir. De graça e sem compromisso — só me responde "manda".
+```
+
+### 📩 Template Retomada de demo — mandou demo e esfriou (criado 08/09/2026)
+
+Para quem já recebeu link de `demos/*.html` e sumiu. Assume a parte da culpa pelo silêncio, isso tira o peso da cobrança.
+
+```
+Oi, [NOME]! Renato do Tem no Limão 🍋
+
+Te mandei aquele exemplo do site em agosto e acabamos perdendo o fio — e eu também sumi, então tá empatado 🙂
+
+Deixo o link aqui de novo:
+https://www.temnolimao.com.br/demos/[ARQUIVO].html
+
+Sem pressa nenhuma. Só me diz se ainda faz sentido conversar ou se prefere que eu deixe pra frente — qualquer uma das duas está ótima.
+```
+
+### ⚠️ Demos prontos e sem registro de envio (auditado 08/09/2026)
+
+Ambos foram commitados em agosto e estão no ar, mas **nenhuma linha da tabela de status registra o envio**. Confirmar com Renato antes de refazer:
+
+| Demo | Criado | Lead | Situação registrada |
+|---|---|---|---|
+| `demos/imbali.html` | 11/08 (commit "piloto de reskin rápido") | Espaço Imbali / Letícia | Tabela só registra "Template A (terça), só bot respondeu" — demo não aparece como enviado |
+| `demos/escola-thais-fase1.html` | 12/08 (commit "demo Fase 1 escola Thaís") | Thaís (Colégio Estrela Guia) | Tabela registra proposta em fases respondida por áudio; demo não aparece como enviado |
+
+### ⚠️ Fila de 12/08 — envio não confirmado (auditado 08/09/2026)
+
+A seção "Fila de envio" listou 13 mensagens pra disparar na manhã de 12/08. A tabela de status só confirma 6 delas (Barbara, Karen, ELC Lash, Nathacha, Imbali, Mayte). **Sem registro de envio** para:
+
+- **Template B (redesign):** HK Consultoria ⚠️ (SSL expirado — é o argumento mais forte da lista inteira), Van Gogh, MRI Tecnologia, Instituto Musicando, Hurbana Soluções, Felix e Navarro
+- **Template A (criação):** Zani Adv, ADV Partners, Arnaldo Personal, United Life
+
+Confirmar com Renato antes de remandar — remandar por engano queima o lead.
+
+---
 
 ### 📩 Mensagem de esclarecimento — Elisangela (pronta pra enviar)
 
