@@ -25,6 +25,7 @@ Renato decidiu enviar tudo de uma vez amanhã de manhã em vez de mandar na hora
    **Mudança de estratégia:** os 3 demos existentes (Império, Elisangela, Carrelli) viram **templates-base por categoria**, reaproveitados via reskin rápido em vez de built from scratch:
    - **Elisangela** (verde-sálvia, editorial) → saúde, terapia, consultório, bem-estar
    - **Bárbara Valieri** (rosé/nude, tokens extraídos do logo dela) → massoterapia, drenagem, bem-estar corporal
+   - **Karen Alves** (carvão + dourado, dark-first, Cormorant Garamond — tokens do logo dela) → beleza premium, nail design, barbearia, salão com marca escura
    - **Império** (dourado/cream, luxo suave) → estética, beleza, spa
    - **Carrelli** (navy/royal, corporativo) → advocacia, imobiliária, consultoria, seguros
 
@@ -348,7 +349,7 @@ Se der pra abordar todos, ótimo. Se precisar priorizar, começa pelos que já r
 | Leandro | Proposta PDF (05/08) + follow-up (11/08) | Sem resposta desde o follow-up — novo toque recomendado |
 | Elmerson | Oferta de preço reduzido condicionada à confirmação de interesse (áudio 06/08 — Renato/Gui decidiram facilitar preço pra ganhar volume) | Nunca confirmou se ainda tinha interesse — proposta revisada prometida "até amanhã" nunca foi enviada por falta dessa confirmação. Retomar oferta pendente |
 | Samara Campos | Demo enviado (terça 20:30) | Renato mandou mensagem errada por engano no dia seguinte, apagou e pediu desculpa (quarta 19:49) — pergunta original ("o que achou?") ficou sem resposta, retomar |
-| Karen Alves Nail | Template A (terça) | Sem resposta, nem bot — follow-up leve recomendado (3 dias) |
+| Karen Alves Nail | Template A (11/08) + **demo** (`demos/karen-alves-nail.html`, 08/09) | Nunca respondeu, nem bot. Demo-first em 08/09 com mensagem nova (ângulo: site como link da bio do Instagram + busca no Google). Serviços reais: alongamento e banho de gel em molde F1. Tem Instagram: @karenalves.nails |
 | Bárbara Valieri | Template A (11/08) + follow-up leve (14/08) + **demo** (`demos/barbara-valieri.html`, 08/09) | Respondeu 14/08 ("recebi sim, quando tiver um tempinho falo contigo") e sumiu — demo montado em 08/09 pra destravar. ⚠️ Nome correto é **Bárbara** (com acento) e ela é **massoterapeuta** (fonte: logo dela), não só "estética" |
 | Edna Lopes / ELC Lash | Template A (terça) | Só bot respondeu (menu automático) — não conta como engajamento real, follow-up leve recomendado |
 | Espaço Nathacha Araujo | Template A (terça) | Só bot respondeu (intake de agendamento) — follow-up leve recomendado |
