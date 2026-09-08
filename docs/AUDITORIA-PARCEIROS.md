@@ -2,7 +2,7 @@
 
 > Levantamento de todos os 60 negócios do diretório TNL, classificados por presença digital, com prateleira de ofertas e templates de mensagem prontos.
 
-**Última atualização:** 11/08/2026
+**Última atualização:** 08/09/2026
 
 ---
 
@@ -24,6 +24,7 @@ Renato decidiu enviar tudo de uma vez amanhã de manhã em vez de mandar na hora
 
    **Mudança de estratégia:** os 3 demos existentes (Império, Elisangela, Carrelli) viram **templates-base por categoria**, reaproveitados via reskin rápido em vez de built from scratch:
    - **Elisangela** (verde-sálvia, editorial) → saúde, terapia, consultório, bem-estar
+   - **Bárbara Valieri** (rosé/nude, tokens extraídos do logo dela) → massoterapia, drenagem, bem-estar corporal
    - **Império** (dourado/cream, luxo suave) → estética, beleza, spa
    - **Carrelli** (navy/royal, corporativo) → advocacia, imobiliária, consultoria, seguros
 
@@ -340,7 +341,7 @@ Se der pra abordar todos, ótimo. Se precisar priorizar, começa pelos que já r
 |---|---|---|
 | Império Depilação | Demo (07/08) + follow-up (11/08) | Sem resposta nos dois contatos — considerar pausar por ora, não insistir num 3º toque |
 | Carrelli Corretora (Roberto) | Demo + follow-up (11/08) | Respondeu "vou olhar sim" (11/08) — aguardando, contato recente, não precisa novo toque ainda |
-| Elisangela Gregori | Demo + esclarecimento + opções (redesign x cuidado) | "Pra mim ficou tudo ok" → "vou dar uma analisada, pode ser?" (terça) — 3 dias sem retorno, follow-up leve recomendado agora |
+| Elisangela Gregori | Demo + esclarecimento + opções (redesign x cuidado) + follow-up leve (14/08) | Sem retorno desde 14/08 (~3,5 semanas). 3º toque em 08/09: mensagem de fechamento de ciclo, com saída fácil e o mensal (R50) como opção de menor atrito |
 | Miranda Odontologia | Template A (errado — tinha site) | Respondeu "já temos site". Recuperação já enviada, caso resolvido |
 | Dias Gomes (contato: Juliana) | Recuperação + demo redesign (`demos/dias-gomes.html`) | Respondeu "Pode sim" à recuperação; demo enviado na quarta, sem resposta desde então — follow-up recomendado |
 | Thaís (lead fora do diretório, indicação do Gui — ver [[project_thais_lead]] na memória) | Proposta em fases (institucional + portal dos pais) | Perguntou se dá pra desacoplar site da mensalidade — respondido por áudio (12/08, "sim, sem problema") — sem confirmação de fechamento desde então, follow-up recomendado |
@@ -348,11 +349,12 @@ Se der pra abordar todos, ótimo. Se precisar priorizar, começa pelos que já r
 | Elmerson | Oferta de preço reduzido condicionada à confirmação de interesse (áudio 06/08 — Renato/Gui decidiram facilitar preço pra ganhar volume) | Nunca confirmou se ainda tinha interesse — proposta revisada prometida "até amanhã" nunca foi enviada por falta dessa confirmação. Retomar oferta pendente |
 | Samara Campos | Demo enviado (terça 20:30) | Renato mandou mensagem errada por engano no dia seguinte, apagou e pediu desculpa (quarta 19:49) — pergunta original ("o que achou?") ficou sem resposta, retomar |
 | Karen Alves Nail | Template A (terça) | Sem resposta, nem bot — follow-up leve recomendado (3 dias) |
-| Barbara Valieri | Template A (terça) | Sem resposta, nem bot — follow-up leve recomendado (3 dias) |
+| Bárbara Valieri | Template A (11/08) + follow-up leve (14/08) + **demo** (`demos/barbara-valieri.html`, 08/09) | Respondeu 14/08 ("recebi sim, quando tiver um tempinho falo contigo") e sumiu — demo montado em 08/09 pra destravar. ⚠️ Nome correto é **Bárbara** (com acento) e ela é **massoterapeuta** (fonte: logo dela), não só "estética" |
 | Edna Lopes / ELC Lash | Template A (terça) | Só bot respondeu (menu automático) — não conta como engajamento real, follow-up leve recomendado |
 | Espaço Nathacha Araujo | Template A (terça) | Só bot respondeu (intake de agendamento) — follow-up leve recomendado |
 | Espaço Imbali (contato: Letícia) | Template A (terça) | Só bot respondeu ("agradece seu contato") — follow-up leve recomendado |
 | Dra. Mayte Peres | Template Recuperação (terça) | Só bot respondeu logo em seguida — follow-up leve recomendado |
+| Redes SP | Template A (19/08) | Sem resposta nenhuma (~3 semanas). Follow-up em 08/09 com oferta explícita de montar demo. Serviço: **instalação de rede de proteção e varal de teto** — nicho de busca no Google, bom candidato a demo-first se responder |
 
 ### 📩 Mensagem de esclarecimento — Elisangela (pronta pra enviar)
 
