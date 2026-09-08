@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karen Alves Beauty Nails — Alongamento e Banho de Gel · Bairro do Limão</title>
+<meta name="description" content="Nail designer no Bairro do Limão, São Paulo. Alongamento em molde F1 e banho de gel, com foco em resistência e durabilidade. Agende pelo WhatsApp.">
+<meta name="theme-color" content="#1A1A1C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #1A1A1C;
+  --bg-2: #232326;
+  --bg-3: #2C2C31;
+  --gold: #D4B06A;
+  --gold-dark: #B89452;
+  --gold-light: #E8D3A0;
+  --text: #F2EFE9;
+  --muted: rgba(242,239,233,0.62);
+  --muted-2: rgba(242,239,233,0.45);
+  --line: rgba(242,239,233,0.10);
+  --radius: 18px;
+  --radius-lg: 28px;
+  --shadow-md: 0 16px 48px rgba(0,0,0,0.45);
+  --shadow-lg: 0 34px 90px rgba(0,0,0,0.6);
+  --easing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+::selection { background: var(--gold); color: var(--bg); }
+
+/* NAV */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  padding: 1.1rem 2rem;
+  z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: all .4s var(--easing);
+}
+.nav.scrolled {
+  background: rgba(26, 26, 28, 0.86);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: .8rem 2rem;
+  border-bottom: 1px solid var(--line);
+}
+.nav-logo { display: flex; align-items: center; gap: .85rem; }
+.nav-logo-mark {
+  width: 52px; height: 52px; border-radius: 50%; overflow: hidden;
+  border: 1px solid rgba(212,176,106,0.35); flex-shrink: 0;
+}
+.nav-logo-mark img { width: 100%; height: 100%; object-fit: contain; }
+.nav-logo-text { display: flex; flex-direction: column; line-height: 1.15; }
+.nav-logo-name {
+  font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 1.3rem;
+  letter-spacing: .04em; color: var(--text);
+}
+.nav-logo-label {
+  font-size: .6rem; font-weight: 500; letter-spacing: .28em; text-transform: uppercase;
+  color: var(--gold); margin-top: 3px;
+}
+.nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
+.nav-links a {
+  font-size: .85rem; font-weight: 500; letter-spacing: .04em; color: var(--muted);
+  transition: color .3s var(--easing);
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-cta {
+  padding: .72rem 1.7rem; background: var(--gold); color: #1A1A1C;
+  border-radius: 50px; font-size: .82rem; font-weight: 600; letter-spacing: .03em;
+  transition: all .3s var(--easing);
+}
+.nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+/* HERO */
+.hero {
+  min-height: 100vh; position: relative; display: flex; align-items: center;
+  padding: 8rem 2rem 4rem; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(100deg, rgba(26,26,28,0.94) 0%, rgba(26,26,28,0.72) 48%, rgba(26,26,28,0.55) 100%),
+    url('https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+  z-index: -1;
+}
+.hero-inner {
+  max-width: 1200px; margin: 0 auto; width: 100%;
+  display: grid; grid-template-columns: 1.4fr 1fr; gap: 4rem; align-items: center;
+}
+.hero-label {
+  display: inline-flex; align-items: center; gap: .7rem;
+  font-size: .68rem; font-weight: 600; letter-spacing: .24em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1.8rem;
+}
+.hero-label::before { content: ''; width: 34px; height: 1px; background: var(--gold); }
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif; font-weight: 400;
+  font-size: clamp(2.9rem, 6vw, 5.2rem); line-height: 1.02; letter-spacing: -.01em;
+  margin-bottom: 1.6rem;
+}
+.hero h1 em { font-style: italic; font-weight: 300; color: var(--gold); }
+.hero h1, .section-title, .hero-card h3, .service-card h3, .faq-question, .nav-logo-name { font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; }
+.hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 470px; margin-bottom: 2.6rem; line-height: 1.7; }
+.hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: .6rem; padding: 1.05rem 2rem;
+  border-radius: 50px; font-size: .92rem; font-weight: 600; letter-spacing: .02em;
+  transition: all .3s var(--easing);
+}
+.btn-primary { background: var(--gold); color: #1A1A1C; box-shadow: 0 12px 34px rgba(212,176,106,0.22); }
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 18px 44px rgba(212,176,106,0.3); }
+.btn-ghost { border: 1px solid rgba(242,239,233,0.22); color: var(--text); }
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+.hero-card {
+  background: rgba(44,44,49,0.5); backdrop-filter: blur(20px);
+  border: 1px solid var(--line); border-radius: var(--radius-lg);
+  padding: 2rem; max-width: 340px; width: 100%;
+}
+.hero-card-label { font-size: .62rem; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+.hero-card h3 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 1.6rem; margin-bottom: .8rem; line-height: 1.2; }
+.hero-card p { font-size: .88rem; color: var(--muted); margin-bottom: 1.5rem; }
+.hero-badges { display: flex; flex-direction: column; gap: .85rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+.hero-badge { display: flex; align-items: center; gap: .8rem; font-size: .86rem; color: rgba(242,239,233,0.85); }
+.hero-badge svg { flex-shrink: 0; color: var(--gold); }
+
+/* SECTIONS */
+section { padding: 7rem 2rem; }
+.container { max-width: 1200px; margin: 0 auto; }
+.section-label {
+  display: block; font-size: .68rem; font-weight: 600; letter-spacing: .24em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1.2rem;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(2.2rem, 4.8vw, 3.6rem);
+  line-height: 1.05; letter-spacing: -.01em; margin-bottom: 1.5rem;
+}
+.section-title em { font-style: italic; color: var(--gold); }
+.section-sub { font-size: 1rem; color: var(--muted); max-width: 620px; line-height: 1.75; }
+
+/* SERVIÇOS */
+.services { background: var(--bg-2); }
+.services-header { text-align: center; margin-bottom: 4rem; display: flex; flex-direction: column; align-items: center; }
+.services-header .section-sub { text-align: center; }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+.service-card {
+  background: var(--bg-3); border-radius: var(--radius); padding: 2.2rem 2rem;
+  transition: all .4s var(--easing); border: 1px solid var(--line);
+  position: relative; overflow: hidden;
+}
+.service-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  transform: scaleX(0); transform-origin: left; transition: transform .5s var(--easing);
+}
+.service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: rgba(212,176,106,0.28); }
+.service-card:hover::before { transform: scaleX(1); }
+.service-num {
+  font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-style: italic;
+  color: var(--gold); opacity: .55; line-height: 1; margin-bottom: 1.2rem;
+}
+.service-card h3 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 1.55rem; margin-bottom: .7rem; }
+.service-card p { font-size: .9rem; color: var(--muted); margin-bottom: 1.4rem; }
+.service-link { font-size: .8rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--gold); }
+
+/* GALERIA */
+.gallery { background: var(--bg); }
+.gallery-header { text-align: center; margin-bottom: 4rem; display: flex; flex-direction: column; align-items: center; }
+.gallery-header .section-sub { text-align: center; }
+.gallery-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 240px 240px; gap: 1rem;
+}
+.gallery-item { border-radius: var(--radius); overflow: hidden; position: relative; }
+.gallery-item:nth-child(1) { grid-row: span 2; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--easing); }
+.gallery-item:hover img { transform: scale(1.06); }
+.gallery-note { margin-top: 1.6rem; text-align: center; font-size: .85rem; color: var(--muted-2); }
+.gallery-note a { color: var(--gold); }
+
+/* SOBRE */
+.about { background: var(--bg-2); }
+.about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.about-visual { position: relative; aspect-ratio: 4/5; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
+.about-visual img { width: 100%; height: 100%; object-fit: cover; }
+.about-tag {
+  position: absolute; top: 1.5rem; left: 1.5rem; padding: .55rem 1.2rem;
+  background: rgba(26,26,28,0.78); backdrop-filter: blur(10px); border-radius: 50px;
+  border: 1px solid rgba(212,176,106,0.3);
+  font-size: .64rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--gold);
+}
+.about-body p { font-size: 1rem; color: var(--muted); margin-bottom: 1.2rem; line-height: 1.8; }
+.about-credentials {
+  margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--line);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+}
+.credential { display: flex; gap: 1rem; align-items: flex-start; }
+.credential-icon {
+  width: 40px; height: 40px; border-radius: 11px; background: rgba(212,176,106,0.12); color: var(--gold);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.credential-label { font-size: .64rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: .3rem; }
+.credential-value { font-size: .92rem; font-weight: 500; color: var(--text); line-height: 1.45; }
+
+/* FAQ */
+.faq { background: var(--bg); }
+.faq-inner { display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; align-items: flex-start; }
+.faq-list { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
+.faq-item { border-bottom: 1px solid var(--line); }
+.faq-question {
+  width: 100%; padding: 1.6rem 0; display: flex; justify-content: space-between; align-items: center;
+  text-align: left; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 1.25rem; color: var(--text);
+  transition: color .3s var(--easing);
+}
+.faq-question:hover { color: var(--gold); }
+.faq-toggle {
+  width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: center; transition: all .3s var(--easing);
+  flex-shrink: 0; margin-left: 1rem; color: var(--gold); font-size: 1rem;
+}
+.faq-item.open .faq-toggle { background: var(--gold); color: var(--bg); border-color: var(--gold); transform: rotate(45deg); }
+.faq-answer {
+  max-height: 0; overflow: hidden; transition: max-height .5s var(--easing), padding .3s var(--easing);
+  color: var(--muted); line-height: 1.8; font-size: .95rem;
+}
+.faq-item.open .faq-answer { max-height: 300px; padding-bottom: 1.6rem; }
+
+/* CONTATO */
+.contact { background: var(--bg-2); position: relative; overflow: hidden; }
+.contact::before {
+  content: ''; position: absolute; top: -35%; right: -18%; width: 62%; height: 110%;
+  background: radial-gradient(circle, rgba(212,176,106,0.10) 0%, transparent 62%); pointer-events: none;
+}
+.contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; position: relative; }
+.contact-info { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.7rem; }
+.contact-item { display: flex; gap: 1.2rem; align-items: flex-start; }
+.contact-item-icon {
+  width: 44px; height: 44px; border-radius: 12px; background: rgba(212,176,106,0.12);
+  display: flex; align-items: center; justify-content: center; color: var(--gold); flex-shrink: 0;
+}
+.contact-item-label { font-size: .64rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: .3rem; }
+.contact-item-value { font-size: .98rem; color: rgba(242,239,233,0.9); line-height: 1.5; }
+.contact-cta { margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+.contact-map {
+  border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 4/5;
+  border: 1px solid var(--line);
+}
+.contact-map img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(60%) brightness(0.7); }
+
+/* FOOTER */
+.footer { background: #141416; color: var(--muted-2); padding: 3rem 2rem; border-top: 1px solid var(--line); }
+.footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+.footer-brand { display: flex; align-items: center; gap: .8rem; }
+.footer-brand-mark { width: 42px; height: 42px; border-radius: 50%; overflow: hidden; border: 1px solid rgba(212,176,106,0.3); flex-shrink: 0; }
+.footer-brand-mark img { width: 100%; height: 100%; object-fit: contain; }
+.footer-brand-name { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 1.2rem; letter-spacing: .04em; color: var(--text); }
+.footer-note { font-size: .8rem; }
+.footer-note a { color: var(--gold); }
+.footer-social { display: flex; gap: .8rem; }
+.footer-social a {
+  width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: center; transition: all .3s var(--easing); color: var(--muted);
+}
+.footer-social a:hover { background: var(--gold); color: var(--bg); border-color: var(--gold); }
+
+/* WHATSAPP FLOAT */
+.wa-float {
+  position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 90;
+  width: 60px; height: 60px; border-radius: 50%; background: #25D366;
+  display: flex; align-items: center; justify-content: center; color: white;
+  box-shadow: 0 10px 30px rgba(37,211,102,0.4); transition: transform .3s var(--easing);
+}
+.wa-float:hover { transform: scale(1.08); }
+.wa-float::before {
+  content: ''; position: absolute; inset: 0; border-radius: 50%; background: #25D366;
+  animation: pulse 2.5s ease-out infinite; z-index: -1;
+}
+@keyframes pulse { 0% { transform: scale(1); opacity: .55; } 100% { transform: scale(1.6); opacity: 0; } }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .nav { padding: 1rem 1.25rem; }
+  .nav-links { display: none; }
+  .nav-cta { padding: .6rem 1.2rem; font-size: .78rem; }
+  .hero { padding: 7rem 1.25rem 3rem; }
+  .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  section { padding: 5rem 1.25rem; }
+  .services-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 200px 200px 200px; }
+  .gallery-item:nth-child(1) { grid-column: span 2; grid-row: auto; }
+  .about-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .about-visual { aspect-ratio: 4/3; }
+  .about-credentials { grid-template-columns: 1fr; }
+  .faq-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .footer-inner { flex-direction: column; text-align: center; }
+}
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s var(--easing), transform .8s var(--easing); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-logo">
+    <span class="nav-logo-mark"><img src="../logo-karen-alves-nail.webp" alt="Karen Alves Beauty Nails"></span>
+    <span class="nav-logo-text">
+      <span class="nav-logo-name">Karen Alves</span>
+      <span class="nav-logo-label">Beauty Nails</span>
+    </span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#trabalhos">Trabalhos</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <a href="https://wa.me/5511952697143" class="nav-cta">Agendar</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-label">Bairro do Limão · São Paulo</div>
+      <h1>Unhas feitas<br>pra <em>durar o mês</em>.</h1>
+      <p class="hero-sub">Nail designer especialista em alongamento e banho de gel, com molde F1. Resistência e durabilidade — não é só bonito na primeira semana.</p>
+      <div class="hero-ctas">
+        <a href="https://wa.me/5511952697143" class="btn btn-primary">Agendar pelo WhatsApp</a>
+        <a href="#servicos" class="btn btn-ghost">Ver serviços</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-label">Especialidade</div>
+      <h3>Alongamento<br>em molde F1</h3>
+      <p>A técnica que dá formato e estrutura — e faz o resultado aguentar a sua rotina.</p>
+      <div class="hero-badges">
+        <div class="hero-badge">
+          <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+          Alongamento em molde F1
+        </div>
+        <div class="hero-badge">
+          <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+          Banho de gel
+        </div>
+        <div class="hero-badge">
+          <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+          Seg a sex, 9h às 17h
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="services" id="servicos">
+  <div class="container">
+    <div class="services-header reveal">
+      <span class="section-label">Serviços & técnica</span>
+      <h2 class="section-title">O que a Karen <em>faz</em>.</h2>
+      <p class="section-sub">Duas especialidades e uma técnica por trás das duas. Sem enrolação, sem catálogo gigante — o que ela faz, ela faz muito bem.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-num">01</div>
+        <h3>Alongamento</h3>
+        <p>Extensão da unha construída em molde F1 — o formato que você quer, com a estrutura que segura o resultado ao longo do mês.</p>
+        <a href="https://wa.me/5511952697143" class="service-link">Agendar →</a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">02</div>
+        <h3>Banho de Gel</h3>
+        <p>Camada de gel sobre a sua unha natural, pra ganhar resistência e brilho sem precisar alongar. Pra quem gosta do comprimento que já tem.</p>
+        <a href="https://wa.me/5511952697143" class="service-link">Agendar →</a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">03</div>
+        <h3>Molde F1</h3>
+        <p>Não é um serviço à parte: é a técnica que a Karen usa pra construir. O molde define o desenho da unha e dá a base que faz ela durar.</p>
+        <a href="https://wa.me/5511952697143" class="service-link">Tirar dúvida →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRABALHOS -->
+<section class="gallery" id="trabalhos">
+  <div class="container">
+    <div class="gallery-header reveal">
+      <span class="section-label">Trabalhos</span>
+      <h2 class="section-title">Feito à mão,<br>uma unha <em>de cada vez</em>.</h2>
+      <p class="section-sub">Cada atendimento é individual, com o formato escolhido junto com você.</p>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=1200&q=80" alt="Aplicação do alongamento"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=800&q=80" alt="Unhas decoradas"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=800&q=80" alt="Acabamento"></div>
+    </div>
+    <p class="gallery-note reveal">Mais trabalhos no Instagram: <a href="https://www.instagram.com/karenalves.nails" target="_blank" rel="noopener">@karenalves.nails</a></p>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="about">
+  <div class="container about-inner">
+    <div class="about-visual reveal">
+      <div class="about-tag">Sobre</div>
+      <img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?auto=format&fit=crop&w=1200&q=80" alt="Trabalho de nail design">
+    </div>
+    <div class="about-body reveal">
+      <span class="section-label">Quem faz</span>
+      <h2 class="section-title">Karen <em>Alves</em>.</h2>
+      <p>Nail designer no Bairro do Limão, especialista em alongamento e banho de gel com molde F1. O foco do trabalho dela é um só: resistência e durabilidade.</p>
+      <p>Porque unha bonita todo mundo faz. Difícil é ela continuar bonita na terceira semana — e é aí que a técnica aparece.</p>
+
+      <div class="about-credentials">
+        <div class="credential">
+          <div class="credential-icon">
+            <svg width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="credential-label">Onde</div>
+            <div class="credential-value">Rua Maria Renata, 98<br>Bairro do Limão, SP</div>
+          </div>
+        </div>
+        <div class="credential">
+          <div class="credential-icon">
+            <svg width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div>
+            <div class="credential-label">Horário</div>
+            <div class="credential-value">Segunda a sexta<br>9h às 17h</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container faq-inner">
+    <div class="reveal">
+      <span class="section-label">Dúvidas comuns</span>
+      <h2 class="section-title">Antes de<br><em>agendar</em>.</h2>
+      <p class="section-sub">Ficou qualquer dúvida, me chama no WhatsApp que eu respondo.</p>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-question">
+          Como faço pra agendar?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">É só me chamar no WhatsApp contando o que você quer fazer — alongamento ou banho de gel. Eu te passo os horários e a gente marca.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          O que é o molde F1?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">É o molde que eu uso pra construir o alongamento: ele dá o desenho da unha e a estrutura que sustenta o resultado. Te explico melhor no WhatsApp — e dá pra ver como fica lá no Instagram.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          Qual a diferença de alongamento pra banho de gel?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">O alongamento aumenta o comprimento da unha. O banho de gel mantém o comprimento que você já tem e deixa a unha mais resistente. Se estiver em dúvida sobre qual faz mais sentido pra você, me chama que a gente decide junto.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          Onde você atende?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">Na Rua Maria Renata, 98, no Bairro do Limão. De segunda a sexta, das 9h às 17h.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contact" id="contato">
+  <div class="container contact-inner">
+    <div class="reveal">
+      <span class="section-label">Contato</span>
+      <h2 class="section-title">Bora marcar <em>a sua</em>?</h2>
+      <p class="section-sub">Me chama no WhatsApp e conta o que você quer fazer.</p>
+
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Endereço</div>
+            <div class="contact-item-value">Rua Maria Renata, 98<br>Bairro do Limão, São Paulo</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Horário</div>
+            <div class="contact-item-value">Segunda a sexta · 9h às 17h</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">WhatsApp</div>
+            <div class="contact-item-value">(11) 95269-7143</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-cta">
+        <a href="https://wa.me/5511952697143" class="btn btn-primary">Agendar pelo WhatsApp</a>
+        <a href="https://www.instagram.com/karenalves.nails" target="_blank" rel="noopener" class="btn btn-ghost">@karenalves.nails</a>
+      </div>
+    </div>
+
+    <div class="contact-map reveal">
+      <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1200&q=80" alt="Localização">
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-brand-mark"><img src="../logo-karen-alves-nail.webp" alt="Karen Alves Beauty Nails"></div>
+      <span class="footer-brand-name">Karen Alves Beauty Nails</span>
+    </div>
+    <div class="footer-note">
+      Site desenvolvido pelo <a href="https://www.temnolimao.com.br" target="_blank">Tem no Limão 🍋</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/karenalves.nails" target="_blank" rel="noopener" title="Instagram">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WA -->
+<a href="https://wa.me/5511952697143" class="wa-float" title="Fale comigo no WhatsApp">
+  <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.83 9.83 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.82 11.82 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.88 11.88 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.48-8.413z"/></svg>
+</a>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); });
+document.querySelectorAll('.faq-question').forEach(q => {
+  q.addEventListener('click', () => { q.parentElement.classList.toggle('open'); });
+});
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
