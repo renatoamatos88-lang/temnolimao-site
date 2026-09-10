@@ -65,7 +65,7 @@ git push
 
 ## Diretório de negócios
 - Array `_negociosDefault` no **`tnl-app.js`**
-- **55 negócios** cadastrados (IDs 1–55); logos em `Site/*.webp` (todos locais — sem CDN)
+- **62 negócios** cadastrados (IDs 1–63; ELC Lash está `paused:true` e não renderiza); logos em `Site/*.webp` (todos locais — sem CDN)
 - Merge automático com `localStorage` via `aplicarDB()` para não perder entries
 - Categorias com filtro; paginação: 6 cards visíveis + "Carregar mais" (paginação só em "Todos")
 - Strip de Destaques (`id="destaque-strip"`) — mostra os 3 destaques mais recentes (sort por `entrada` DESC)
