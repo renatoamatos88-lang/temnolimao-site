@@ -249,6 +249,12 @@ const _vagasDefault = [
     horario:'Segunda a Sexta · 9h às 18h',
     dataPublicacao:'2026-09-03',
     wpp:'https://wa.me/5511947254821?text=Oi%21%20Vi%20a%20vaga%20de%20Auxiliar%20Administrativo%20%28Helka%20Corretora%29%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse%21' },
+  { cargo:'Técnico em Saúde Bucal (TSB)', tipo:'A combinar', area:'Saúde', sal:'A combinar + Cesta Básica + Vale-Transporte', local:'Limão, SP', tempo:'Novo', icon:'🦷',
+    desc:'Instrumentar o cirurgião dentista durante cirurgias e consultas · preparar a sala e organizar materiais · esterilização (lavar, embalar e esterilizar instrumentais) · gerenciamento de estoque.',
+    horario:'Segunda a Sexta · 8h30 às 17h30',
+    requisitos:'Curso completo e reconhecido de TSB ou ASB · CRO ativo',
+    dataPublicacao:'2026-09-11',
+    wpp:'mailto:jcprecursoshumanos@gmail.com?subject=Vim%20pelo%20Tem%20no%20Lim%C3%A3o%20-%20Vaga%20T%C3%A9cnico%20em%20Sa%C3%BAde%20Bucal&body=Ol%C3%A1!%20Vi%20a%20vaga%20de%20T%C3%A9cnico%20em%20Sa%C3%BAde%20Bucal%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20e%20tenho%20interesse.%20Segue%20meu%20curr%C3%ADculo%20em%20anexo.' },
 ];
 let vagas = [..._vagasDefault];
 
