@@ -255,6 +255,11 @@ const _vagasDefault = [
     requisitos:'Curso completo e reconhecido de TSB ou ASB · CRO ativo',
     dataPublicacao:'2026-09-11',
     wpp:'mailto:jcprecursoshumanos@gmail.com?subject=Vim%20pelo%20Tem%20no%20Lim%C3%A3o%20-%20Vaga%20T%C3%A9cnico%20em%20Sa%C3%BAde%20Bucal&body=Ol%C3%A1!%20Vi%20a%20vaga%20de%20T%C3%A9cnico%20em%20Sa%C3%BAde%20Bucal%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20e%20tenho%20interesse.%20Segue%20meu%20curr%C3%ADculo%20em%20anexo.' },
+  { cargo:'Técnico de Controle de Pragas e Limpeza de Caixa d\'Água', tipo:'Efetiva', area:'Controle de Pragas', sal:'R$ 2.100 + Insalubridade R$ 420 + Vale-Transporte + Vale-Refeição + Cesta Básica + Seguro de Vida', local:'Zona Norte / Oeste, SP', tempo:'Novo', icon:'🐜',
+    desc:'Controle de pragas · limpeza de caixa d\'água · descupinização e controle de pombos. Requisitos: CNH categoria B, 1 ano de experiência, residir na Zona Norte ou Oeste de SP e sem restrições para trabalho em altura. Envie seu currículo pelo WhatsApp.',
+    requisitos:'Habilitação categoria B · Experiência de 1 ano · Residir na Zona Norte ou Oeste de SP · Sem restrições para trabalho em altura · Comprometimento e pontualidade · Disponibilidade de horário',
+    dataPublicacao:'2026-09-23',
+    wpp:'https://wa.me/5511942799928?text=Oi%21%20Vi%20a%20vaga%20de%20T%C3%A9cnico%20de%20Controle%20de%20Pragas%20pelo%20Tem%20no%20Lim%C3%A3o%20%F0%9F%8D%8B%20%E2%80%94%20tenho%20interesse%21' },
 ];
 let vagas = [..._vagasDefault];
 
