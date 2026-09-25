@@ -1118,7 +1118,7 @@
         io.unobserve(e.target);
       }
     });
-  }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+  }, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
   targets.forEach(function(el){ io.observe(el); });
 })();
 </script>
